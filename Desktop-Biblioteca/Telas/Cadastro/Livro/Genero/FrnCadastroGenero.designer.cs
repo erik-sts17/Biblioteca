@@ -47,8 +47,9 @@
             this.panel1.Controls.Add(this.btnFechar);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(0, 0);
+            this.panel1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(432, 61);
+            this.panel1.Size = new System.Drawing.Size(324, 50);
             this.panel1.TabIndex = 3;
             this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
             // 
@@ -57,10 +58,9 @@
             this.lblLogin.AutoSize = true;
             this.lblLogin.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblLogin.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
-            this.lblLogin.Location = new System.Drawing.Point(13, 9);
-            this.lblLogin.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblLogin.Location = new System.Drawing.Point(10, 7);
             this.lblLogin.Name = "lblLogin";
-            this.lblLogin.Size = new System.Drawing.Size(271, 37);
+            this.lblLogin.Size = new System.Drawing.Size(206, 30);
             this.lblLogin.TabIndex = 2;
             this.lblLogin.Text = "Cadastro de Gênero";
             this.lblLogin.Click += new System.EventHandler(this.lblLogin_Click);
@@ -73,10 +73,9 @@
             this.btnFechar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Red;
             this.btnFechar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnFechar.Image = ((System.Drawing.Image)(resources.GetObject("btnFechar.Image")));
-            this.btnFechar.Location = new System.Drawing.Point(359, 0);
-            this.btnFechar.Margin = new System.Windows.Forms.Padding(4);
+            this.btnFechar.Location = new System.Drawing.Point(269, 0);
             this.btnFechar.Name = "btnFechar";
-            this.btnFechar.Size = new System.Drawing.Size(73, 61);
+            this.btnFechar.Size = new System.Drawing.Size(55, 50);
             this.btnFechar.TabIndex = 1;
             this.btnFechar.UseVisualStyleBackColor = true;
             this.btnFechar.Click += new System.EventHandler(this.btnFechar_Click);
@@ -86,9 +85,10 @@
             this.btnLimpar.BackColor = System.Drawing.Color.Red;
             this.btnLimpar.Font = new System.Drawing.Font("Segoe UI", 15F, System.Drawing.FontStyle.Bold);
             this.btnLimpar.ForeColor = System.Drawing.Color.White;
-            this.btnLimpar.Location = new System.Drawing.Point(211, 237);
+            this.btnLimpar.Location = new System.Drawing.Point(158, 193);
+            this.btnLimpar.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnLimpar.Name = "btnLimpar";
-            this.btnLimpar.Size = new System.Drawing.Size(112, 59);
+            this.btnLimpar.Size = new System.Drawing.Size(85, 48);
             this.btnLimpar.TabIndex = 27;
             this.btnLimpar.Text = "Limpar";
             this.btnLimpar.UseVisualStyleBackColor = false;
@@ -99,9 +99,10 @@
             this.btnSalvar.BackColor = System.Drawing.Color.Lime;
             this.btnSalvar.Font = new System.Drawing.Font("Segoe UI", 15F, System.Drawing.FontStyle.Bold);
             this.btnSalvar.ForeColor = System.Drawing.Color.White;
-            this.btnSalvar.Location = new System.Drawing.Point(78, 237);
+            this.btnSalvar.Location = new System.Drawing.Point(58, 193);
+            this.btnSalvar.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnSalvar.Name = "btnSalvar";
-            this.btnSalvar.Size = new System.Drawing.Size(112, 59);
+            this.btnSalvar.Size = new System.Drawing.Size(84, 48);
             this.btnSalvar.TabIndex = 26;
             this.btnSalvar.Text = "Salvar";
             this.btnSalvar.UseVisualStyleBackColor = false;
@@ -110,11 +111,10 @@
             // txtGenero
             // 
             this.txtGenero.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.txtGenero.Location = new System.Drawing.Point(78, 147);
-            this.txtGenero.Margin = new System.Windows.Forms.Padding(4);
+            this.txtGenero.Location = new System.Drawing.Point(58, 119);
             this.txtGenero.MaxLength = 50;
             this.txtGenero.Name = "txtGenero";
-            this.txtGenero.Size = new System.Drawing.Size(245, 27);
+            this.txtGenero.Size = new System.Drawing.Size(185, 23);
             this.txtGenero.TabIndex = 28;
             this.txtGenero.TextChanged += new System.EventHandler(this.txtNomeMoeda_TextChanged);
             // 
@@ -123,10 +123,9 @@
             this.lblNome.AutoSize = true;
             this.lblNome.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold);
             this.lblNome.ForeColor = System.Drawing.Color.White;
-            this.lblNome.Location = new System.Drawing.Point(73, 115);
-            this.lblNome.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblNome.Location = new System.Drawing.Point(55, 93);
             this.lblNome.Name = "lblNome";
-            this.lblNome.Size = new System.Drawing.Size(109, 28);
+            this.lblNome.Size = new System.Drawing.Size(88, 21);
             this.lblNome.TabIndex = 29;
             this.lblNome.Text = "Descrição:";
             this.lblNome.Click += new System.EventHandler(this.label1_Click);
@@ -136,9 +135,10 @@
             this.lblSucesso.AutoSize = true;
             this.lblSucesso.Font = new System.Drawing.Font("Segoe UI", 13F);
             this.lblSucesso.ForeColor = System.Drawing.Color.Lime;
-            this.lblSucesso.Location = new System.Drawing.Point(73, 191);
+            this.lblSucesso.Location = new System.Drawing.Point(55, 155);
+            this.lblSucesso.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblSucesso.Name = "lblSucesso";
-            this.lblSucesso.Size = new System.Drawing.Size(303, 30);
+            this.lblSucesso.Size = new System.Drawing.Size(255, 25);
             this.lblSucesso.TabIndex = 33;
             this.lblSucesso.Text = "Dados gravados com sucesso!";
             this.lblSucesso.Visible = false;
@@ -146,10 +146,10 @@
             // 
             // FrmCadastroGenero
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(46)))), ((int)(((byte)(59)))));
-            this.ClientSize = new System.Drawing.Size(432, 351);
+            this.ClientSize = new System.Drawing.Size(324, 285);
             this.Controls.Add(this.lblSucesso);
             this.Controls.Add(this.txtGenero);
             this.Controls.Add(this.lblNome);
@@ -157,6 +157,7 @@
             this.Controls.Add(this.btnSalvar);
             this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "FrmCadastroGenero";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FrmCadastroMoeda";

@@ -1,28 +1,52 @@
-﻿using System.Configuration;
+﻿using System;
+using System.Collections.Generic;
+using System.Data;
 using System.Data.SqlClient;
 
 namespace Desktop_Biblioteca.DAO.Livro
 {
-    public class LivroDao
+    public class LivroDao : BaseDAO
     {
-        public void Insert(Entidades.Livro.Livro livro)
+        public int Insert(Entidades.Livro.Livro livro, List<int> autoresIds)
         {
-            string cmdInsert = " INSERT INTO LIVRO (TITULO, CATEGORIAID, GENEROID, PAGINAS, ATIVO) "
-                                + " VALUES ('" + livro.Titulo + "', '" + livro.CategoriaId + "', '" + livro.GeneroId + "', '" + livro.Paginas + "', '" + 1 + "')"
-                                + " INSERT INTO AUTORESLIVROS(AUTORID, LIVROID)  VALUES ('" + livro.AutorId + "', (SELECT IDENT_CURRENT('biblioteca.dbo.LIVRO')))";
-            string strConexao = ConfigurationManager.AppSettings["ConnectionString"];
-            try
+            string cmdInsert = "INSERT INTO LIVRO (TITULO, CATEGORIAID, GENEROID, PAGINAS, IMAGEM, ATIVO) " +
+                                "VALUES (@Titulo, @CategoriaId, @GeneroId, @Paginas, @Imagem, @Ativo);" +
+                                "SELECT CAST(scope_identity() AS int)";
+
+            var imagemParam = new SqlParameter("@Imagem", SqlDbType.VarBinary);
+            if (livro.Imagem != null)
+                imagemParam.Value = livro.Imagem;
+            
+            else
+                imagemParam.Value = DBNull.Value;
+            
+            SqlParameter[] parameters = new SqlParameter[]
             {
-                SqlConnection con = new SqlConnection(strConexao);
-                SqlCommand sqlCommand = new SqlCommand(cmdInsert, con);
-                con.Open();
-                sqlCommand.ExecuteNonQuery();
-                con.Close();
-            }
-            catch (System.Exception e)
+               
+                new SqlParameter("@Titulo", livro.Titulo),
+                new SqlParameter("@CategoriaId", livro.CategoriaId),
+                new SqlParameter("@GeneroId", livro.GeneroId),
+                new SqlParameter("@Paginas", livro.Paginas),
+                imagemParam,
+                new SqlParameter("@Ativo", 1)
+            };
+
+            int livroId = (int)ExecuteScalar(cmdInsert, parameters);
+
+            string cmdInsertAutor = "INSERT INTO AUTORESLIVROS(AUTORID, LIVROID) " +
+                                    "VALUES (@AutorId, @LivroId)";
+
+            foreach (int autorId in autoresIds)
             {
-                throw e;
+                SqlParameter[] parametersAutor = new SqlParameter[]
+                {
+                    new SqlParameter("@AutorId", autorId),
+                    new SqlParameter("@LivroId", livroId)
+                };
+
+                Execute(cmdInsertAutor, parametersAutor);
             }
+            return livroId;
         }
     }
 }

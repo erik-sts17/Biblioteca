@@ -103,9 +103,6 @@ namespace Desktop_Biblioteca.Home
             {
                 Application.OpenForms[i].Hide();
             }
-
-            //FrmLogin login = new FrmLogin();
-            // login.Show();
         }
 
         private void btnCadastroLivro_Click(object sender, EventArgs e)

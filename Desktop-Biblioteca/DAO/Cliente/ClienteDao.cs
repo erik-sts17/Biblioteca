@@ -1,28 +1,35 @@
-﻿using System;
-using System.Configuration;
-using System.Data.SqlClient;
+﻿using System.Data.SqlClient;
 
 namespace Desktop_Biblioteca.DAO.Cliente
 {
-    public class ClienteDao
+    public class ClienteDao : BaseDAO
     {
         public void Insert(Entidades.Cliente cliente)
         {
-            string cmdInsertEndereco = " INSERT INTO Endereco (UF, CIDADE, BAIRRO, LOGRADOURO, NUMERO, COMPLEMENTO, ATIVO) VALUES ('" + cliente.Endereco.Uf + "' , '" + cliente.Endereco.Cidade + "', '" + cliente.Endereco.Bairro + "', '" + cliente.Endereco.Logradouro + "' , '" + cliente.Endereco.Numero + "', '" + cliente.Endereco.Complemento + "', '" + 1 + "') ";
-            string cmdInsertCliente = " INSERT INTO Cliente (NOME, DATANASCIMENTO, RG, EMAIL, TELEFONE, ENDERECOID, ATIVO) VALUES ('" + cliente.Nome + "', '" + cliente.DataNascimento + "', '" + cliente.Rg + "', '" + cliente.Email + "', '" + cliente.Telefone + "', (SELECT IDENT_CURRENT('biblioteca.dbo.Endereco')) , '" + 1 + "') ";
-            string strConexao = ConfigurationManager.AppSettings["ConnectionString"];
-            try
+            SqlParameter[] parameters =
             {
-                SqlConnection con = new SqlConnection(strConexao);
-                SqlCommand sqlCommand = new SqlCommand(cmdInsertEndereco + cmdInsertCliente, con);
-                con.Open();
-                sqlCommand.ExecuteNonQuery();
-                con.Close();
-            }
-            catch (Exception e)
-            {
-                throw e;
-            }
+                new SqlParameter("@Uf", cliente.Endereco.Uf),
+                new SqlParameter("@Cidade", cliente.Endereco.Cidade),
+                new SqlParameter("@Bairro", cliente.Endereco.Bairro),
+                new SqlParameter("@Logradouro", cliente.Endereco.Logradouro),
+                new SqlParameter("@Numero", cliente.Endereco.Numero),
+                new SqlParameter("@Complemento", cliente.Endereco.Complemento),
+                new SqlParameter("@AtivoCli", 1),
+                new SqlParameter("@Nome", cliente.Nome),
+                new SqlParameter("@DataNascimento", cliente.DataNascimento),
+                new SqlParameter("@Rg", cliente.Rg),
+                new SqlParameter("@Email", cliente.Email),
+                new SqlParameter("@Telefone", cliente.Telefone),
+                new SqlParameter("@AtivoEnd", 1),
+            };
+
+            string query = "INSERT INTO Endereco (UF, CIDADE, BAIRRO, LOGRADOURO, NUMERO, COMPLEMENTO, ATIVO) " +
+                           "VALUES (@Uf, @Cidade, @Bairro, @Logradouro, @Numero, @Complemento, @AtivoCli);" +
+                           "DECLARE @EnderecoId INT = CAST(scope_identity() AS int);" +
+                           "INSERT INTO Cliente (NOME, DATANASCIMENTO, RG, EMAIL, TELEFONE, ENDERECOID, ATIVO) " +
+                           "VALUES (@Nome, @DataNascimento, @Rg, @Email, @Telefone, @EnderecoId, @AtivoEnd)";
+
+            Execute(query, parameters);
         }
     }
 }

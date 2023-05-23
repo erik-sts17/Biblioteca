@@ -6,6 +6,8 @@ using System.Collections.Generic;
 using Desktop_Biblioteca.Livro.Categoria;
 using Desktop_Biblioteca.Cadastro.Genero;
 using Desktop_Biblioteca.Cadastro.Autor;
+using System.Drawing;
+using System.IO;
 
 namespace Desktop_Biblioteca.Cadastro
 {
@@ -14,6 +16,7 @@ namespace Desktop_Biblioteca.Cadastro
         public List<Entidades.Livro.Autor> Autores { get; set; }
         public List<Entidades.Livro.Genero> Generos { get; set; }
         public List<Entidades.Livro.Categoria> Categorias { get; set; }
+        public string NomeImagem { get; set; }
 
         public FrmCadastroLivro()
         {
@@ -24,6 +27,9 @@ namespace Desktop_Biblioteca.Cadastro
         {
             txtNome.Clear();
             txtPaginas.Clear();
+            lstAutores.ClearSelected();
+            cbxCategoria.SelectedIndex = -1;
+            cbxGenero.SelectedIndex = -1;
         }
 
         private void btnFechar_Click(object sender, EventArgs e)
@@ -38,12 +44,22 @@ namespace Desktop_Biblioteca.Cadastro
 
             var categoriaId = Categorias.Where(y => y.Descricao == cbxCategoria.SelectedItem.ToString()).Select(y => y.Id).FirstOrDefault();
             var generoId = Generos.Where(y => y.Descricao == cbxGenero.SelectedItem.ToString()).Select(y => y.Id).FirstOrDefault();
-            var autorId = Autores.Where(y => y.Nome == cbxAutor.SelectedItem.ToString()).Select(y => y.Id).FirstOrDefault();
-            Entidades.Livro.Livro livro = new Entidades.Livro.Livro(txtNome.Text, categoriaId, generoId, autorId, Convert.ToInt32(txtPaginas.Text));
+
+            List<string> nomesSelecionados = lstAutores.SelectedItems.Cast<string>().ToList();
+            List<int> autoresSelecionados = Autores
+                .Where(a => nomesSelecionados.Contains(a.Nome))
+                .Select(a => a.Id)
+                .ToList();
+
+            byte[] imageBytes = null;
+            if (NomeImagem != null)
+                imageBytes = File.ReadAllBytes(NomeImagem);
+            
+            Entidades.Livro.Livro livro = new Entidades.Livro.Livro(txtNome.Text, categoriaId, generoId, Convert.ToInt32(txtPaginas.Text), imageBytes);
             try
             {
                 LivroDao dao = new LivroDao();
-                dao.Insert(livro);
+                dao.Insert(livro, autoresSelecionados);
                 buttonLimpa_Click(sender, e);
                 lblSucesso.Visible = true;
             }
@@ -66,7 +82,7 @@ namespace Desktop_Biblioteca.Cadastro
             this.Categorias = categorias;
             foreach (var autor in autores.Select(x => x.Nome).ToList())
             {
-                cbxAutor.Items.Add(autor);
+                lstAutores.Items.Add(autor);
             }
             foreach (var genero in generos.Select(x => x.Descricao).ToList())
             {
@@ -78,7 +94,7 @@ namespace Desktop_Biblioteca.Cadastro
             }
             if (this.Autores == null || this.Autores.Count == 0)
             {
-                cbxAutor.Visible = false;
+                lstAutores.Visible = false;
                 btnAdicionaAutor.Visible = true;
             }
 
@@ -105,6 +121,7 @@ namespace Desktop_Biblioteca.Cadastro
             return true;
         }
 
+
         private void lblNome_Click(object sender, EventArgs e)
         {
 
@@ -129,6 +146,34 @@ namespace Desktop_Biblioteca.Cadastro
             this.Hide();
             FrmCadastroAutor frmCadastroAutor = new FrmCadastroAutor();
             frmCadastroAutor.Show();
+        }
+
+        private void btnCarregarImagem_Click(object sender, EventArgs e)
+        {
+            OpenFileDialog openFileDialog = new OpenFileDialog();
+            openFileDialog.Filter = "Arquivos de Imagem (*.jpg, *.jpeg, *.png, *.gif)|*.jpg;*.jpeg;*.png;*.gif";
+
+            if (openFileDialog.ShowDialog() == DialogResult.OK)
+            {
+                try
+                {
+                    Image image = Image.FromFile(openFileDialog.FileName);
+                    pbxCliente.Image = image;
+                    NomeImagem = openFileDialog.FileName;
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Erro ao carregar a imagem: " + ex.Message);
+                }
+            }
+        }
+
+        private void txtPaginas_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar))
+            {
+                e.Handled = true;
+            }
         }
     }
 }

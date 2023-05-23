@@ -74,7 +74,6 @@
             this.button13 = new System.Windows.Forms.Button();
             this.timerDataHora = new System.Windows.Forms.Timer(this.components);
             this.panel18 = new System.Windows.Forms.Panel();
-            this.panel25 = new System.Windows.Forms.Panel();
             this.subMenuEmprestimo = new System.Windows.Forms.Panel();
             this.panel32 = new System.Windows.Forms.Panel();
             this.button9 = new System.Windows.Forms.Button();
@@ -108,19 +107,19 @@
             this.panelMenu.Controls.Add(this.btnLivros);
             this.panelMenu.Controls.Add(this.btnClientes);
             this.panelMenu.Dock = System.Windows.Forms.DockStyle.Left;
-            this.panelMenu.Location = new System.Drawing.Point(0, 66);
-            this.panelMenu.Margin = new System.Windows.Forms.Padding(4);
+            this.panelMenu.Location = new System.Drawing.Point(0, 54);
             this.panelMenu.Name = "panelMenu";
-            this.panelMenu.Size = new System.Drawing.Size(219, 986);
+            this.panelMenu.Size = new System.Drawing.Size(164, 801);
             this.panelMenu.TabIndex = 4;
             this.panelMenu.Paint += new System.Windows.Forms.PaintEventHandler(this.panelMenu_Paint);
             // 
             // panel12
             // 
             this.panel12.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(194)))), ((int)(((byte)(0)))));
-            this.panel12.Location = new System.Drawing.Point(221, 320);
+            this.panel12.Location = new System.Drawing.Point(166, 260);
+            this.panel12.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.panel12.Name = "panel12";
-            this.panel12.Size = new System.Drawing.Size(10, 50);
+            this.panel12.Size = new System.Drawing.Size(8, 41);
             this.panel12.TabIndex = 7;
             // 
             // submenuLivro
@@ -129,18 +128,20 @@
             this.submenuLivro.Controls.Add(this.btnLivroConsulta);
             this.submenuLivro.Controls.Add(this.panel6);
             this.submenuLivro.Controls.Add(this.btnLivroCadastro);
-            this.submenuLivro.Location = new System.Drawing.Point(20, 320);
+            this.submenuLivro.Location = new System.Drawing.Point(15, 260);
+            this.submenuLivro.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.submenuLivro.Name = "submenuLivro";
-            this.submenuLivro.Size = new System.Drawing.Size(195, 108);
+            this.submenuLivro.Size = new System.Drawing.Size(146, 88);
             this.submenuLivro.TabIndex = 8;
             this.submenuLivro.Visible = false;
             // 
             // panel5
             // 
             this.panel5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(194)))), ((int)(((byte)(0)))));
-            this.panel5.Location = new System.Drawing.Point(0, 57);
+            this.panel5.Location = new System.Drawing.Point(0, 46);
+            this.panel5.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.panel5.Name = "panel5";
-            this.panel5.Size = new System.Drawing.Size(10, 50);
+            this.panel5.Size = new System.Drawing.Size(8, 41);
             this.panel5.TabIndex = 4;
             // 
             // btnLivroConsulta
@@ -151,10 +152,9 @@
             this.btnLivroConsulta.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnLivroConsulta.ForeColor = System.Drawing.Color.White;
             this.btnLivroConsulta.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnLivroConsulta.Location = new System.Drawing.Point(8, 57);
-            this.btnLivroConsulta.Margin = new System.Windows.Forms.Padding(4);
+            this.btnLivroConsulta.Location = new System.Drawing.Point(6, 46);
             this.btnLivroConsulta.Name = "btnLivroConsulta";
-            this.btnLivroConsulta.Size = new System.Drawing.Size(191, 50);
+            this.btnLivroConsulta.Size = new System.Drawing.Size(143, 41);
             this.btnLivroConsulta.TabIndex = 5;
             this.btnLivroConsulta.Text = "  Consulta\r\n";
             this.btnLivroConsulta.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -165,8 +165,9 @@
             // 
             this.panel6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(194)))), ((int)(((byte)(0)))));
             this.panel6.Location = new System.Drawing.Point(0, 0);
+            this.panel6.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.panel6.Name = "panel6";
-            this.panel6.Size = new System.Drawing.Size(10, 50);
+            this.panel6.Size = new System.Drawing.Size(8, 41);
             this.panel6.TabIndex = 0;
             // 
             // btnLivroCadastro
@@ -177,10 +178,9 @@
             this.btnLivroCadastro.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnLivroCadastro.ForeColor = System.Drawing.Color.White;
             this.btnLivroCadastro.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnLivroCadastro.Location = new System.Drawing.Point(8, 0);
-            this.btnLivroCadastro.Margin = new System.Windows.Forms.Padding(4);
+            this.btnLivroCadastro.Location = new System.Drawing.Point(6, 0);
             this.btnLivroCadastro.Name = "btnLivroCadastro";
-            this.btnLivroCadastro.Size = new System.Drawing.Size(191, 50);
+            this.btnLivroCadastro.Size = new System.Drawing.Size(143, 41);
             this.btnLivroCadastro.TabIndex = 3;
             this.btnLivroCadastro.Text = " Cadastro";
             this.btnLivroCadastro.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -193,18 +193,20 @@
             this.submenuCliente.Controls.Add(this.btnConsultarFuncionario);
             this.submenuCliente.Controls.Add(this.panel3);
             this.submenuCliente.Controls.Add(this.btnCadastrarFuncionario);
-            this.submenuCliente.Location = new System.Drawing.Point(20, 106);
+            this.submenuCliente.Location = new System.Drawing.Point(15, 86);
+            this.submenuCliente.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.submenuCliente.Name = "submenuCliente";
-            this.submenuCliente.Size = new System.Drawing.Size(195, 108);
+            this.submenuCliente.Size = new System.Drawing.Size(146, 88);
             this.submenuCliente.TabIndex = 7;
             this.submenuCliente.Visible = false;
             // 
             // panel4
             // 
             this.panel4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(194)))), ((int)(((byte)(0)))));
-            this.panel4.Location = new System.Drawing.Point(0, 57);
+            this.panel4.Location = new System.Drawing.Point(0, 46);
+            this.panel4.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(10, 50);
+            this.panel4.Size = new System.Drawing.Size(8, 41);
             this.panel4.TabIndex = 4;
             // 
             // btnConsultarFuncionario
@@ -215,10 +217,9 @@
             this.btnConsultarFuncionario.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnConsultarFuncionario.ForeColor = System.Drawing.Color.White;
             this.btnConsultarFuncionario.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnConsultarFuncionario.Location = new System.Drawing.Point(8, 57);
-            this.btnConsultarFuncionario.Margin = new System.Windows.Forms.Padding(4);
+            this.btnConsultarFuncionario.Location = new System.Drawing.Point(6, 46);
             this.btnConsultarFuncionario.Name = "btnConsultarFuncionario";
-            this.btnConsultarFuncionario.Size = new System.Drawing.Size(191, 50);
+            this.btnConsultarFuncionario.Size = new System.Drawing.Size(143, 41);
             this.btnConsultarFuncionario.TabIndex = 5;
             this.btnConsultarFuncionario.Text = " Consulta\r\n";
             this.btnConsultarFuncionario.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -229,8 +230,9 @@
             // 
             this.panel3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(194)))), ((int)(((byte)(0)))));
             this.panel3.Location = new System.Drawing.Point(0, 0);
+            this.panel3.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(10, 50);
+            this.panel3.Size = new System.Drawing.Size(8, 41);
             this.panel3.TabIndex = 0;
             // 
             // btnCadastrarFuncionario
@@ -241,10 +243,9 @@
             this.btnCadastrarFuncionario.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCadastrarFuncionario.ForeColor = System.Drawing.Color.White;
             this.btnCadastrarFuncionario.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnCadastrarFuncionario.Location = new System.Drawing.Point(8, 0);
-            this.btnCadastrarFuncionario.Margin = new System.Windows.Forms.Padding(4);
+            this.btnCadastrarFuncionario.Location = new System.Drawing.Point(6, 0);
             this.btnCadastrarFuncionario.Name = "btnCadastrarFuncionario";
-            this.btnCadastrarFuncionario.Size = new System.Drawing.Size(191, 50);
+            this.btnCadastrarFuncionario.Size = new System.Drawing.Size(143, 41);
             this.btnCadastrarFuncionario.TabIndex = 3;
             this.btnCadastrarFuncionario.Text = "Cadastro";
             this.btnCadastrarFuncionario.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -260,12 +261,11 @@
             this.btnLivros.ForeColor = System.Drawing.Color.White;
             this.btnLivros.Image = ((System.Drawing.Image)(resources.GetObject("btnLivros.Image")));
             this.btnLivros.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnLivros.Location = new System.Drawing.Point(0, 232);
-            this.btnLivros.Margin = new System.Windows.Forms.Padding(4);
+            this.btnLivros.Location = new System.Drawing.Point(0, 188);
             this.btnLivros.Name = "btnLivros";
-            this.btnLivros.Size = new System.Drawing.Size(219, 81);
+            this.btnLivros.Size = new System.Drawing.Size(164, 66);
             this.btnLivros.TabIndex = 5;
-            this.btnLivros.Text = "Livros";
+            this.btnLivros.Text = "        Livros";
             this.btnLivros.UseVisualStyleBackColor = true;
             this.btnLivros.Click += new System.EventHandler(this.btnLivros_Click);
             // 
@@ -278,12 +278,11 @@
             this.btnClientes.ForeColor = System.Drawing.Color.White;
             this.btnClientes.Image = global::Desktop_Biblioteca.Properties.Resources.logoCliente;
             this.btnClientes.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnClientes.Location = new System.Drawing.Point(4, 18);
-            this.btnClientes.Margin = new System.Windows.Forms.Padding(4);
+            this.btnClientes.Location = new System.Drawing.Point(3, 15);
             this.btnClientes.Name = "btnClientes";
-            this.btnClientes.Size = new System.Drawing.Size(215, 81);
+            this.btnClientes.Size = new System.Drawing.Size(161, 66);
             this.btnClientes.TabIndex = 4;
-            this.btnClientes.Text = "   Clientes";
+            this.btnClientes.Text = "             Clientes";
             this.btnClientes.UseVisualStyleBackColor = true;
             this.btnClientes.Click += new System.EventHandler(this.btnCadastroFuncionario_Click);
             // 
@@ -295,8 +294,9 @@
             this.panel1.Controls.Add(this.lblDataAtual);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(0, 0);
+            this.panel1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1367, 66);
+            this.panel1.Size = new System.Drawing.Size(1025, 54);
             this.panel1.TabIndex = 3;
             // 
             // lblLogin
@@ -304,10 +304,9 @@
             this.lblLogin.AutoSize = true;
             this.lblLogin.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblLogin.ForeColor = System.Drawing.Color.IndianRed;
-            this.lblLogin.Location = new System.Drawing.Point(17, 10);
-            this.lblLogin.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblLogin.Location = new System.Drawing.Point(13, 8);
             this.lblLogin.Name = "lblLogin";
-            this.lblLogin.Size = new System.Drawing.Size(197, 37);
+            this.lblLogin.Size = new System.Drawing.Size(151, 30);
             this.lblLogin.TabIndex = 4;
             this.lblLogin.Text = "Além do Livro";
             // 
@@ -319,10 +318,9 @@
             this.btnFechar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Red;
             this.btnFechar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnFechar.Image = ((System.Drawing.Image)(resources.GetObject("btnFechar.Image")));
-            this.btnFechar.Location = new System.Drawing.Point(1294, 0);
-            this.btnFechar.Margin = new System.Windows.Forms.Padding(4);
+            this.btnFechar.Location = new System.Drawing.Point(970, 0);
             this.btnFechar.Name = "btnFechar";
-            this.btnFechar.Size = new System.Drawing.Size(73, 69);
+            this.btnFechar.Size = new System.Drawing.Size(55, 56);
             this.btnFechar.TabIndex = 1;
             this.btnFechar.UseVisualStyleBackColor = true;
             this.btnFechar.Click += new System.EventHandler(this.btnFechar_Click);
@@ -331,9 +329,10 @@
             // 
             this.lblDataAtual.AutoSize = true;
             this.lblDataAtual.Font = new System.Drawing.Font("Segoe UI", 10.28571F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblDataAtual.Location = new System.Drawing.Point(774, 21);
+            this.lblDataAtual.Location = new System.Drawing.Point(580, 17);
+            this.lblDataAtual.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblDataAtual.Name = "lblDataAtual";
-            this.lblDataAtual.Size = new System.Drawing.Size(46, 23);
+            this.lblDataAtual.Size = new System.Drawing.Size(39, 19);
             this.lblDataAtual.TabIndex = 11;
             this.lblDataAtual.Text = "data";
             this.lblDataAtual.TextAlign = System.Drawing.ContentAlignment.BottomRight;
@@ -349,9 +348,10 @@
             this.subMenuLivroCadastro.Controls.Add(this.btnCadastroAutor);
             this.subMenuLivroCadastro.Controls.Add(this.panel11);
             this.subMenuLivroCadastro.Controls.Add(this.btnCadastroLivro);
-            this.subMenuLivroCadastro.Location = new System.Drawing.Point(222, 217);
+            this.subMenuLivroCadastro.Location = new System.Drawing.Point(166, 176);
+            this.subMenuLivroCadastro.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.subMenuLivroCadastro.Name = "subMenuLivroCadastro";
-            this.subMenuLivroCadastro.Size = new System.Drawing.Size(195, 222);
+            this.subMenuLivroCadastro.Size = new System.Drawing.Size(146, 180);
             this.subMenuLivroCadastro.TabIndex = 8;
             this.subMenuLivroCadastro.Visible = false;
             // 
@@ -359,42 +359,47 @@
             // 
             this.panel9.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(194)))), ((int)(((byte)(0)))));
             this.panel9.Controls.Add(this.panel16);
-            this.panel9.Location = new System.Drawing.Point(0, 109);
+            this.panel9.Location = new System.Drawing.Point(0, 89);
+            this.panel9.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.panel9.Name = "panel9";
-            this.panel9.Size = new System.Drawing.Size(10, 50);
+            this.panel9.Size = new System.Drawing.Size(8, 41);
             this.panel9.TabIndex = 10;
             // 
             // panel16
             // 
             this.panel16.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(194)))), ((int)(((byte)(0)))));
-            this.panel16.Location = new System.Drawing.Point(0, 53);
+            this.panel16.Location = new System.Drawing.Point(0, 43);
+            this.panel16.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.panel16.Name = "panel16";
-            this.panel16.Size = new System.Drawing.Size(10, 50);
+            this.panel16.Size = new System.Drawing.Size(8, 41);
             this.panel16.TabIndex = 1;
             // 
             // panel13
             // 
             this.panel13.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(194)))), ((int)(((byte)(0)))));
             this.panel13.Controls.Add(this.panel15);
-            this.panel13.Location = new System.Drawing.Point(0, 53);
+            this.panel13.Location = new System.Drawing.Point(0, 43);
+            this.panel13.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.panel13.Name = "panel13";
-            this.panel13.Size = new System.Drawing.Size(10, 50);
+            this.panel13.Size = new System.Drawing.Size(8, 41);
             this.panel13.TabIndex = 9;
             // 
             // panel15
             // 
             this.panel15.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(194)))), ((int)(((byte)(0)))));
-            this.panel15.Location = new System.Drawing.Point(0, 53);
+            this.panel15.Location = new System.Drawing.Point(0, 43);
+            this.panel15.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.panel15.Name = "panel15";
-            this.panel15.Size = new System.Drawing.Size(10, 50);
+            this.panel15.Size = new System.Drawing.Size(8, 41);
             this.panel15.TabIndex = 1;
             // 
             // panel14
             // 
             this.panel14.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(194)))), ((int)(((byte)(0)))));
-            this.panel14.Location = new System.Drawing.Point(0, 166);
+            this.panel14.Location = new System.Drawing.Point(0, 135);
+            this.panel14.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.panel14.Name = "panel14";
-            this.panel14.Size = new System.Drawing.Size(10, 50);
+            this.panel14.Size = new System.Drawing.Size(8, 41);
             this.panel14.TabIndex = 8;
             // 
             // btnCadastroCategoria
@@ -405,10 +410,9 @@
             this.btnCadastroCategoria.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCadastroCategoria.ForeColor = System.Drawing.Color.White;
             this.btnCadastroCategoria.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnCadastroCategoria.Location = new System.Drawing.Point(9, 166);
-            this.btnCadastroCategoria.Margin = new System.Windows.Forms.Padding(4);
+            this.btnCadastroCategoria.Location = new System.Drawing.Point(7, 135);
             this.btnCadastroCategoria.Name = "btnCadastroCategoria";
-            this.btnCadastroCategoria.Size = new System.Drawing.Size(191, 50);
+            this.btnCadastroCategoria.Size = new System.Drawing.Size(143, 41);
             this.btnCadastroCategoria.TabIndex = 7;
             this.btnCadastroCategoria.Text = "Categoria";
             this.btnCadastroCategoria.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -423,10 +427,9 @@
             this.btnCadastroGenero.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCadastroGenero.ForeColor = System.Drawing.Color.White;
             this.btnCadastroGenero.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnCadastroGenero.Location = new System.Drawing.Point(9, 109);
-            this.btnCadastroGenero.Margin = new System.Windows.Forms.Padding(4);
+            this.btnCadastroGenero.Location = new System.Drawing.Point(7, 89);
             this.btnCadastroGenero.Name = "btnCadastroGenero";
-            this.btnCadastroGenero.Size = new System.Drawing.Size(191, 50);
+            this.btnCadastroGenero.Size = new System.Drawing.Size(143, 41);
             this.btnCadastroGenero.TabIndex = 6;
             this.btnCadastroGenero.Text = "Gênero";
             this.btnCadastroGenero.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -441,10 +444,9 @@
             this.btnCadastroAutor.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCadastroAutor.ForeColor = System.Drawing.Color.White;
             this.btnCadastroAutor.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnCadastroAutor.Location = new System.Drawing.Point(9, 53);
-            this.btnCadastroAutor.Margin = new System.Windows.Forms.Padding(4);
+            this.btnCadastroAutor.Location = new System.Drawing.Point(7, 43);
             this.btnCadastroAutor.Name = "btnCadastroAutor";
-            this.btnCadastroAutor.Size = new System.Drawing.Size(182, 50);
+            this.btnCadastroAutor.Size = new System.Drawing.Size(136, 41);
             this.btnCadastroAutor.TabIndex = 5;
             this.btnCadastroAutor.Text = "Autor";
             this.btnCadastroAutor.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -456,16 +458,18 @@
             this.panel11.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(194)))), ((int)(((byte)(0)))));
             this.panel11.Controls.Add(this.panel10);
             this.panel11.Location = new System.Drawing.Point(0, 0);
+            this.panel11.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.panel11.Name = "panel11";
-            this.panel11.Size = new System.Drawing.Size(10, 50);
+            this.panel11.Size = new System.Drawing.Size(8, 41);
             this.panel11.TabIndex = 0;
             // 
             // panel10
             // 
             this.panel10.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(194)))), ((int)(((byte)(0)))));
-            this.panel10.Location = new System.Drawing.Point(0, 53);
+            this.panel10.Location = new System.Drawing.Point(0, 43);
+            this.panel10.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.panel10.Name = "panel10";
-            this.panel10.Size = new System.Drawing.Size(10, 50);
+            this.panel10.Size = new System.Drawing.Size(8, 41);
             this.panel10.TabIndex = 1;
             // 
             // btnCadastroLivro
@@ -476,10 +480,9 @@
             this.btnCadastroLivro.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCadastroLivro.ForeColor = System.Drawing.Color.White;
             this.btnCadastroLivro.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnCadastroLivro.Location = new System.Drawing.Point(8, 0);
-            this.btnCadastroLivro.Margin = new System.Windows.Forms.Padding(4);
+            this.btnCadastroLivro.Location = new System.Drawing.Point(6, 0);
             this.btnCadastroLivro.Name = "btnCadastroLivro";
-            this.btnCadastroLivro.Size = new System.Drawing.Size(191, 50);
+            this.btnCadastroLivro.Size = new System.Drawing.Size(143, 41);
             this.btnCadastroLivro.TabIndex = 3;
             this.btnCadastroLivro.Text = "Livro";
             this.btnCadastroLivro.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -497,9 +500,10 @@
             this.subMenuLivroConsulta.Controls.Add(this.button12);
             this.subMenuLivroConsulta.Controls.Add(this.panel21);
             this.subMenuLivroConsulta.Controls.Add(this.button13);
-            this.subMenuLivroConsulta.Location = new System.Drawing.Point(222, 446);
+            this.subMenuLivroConsulta.Location = new System.Drawing.Point(166, 362);
+            this.subMenuLivroConsulta.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.subMenuLivroConsulta.Name = "subMenuLivroConsulta";
-            this.subMenuLivroConsulta.Size = new System.Drawing.Size(195, 222);
+            this.subMenuLivroConsulta.Size = new System.Drawing.Size(146, 180);
             this.subMenuLivroConsulta.TabIndex = 9;
             this.subMenuLivroConsulta.Visible = false;
             // 
@@ -507,42 +511,47 @@
             // 
             this.panel23.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(194)))), ((int)(((byte)(0)))));
             this.panel23.Controls.Add(this.panel24);
-            this.panel23.Location = new System.Drawing.Point(0, 110);
+            this.panel23.Location = new System.Drawing.Point(0, 89);
+            this.panel23.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.panel23.Name = "panel23";
-            this.panel23.Size = new System.Drawing.Size(10, 50);
+            this.panel23.Size = new System.Drawing.Size(8, 41);
             this.panel23.TabIndex = 2;
             // 
             // panel24
             // 
             this.panel24.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(194)))), ((int)(((byte)(0)))));
-            this.panel24.Location = new System.Drawing.Point(0, 53);
+            this.panel24.Location = new System.Drawing.Point(0, 43);
+            this.panel24.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.panel24.Name = "panel24";
-            this.panel24.Size = new System.Drawing.Size(10, 50);
+            this.panel24.Size = new System.Drawing.Size(8, 41);
             this.panel24.TabIndex = 1;
             // 
             // panel17
             // 
             this.panel17.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(194)))), ((int)(((byte)(0)))));
             this.panel17.Controls.Add(this.panel19);
-            this.panel17.Location = new System.Drawing.Point(0, 53);
+            this.panel17.Location = new System.Drawing.Point(0, 43);
+            this.panel17.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.panel17.Name = "panel17";
-            this.panel17.Size = new System.Drawing.Size(10, 50);
+            this.panel17.Size = new System.Drawing.Size(8, 41);
             this.panel17.TabIndex = 9;
             // 
             // panel19
             // 
             this.panel19.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(194)))), ((int)(((byte)(0)))));
-            this.panel19.Location = new System.Drawing.Point(0, 53);
+            this.panel19.Location = new System.Drawing.Point(0, 43);
+            this.panel19.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.panel19.Name = "panel19";
-            this.panel19.Size = new System.Drawing.Size(10, 50);
+            this.panel19.Size = new System.Drawing.Size(8, 41);
             this.panel19.TabIndex = 1;
             // 
             // panel20
             // 
             this.panel20.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(194)))), ((int)(((byte)(0)))));
-            this.panel20.Location = new System.Drawing.Point(0, 166);
+            this.panel20.Location = new System.Drawing.Point(0, 135);
+            this.panel20.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.panel20.Name = "panel20";
-            this.panel20.Size = new System.Drawing.Size(10, 50);
+            this.panel20.Size = new System.Drawing.Size(8, 41);
             this.panel20.TabIndex = 8;
             // 
             // button10
@@ -553,10 +562,9 @@
             this.button10.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button10.ForeColor = System.Drawing.Color.White;
             this.button10.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button10.Location = new System.Drawing.Point(9, 166);
-            this.button10.Margin = new System.Windows.Forms.Padding(4);
+            this.button10.Location = new System.Drawing.Point(7, 135);
             this.button10.Name = "button10";
-            this.button10.Size = new System.Drawing.Size(191, 50);
+            this.button10.Size = new System.Drawing.Size(143, 41);
             this.button10.TabIndex = 7;
             this.button10.Text = "Categoria";
             this.button10.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -570,10 +578,9 @@
             this.button11.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button11.ForeColor = System.Drawing.Color.White;
             this.button11.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button11.Location = new System.Drawing.Point(9, 110);
-            this.button11.Margin = new System.Windows.Forms.Padding(4);
+            this.button11.Location = new System.Drawing.Point(7, 89);
             this.button11.Name = "button11";
-            this.button11.Size = new System.Drawing.Size(191, 50);
+            this.button11.Size = new System.Drawing.Size(143, 41);
             this.button11.TabIndex = 6;
             this.button11.Text = "Gênero";
             this.button11.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -587,10 +594,9 @@
             this.button12.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button12.ForeColor = System.Drawing.Color.White;
             this.button12.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button12.Location = new System.Drawing.Point(9, 53);
-            this.button12.Margin = new System.Windows.Forms.Padding(4);
+            this.button12.Location = new System.Drawing.Point(7, 43);
             this.button12.Name = "button12";
-            this.button12.Size = new System.Drawing.Size(182, 50);
+            this.button12.Size = new System.Drawing.Size(136, 41);
             this.button12.TabIndex = 5;
             this.button12.Text = "Autor";
             this.button12.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -601,16 +607,18 @@
             this.panel21.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(194)))), ((int)(((byte)(0)))));
             this.panel21.Controls.Add(this.panel22);
             this.panel21.Location = new System.Drawing.Point(0, 0);
+            this.panel21.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.panel21.Name = "panel21";
-            this.panel21.Size = new System.Drawing.Size(10, 50);
+            this.panel21.Size = new System.Drawing.Size(8, 41);
             this.panel21.TabIndex = 0;
             // 
             // panel22
             // 
             this.panel22.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(194)))), ((int)(((byte)(0)))));
-            this.panel22.Location = new System.Drawing.Point(0, 53);
+            this.panel22.Location = new System.Drawing.Point(0, 43);
+            this.panel22.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.panel22.Name = "panel22";
-            this.panel22.Size = new System.Drawing.Size(10, 50);
+            this.panel22.Size = new System.Drawing.Size(8, 41);
             this.panel22.TabIndex = 1;
             // 
             // button13
@@ -621,10 +629,9 @@
             this.button13.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button13.ForeColor = System.Drawing.Color.White;
             this.button13.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button13.Location = new System.Drawing.Point(8, 0);
-            this.button13.Margin = new System.Windows.Forms.Padding(4);
+            this.button13.Location = new System.Drawing.Point(6, 0);
             this.button13.Name = "button13";
-            this.button13.Size = new System.Drawing.Size(191, 50);
+            this.button13.Size = new System.Drawing.Size(143, 41);
             this.button13.TabIndex = 3;
             this.button13.Text = "Livro";
             this.button13.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -639,23 +646,13 @@
             // panel18
             // 
             this.panel18.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(46)))), ((int)(((byte)(59)))));
-            this.panel18.Controls.Add(this.panel25);
             this.panel18.Controls.Add(this.subMenuEmprestimo);
             this.panel18.Controls.Add(this.btnEmprestimo);
             this.panel18.Dock = System.Windows.Forms.DockStyle.Right;
-            this.panel18.Location = new System.Drawing.Point(1148, 66);
-            this.panel18.Margin = new System.Windows.Forms.Padding(4);
+            this.panel18.Location = new System.Drawing.Point(859, 54);
             this.panel18.Name = "panel18";
-            this.panel18.Size = new System.Drawing.Size(219, 986);
+            this.panel18.Size = new System.Drawing.Size(166, 801);
             this.panel18.TabIndex = 13;
-            // 
-            // panel25
-            // 
-            this.panel25.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(194)))), ((int)(((byte)(0)))));
-            this.panel25.Location = new System.Drawing.Point(221, 320);
-            this.panel25.Name = "panel25";
-            this.panel25.Size = new System.Drawing.Size(10, 50);
-            this.panel25.TabIndex = 7;
             // 
             // subMenuEmprestimo
             // 
@@ -663,18 +660,20 @@
             this.subMenuEmprestimo.Controls.Add(this.button9);
             this.subMenuEmprestimo.Controls.Add(this.panel33);
             this.subMenuEmprestimo.Controls.Add(this.button14);
-            this.subMenuEmprestimo.Location = new System.Drawing.Point(21, 105);
+            this.subMenuEmprestimo.Location = new System.Drawing.Point(16, 85);
+            this.subMenuEmprestimo.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.subMenuEmprestimo.Name = "subMenuEmprestimo";
-            this.subMenuEmprestimo.Size = new System.Drawing.Size(195, 108);
+            this.subMenuEmprestimo.Size = new System.Drawing.Size(146, 88);
             this.subMenuEmprestimo.TabIndex = 8;
             this.subMenuEmprestimo.Visible = false;
             // 
             // panel32
             // 
             this.panel32.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(194)))), ((int)(((byte)(0)))));
-            this.panel32.Location = new System.Drawing.Point(0, 57);
+            this.panel32.Location = new System.Drawing.Point(0, 46);
+            this.panel32.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.panel32.Name = "panel32";
-            this.panel32.Size = new System.Drawing.Size(10, 50);
+            this.panel32.Size = new System.Drawing.Size(8, 41);
             this.panel32.TabIndex = 4;
             // 
             // button9
@@ -685,10 +684,9 @@
             this.button9.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button9.ForeColor = System.Drawing.Color.White;
             this.button9.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button9.Location = new System.Drawing.Point(8, 57);
-            this.button9.Margin = new System.Windows.Forms.Padding(4);
+            this.button9.Location = new System.Drawing.Point(6, 46);
             this.button9.Name = "button9";
-            this.button9.Size = new System.Drawing.Size(191, 50);
+            this.button9.Size = new System.Drawing.Size(154, 41);
             this.button9.TabIndex = 5;
             this.button9.Text = "  Consulta\r\n";
             this.button9.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -698,8 +696,9 @@
             // 
             this.panel33.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(194)))), ((int)(((byte)(0)))));
             this.panel33.Location = new System.Drawing.Point(0, 0);
+            this.panel33.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.panel33.Name = "panel33";
-            this.panel33.Size = new System.Drawing.Size(10, 50);
+            this.panel33.Size = new System.Drawing.Size(8, 41);
             this.panel33.TabIndex = 0;
             // 
             // button14
@@ -710,10 +709,9 @@
             this.button14.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button14.ForeColor = System.Drawing.Color.White;
             this.button14.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button14.Location = new System.Drawing.Point(8, 0);
-            this.button14.Margin = new System.Windows.Forms.Padding(4);
+            this.button14.Location = new System.Drawing.Point(6, 0);
             this.button14.Name = "button14";
-            this.button14.Size = new System.Drawing.Size(191, 50);
+            this.button14.Size = new System.Drawing.Size(154, 41);
             this.button14.TabIndex = 3;
             this.button14.Text = " Cadastro";
             this.button14.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -729,12 +727,11 @@
             this.btnEmprestimo.ForeColor = System.Drawing.Color.White;
             this.btnEmprestimo.Image = ((System.Drawing.Image)(resources.GetObject("btnEmprestimo.Image")));
             this.btnEmprestimo.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnEmprestimo.Location = new System.Drawing.Point(4, 18);
-            this.btnEmprestimo.Margin = new System.Windows.Forms.Padding(4);
+            this.btnEmprestimo.Location = new System.Drawing.Point(3, 15);
             this.btnEmprestimo.Name = "btnEmprestimo";
-            this.btnEmprestimo.Size = new System.Drawing.Size(219, 81);
+            this.btnEmprestimo.Size = new System.Drawing.Size(173, 66);
             this.btnEmprestimo.TabIndex = 5;
-            this.btnEmprestimo.Text = "      Empréstimo";
+            this.btnEmprestimo.Text = "              Empréstimo";
             this.btnEmprestimo.UseVisualStyleBackColor = true;
             this.btnEmprestimo.Click += new System.EventHandler(this.btnEmprestimo_Click);
             // 
@@ -743,18 +740,19 @@
             this.pictureBox1.BackgroundImage = global::Desktop_Biblioteca.Properties.Resources.livros;
             this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.pictureBox1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pictureBox1.Location = new System.Drawing.Point(219, 66);
+            this.pictureBox1.Location = new System.Drawing.Point(164, 54);
+            this.pictureBox1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(929, 986);
+            this.pictureBox1.Size = new System.Drawing.Size(695, 801);
             this.pictureBox1.TabIndex = 15;
             this.pictureBox1.TabStop = false;
             // 
             // Form1
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(1367, 1052);
+            this.ClientSize = new System.Drawing.Size(1025, 855);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.panel18);
             this.Controls.Add(this.subMenuLivroConsulta);
@@ -762,6 +760,7 @@
             this.Controls.Add(this.panelMenu);
             this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "Form1";
             this.Text = "Form1";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
@@ -831,7 +830,6 @@
         private System.Windows.Forms.Label lblDataAtual;
         private System.Windows.Forms.Timer timerDataHora;
         private System.Windows.Forms.Panel panel18;
-        private System.Windows.Forms.Panel panel25;
         private System.Windows.Forms.Panel subMenuEmprestimo;
         private System.Windows.Forms.Panel panel32;
         private System.Windows.Forms.Button button9;

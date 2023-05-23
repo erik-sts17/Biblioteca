@@ -1,35 +1,26 @@
 ﻿using Desktop_Biblioteca.Entidades.Livro;
-using System;
 using System.Collections.Generic;
-using System.Configuration;
 using System.Data.SqlClient;
 
 namespace Desktop_Biblioteca.DAO.Livro
 {
-    public class GeneroDao
+    public class GeneroDao : BaseDAO
     {
         public void Insert(Genero genero)
         {
-            string cmdInsert = " INSERT INTO Genero (DESCRICAO, ATIVO) VALUES ('" + genero.Descricao + "', '" + 1 + "')";
-            string strConexao = ConfigurationManager.AppSettings["ConnectionString"];
-            try
+            string cmdInsert = "INSERT INTO Genero (DESCRICAO, ATIVO) VALUES (@Descricao, @Ativo)";
+            SqlParameter[] parameters =
             {
-                SqlConnection con = new SqlConnection(strConexao);
-                SqlCommand sqlCommand = new SqlCommand(cmdInsert, con);
-                con.Open();
-                sqlCommand.ExecuteNonQuery();
-                con.Close();
-            }
-            catch (Exception e)
-            {
-                throw e;
-            }
+                new SqlParameter("@Descricao", genero.Descricao),
+                new SqlParameter("@Ativo", 1)
+            };
+            Execute(cmdInsert, parameters);
         }
 
         public List<Genero> Buscar()
         {
             string cmdInsert = "SELECT DESCRICAO, ID FROM biblioteca.dbo.GENERO WHERE ATIVO = 1";
-            string strConexao = "data source=DESKTOP-3ILN32B;initial catalog=biblioteca;trusted_connection=true";
+            string strConexao = "data source=DESKTOP-IBAL138;initial catalog=biblioteca;trusted_connection=true";
             SqlConnection con = new SqlConnection(strConexao);
             SqlCommand sqlCommand = new SqlCommand(cmdInsert, con);
             con.Open();

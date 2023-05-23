@@ -1,8 +1,11 @@
-﻿using Desktop_Biblioteca.DAO.Cliente;
+﻿using Desktop_Biblioteca.Client;
+using Desktop_Biblioteca.Client.Models;
+using Desktop_Biblioteca.DAO.Cliente;
 using Desktop_Biblioteca.Entidades;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Net;
 using System.Windows.Forms;
 
 namespace Desktop_Biblioteca.Cadastro.Cliente
@@ -92,6 +95,32 @@ namespace Desktop_Biblioteca.Cadastro.Cliente
         private void cbUf_SelectedIndexChanged(object sender, EventArgs e)
         {
 
+        }
+
+        private void btnBuscaCep_Click(object sender, EventArgs e)
+        {
+            if (String.IsNullOrEmpty(txtCep.Text) || txtCep.Text.Length < 8)
+            {
+                MessageBox.Show("Preencha o campo CEP antes");
+                return;
+            }
+            var baseClient = new BaseClient();
+            var url = $"https://viacep.com.br/ws/{txtCep.Text}/json/";
+            var endereco = baseClient.GetApi<CepModel>(url);
+            if (endereco.StatusCode != HttpStatusCode.OK)
+            {
+                MessageBox.Show("Erro ao buscar CEP, tente novamente");
+                return;
+            }
+            if (endereco.Entity.Erro)
+            {
+                MessageBox.Show("CEP inválido, verifique o campo e tente novamente");
+                return;
+            }
+            txtCidade.Text = endereco.Entity.Localidade;
+            txtEndereco.Text = endereco.Entity.Logradouro;
+            txtBairro.Text = endereco.Entity.Bairro;
+            cbUf.Text = endereco.Entity.UF;
         }
     }
 }

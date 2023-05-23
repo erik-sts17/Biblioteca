@@ -1,0 +1,16 @@
+{
+  "ExpandedNodes": [
+    "",
+    "\\Desktop-Biblioteca",
+    "\\Desktop-Biblioteca\\DAO\\Cliente",
+    "\\Desktop-Biblioteca\\DAO\\Livro",
+    "\\Desktop-Biblioteca\\Entidades\\Livro",
+    "\\Desktop-Biblioteca\\Telas",
+    "\\Desktop-Biblioteca\\Telas\\Cadastro",
+    "\\Desktop-Biblioteca\\Telas\\Cadastro\\Livro\\Categoria",
+    "\\Desktop-Biblioteca\\Telas\\Login",
+    "\\packages\\MySql.Data.6.7.9"
+  ],
+  "SelectedNode": "\\Desktop-Biblioteca\\Telas\\Login\\FrmLogin.cs",
+  "PreviewInSolutionExplorer": false
+}

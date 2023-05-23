@@ -1,35 +1,27 @@
 ﻿using Desktop_Biblioteca.Entidades.Livro;
 using System.Collections.Generic;
-using System;
 using System.Data.SqlClient;
-using System.Configuration;
+
 
 namespace Desktop_Biblioteca.DAO.Livro
 {
-    public class AutorDao
+    public class AutorDao : BaseDAO
     {
         public void Insert(Autor autor)
         {
-            string cmdInsert = " INSERT INTO Autor (NOME, ATIVO) VALUES ('" + autor.Nome + "', '" + 1 + "')";
-            string strConexao = ConfigurationManager.AppSettings["ConnectionString"];
-            try
+            string cmdInsert = "INSERT INTO Autor (NOME, ATIVO) VALUES (@Nome, @Ativo)";
+            SqlParameter[] parameters =
             {
-                SqlConnection con = new SqlConnection(strConexao);
-                SqlCommand sqlCommand = new SqlCommand(cmdInsert, con);
-                con.Open();
-                sqlCommand.ExecuteNonQuery();
-                con.Close();
-            }
-            catch (Exception e)
-            {
-                throw e;
-            }
+                new SqlParameter("@Nome", autor.Nome),
+                new SqlParameter("@Ativo", 1)
+            };
+            Execute(cmdInsert, parameters);
         }
 
         public List<Autor> Buscar()
         {
             string cmdInsert = "SELECT NOME, ID FROM biblioteca.dbo.Autor WHERE ATIVO = 1";
-            string strConexao = "data source=DESKTOP-3ILN32B;initial catalog=biblioteca;trusted_connection=true";
+            string strConexao = "data source=DESKTOP-IBAL138;initial catalog=biblioteca;trusted_connection=true";
             SqlConnection con = new SqlConnection(strConexao);
             SqlCommand sqlCommand = new SqlCommand(cmdInsert, con);
             con.Open();
