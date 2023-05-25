@@ -68,7 +68,7 @@
             this.panel20 = new System.Windows.Forms.Panel();
             this.button10 = new System.Windows.Forms.Button();
             this.button11 = new System.Windows.Forms.Button();
-            this.button12 = new System.Windows.Forms.Button();
+            this.btnConsultaAutor = new System.Windows.Forms.Button();
             this.panel21 = new System.Windows.Forms.Panel();
             this.panel22 = new System.Windows.Forms.Panel();
             this.button13 = new System.Windows.Forms.Button();
@@ -117,7 +117,7 @@
             // 
             this.panel12.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(194)))), ((int)(((byte)(0)))));
             this.panel12.Location = new System.Drawing.Point(166, 260);
-            this.panel12.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panel12.Margin = new System.Windows.Forms.Padding(2);
             this.panel12.Name = "panel12";
             this.panel12.Size = new System.Drawing.Size(8, 41);
             this.panel12.TabIndex = 7;
@@ -129,7 +129,7 @@
             this.submenuLivro.Controls.Add(this.panel6);
             this.submenuLivro.Controls.Add(this.btnLivroCadastro);
             this.submenuLivro.Location = new System.Drawing.Point(15, 260);
-            this.submenuLivro.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.submenuLivro.Margin = new System.Windows.Forms.Padding(2);
             this.submenuLivro.Name = "submenuLivro";
             this.submenuLivro.Size = new System.Drawing.Size(146, 88);
             this.submenuLivro.TabIndex = 8;
@@ -139,7 +139,7 @@
             // 
             this.panel5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(194)))), ((int)(((byte)(0)))));
             this.panel5.Location = new System.Drawing.Point(0, 46);
-            this.panel5.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panel5.Margin = new System.Windows.Forms.Padding(2);
             this.panel5.Name = "panel5";
             this.panel5.Size = new System.Drawing.Size(8, 41);
             this.panel5.TabIndex = 4;
@@ -165,7 +165,7 @@
             // 
             this.panel6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(194)))), ((int)(((byte)(0)))));
             this.panel6.Location = new System.Drawing.Point(0, 0);
-            this.panel6.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panel6.Margin = new System.Windows.Forms.Padding(2);
             this.panel6.Name = "panel6";
             this.panel6.Size = new System.Drawing.Size(8, 41);
             this.panel6.TabIndex = 0;
@@ -194,7 +194,7 @@
             this.submenuCliente.Controls.Add(this.panel3);
             this.submenuCliente.Controls.Add(this.btnCadastrarFuncionario);
             this.submenuCliente.Location = new System.Drawing.Point(15, 86);
-            this.submenuCliente.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.submenuCliente.Margin = new System.Windows.Forms.Padding(2);
             this.submenuCliente.Name = "submenuCliente";
             this.submenuCliente.Size = new System.Drawing.Size(146, 88);
             this.submenuCliente.TabIndex = 7;
@@ -204,7 +204,7 @@
             // 
             this.panel4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(194)))), ((int)(((byte)(0)))));
             this.panel4.Location = new System.Drawing.Point(0, 46);
-            this.panel4.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panel4.Margin = new System.Windows.Forms.Padding(2);
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(8, 41);
             this.panel4.TabIndex = 4;
@@ -230,7 +230,7 @@
             // 
             this.panel3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(194)))), ((int)(((byte)(0)))));
             this.panel3.Location = new System.Drawing.Point(0, 0);
-            this.panel3.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panel3.Margin = new System.Windows.Forms.Padding(2);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(8, 41);
             this.panel3.TabIndex = 0;
@@ -294,7 +294,7 @@
             this.panel1.Controls.Add(this.lblDataAtual);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(0, 0);
-            this.panel1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panel1.Margin = new System.Windows.Forms.Padding(2);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(1025, 54);
             this.panel1.TabIndex = 3;
@@ -349,7 +349,7 @@
             this.subMenuLivroCadastro.Controls.Add(this.panel11);
             this.subMenuLivroCadastro.Controls.Add(this.btnCadastroLivro);
             this.subMenuLivroCadastro.Location = new System.Drawing.Point(166, 176);
-            this.subMenuLivroCadastro.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.subMenuLivroCadastro.Margin = new System.Windows.Forms.Padding(2);
             this.subMenuLivroCadastro.Name = "subMenuLivroCadastro";
             this.subMenuLivroCadastro.Size = new System.Drawing.Size(146, 180);
             this.subMenuLivroCadastro.TabIndex = 8;
@@ -360,7 +360,7 @@
             this.panel9.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(194)))), ((int)(((byte)(0)))));
             this.panel9.Controls.Add(this.panel16);
             this.panel9.Location = new System.Drawing.Point(0, 89);
-            this.panel9.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panel9.Margin = new System.Windows.Forms.Padding(2);
             this.panel9.Name = "panel9";
             this.panel9.Size = new System.Drawing.Size(8, 41);
             this.panel9.TabIndex = 10;
@@ -369,7 +369,7 @@
             // 
             this.panel16.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(194)))), ((int)(((byte)(0)))));
             this.panel16.Location = new System.Drawing.Point(0, 43);
-            this.panel16.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panel16.Margin = new System.Windows.Forms.Padding(2);
             this.panel16.Name = "panel16";
             this.panel16.Size = new System.Drawing.Size(8, 41);
             this.panel16.TabIndex = 1;
@@ -379,7 +379,7 @@
             this.panel13.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(194)))), ((int)(((byte)(0)))));
             this.panel13.Controls.Add(this.panel15);
             this.panel13.Location = new System.Drawing.Point(0, 43);
-            this.panel13.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panel13.Margin = new System.Windows.Forms.Padding(2);
             this.panel13.Name = "panel13";
             this.panel13.Size = new System.Drawing.Size(8, 41);
             this.panel13.TabIndex = 9;
@@ -388,7 +388,7 @@
             // 
             this.panel15.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(194)))), ((int)(((byte)(0)))));
             this.panel15.Location = new System.Drawing.Point(0, 43);
-            this.panel15.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panel15.Margin = new System.Windows.Forms.Padding(2);
             this.panel15.Name = "panel15";
             this.panel15.Size = new System.Drawing.Size(8, 41);
             this.panel15.TabIndex = 1;
@@ -397,7 +397,7 @@
             // 
             this.panel14.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(194)))), ((int)(((byte)(0)))));
             this.panel14.Location = new System.Drawing.Point(0, 135);
-            this.panel14.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panel14.Margin = new System.Windows.Forms.Padding(2);
             this.panel14.Name = "panel14";
             this.panel14.Size = new System.Drawing.Size(8, 41);
             this.panel14.TabIndex = 8;
@@ -458,7 +458,7 @@
             this.panel11.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(194)))), ((int)(((byte)(0)))));
             this.panel11.Controls.Add(this.panel10);
             this.panel11.Location = new System.Drawing.Point(0, 0);
-            this.panel11.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panel11.Margin = new System.Windows.Forms.Padding(2);
             this.panel11.Name = "panel11";
             this.panel11.Size = new System.Drawing.Size(8, 41);
             this.panel11.TabIndex = 0;
@@ -467,7 +467,7 @@
             // 
             this.panel10.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(194)))), ((int)(((byte)(0)))));
             this.panel10.Location = new System.Drawing.Point(0, 43);
-            this.panel10.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panel10.Margin = new System.Windows.Forms.Padding(2);
             this.panel10.Name = "panel10";
             this.panel10.Size = new System.Drawing.Size(8, 41);
             this.panel10.TabIndex = 1;
@@ -497,11 +497,11 @@
             this.subMenuLivroConsulta.Controls.Add(this.panel20);
             this.subMenuLivroConsulta.Controls.Add(this.button10);
             this.subMenuLivroConsulta.Controls.Add(this.button11);
-            this.subMenuLivroConsulta.Controls.Add(this.button12);
+            this.subMenuLivroConsulta.Controls.Add(this.btnConsultaAutor);
             this.subMenuLivroConsulta.Controls.Add(this.panel21);
             this.subMenuLivroConsulta.Controls.Add(this.button13);
             this.subMenuLivroConsulta.Location = new System.Drawing.Point(166, 362);
-            this.subMenuLivroConsulta.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.subMenuLivroConsulta.Margin = new System.Windows.Forms.Padding(2);
             this.subMenuLivroConsulta.Name = "subMenuLivroConsulta";
             this.subMenuLivroConsulta.Size = new System.Drawing.Size(146, 180);
             this.subMenuLivroConsulta.TabIndex = 9;
@@ -512,7 +512,7 @@
             this.panel23.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(194)))), ((int)(((byte)(0)))));
             this.panel23.Controls.Add(this.panel24);
             this.panel23.Location = new System.Drawing.Point(0, 89);
-            this.panel23.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panel23.Margin = new System.Windows.Forms.Padding(2);
             this.panel23.Name = "panel23";
             this.panel23.Size = new System.Drawing.Size(8, 41);
             this.panel23.TabIndex = 2;
@@ -521,7 +521,7 @@
             // 
             this.panel24.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(194)))), ((int)(((byte)(0)))));
             this.panel24.Location = new System.Drawing.Point(0, 43);
-            this.panel24.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panel24.Margin = new System.Windows.Forms.Padding(2);
             this.panel24.Name = "panel24";
             this.panel24.Size = new System.Drawing.Size(8, 41);
             this.panel24.TabIndex = 1;
@@ -531,7 +531,7 @@
             this.panel17.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(194)))), ((int)(((byte)(0)))));
             this.panel17.Controls.Add(this.panel19);
             this.panel17.Location = new System.Drawing.Point(0, 43);
-            this.panel17.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panel17.Margin = new System.Windows.Forms.Padding(2);
             this.panel17.Name = "panel17";
             this.panel17.Size = new System.Drawing.Size(8, 41);
             this.panel17.TabIndex = 9;
@@ -540,7 +540,7 @@
             // 
             this.panel19.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(194)))), ((int)(((byte)(0)))));
             this.panel19.Location = new System.Drawing.Point(0, 43);
-            this.panel19.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panel19.Margin = new System.Windows.Forms.Padding(2);
             this.panel19.Name = "panel19";
             this.panel19.Size = new System.Drawing.Size(8, 41);
             this.panel19.TabIndex = 1;
@@ -549,7 +549,7 @@
             // 
             this.panel20.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(194)))), ((int)(((byte)(0)))));
             this.panel20.Location = new System.Drawing.Point(0, 135);
-            this.panel20.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panel20.Margin = new System.Windows.Forms.Padding(2);
             this.panel20.Name = "panel20";
             this.panel20.Size = new System.Drawing.Size(8, 41);
             this.panel20.TabIndex = 8;
@@ -586,28 +586,29 @@
             this.button11.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.button11.UseVisualStyleBackColor = true;
             // 
-            // button12
+            // btnConsultaAutor
             // 
-            this.button12.FlatAppearance.BorderSize = 0;
-            this.button12.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Goldenrod;
-            this.button12.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button12.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button12.ForeColor = System.Drawing.Color.White;
-            this.button12.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button12.Location = new System.Drawing.Point(7, 43);
-            this.button12.Name = "button12";
-            this.button12.Size = new System.Drawing.Size(136, 41);
-            this.button12.TabIndex = 5;
-            this.button12.Text = "Autor";
-            this.button12.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button12.UseVisualStyleBackColor = true;
+            this.btnConsultaAutor.FlatAppearance.BorderSize = 0;
+            this.btnConsultaAutor.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Goldenrod;
+            this.btnConsultaAutor.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnConsultaAutor.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnConsultaAutor.ForeColor = System.Drawing.Color.White;
+            this.btnConsultaAutor.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnConsultaAutor.Location = new System.Drawing.Point(7, 43);
+            this.btnConsultaAutor.Name = "btnConsultaAutor";
+            this.btnConsultaAutor.Size = new System.Drawing.Size(136, 41);
+            this.btnConsultaAutor.TabIndex = 5;
+            this.btnConsultaAutor.Text = "Autor";
+            this.btnConsultaAutor.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnConsultaAutor.UseVisualStyleBackColor = true;
+            this.btnConsultaAutor.Click += new System.EventHandler(this.btnConsultaAutor_Click);
             // 
             // panel21
             // 
             this.panel21.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(194)))), ((int)(((byte)(0)))));
             this.panel21.Controls.Add(this.panel22);
             this.panel21.Location = new System.Drawing.Point(0, 0);
-            this.panel21.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panel21.Margin = new System.Windows.Forms.Padding(2);
             this.panel21.Name = "panel21";
             this.panel21.Size = new System.Drawing.Size(8, 41);
             this.panel21.TabIndex = 0;
@@ -616,7 +617,7 @@
             // 
             this.panel22.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(194)))), ((int)(((byte)(0)))));
             this.panel22.Location = new System.Drawing.Point(0, 43);
-            this.panel22.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panel22.Margin = new System.Windows.Forms.Padding(2);
             this.panel22.Name = "panel22";
             this.panel22.Size = new System.Drawing.Size(8, 41);
             this.panel22.TabIndex = 1;
@@ -661,7 +662,7 @@
             this.subMenuEmprestimo.Controls.Add(this.panel33);
             this.subMenuEmprestimo.Controls.Add(this.button14);
             this.subMenuEmprestimo.Location = new System.Drawing.Point(16, 85);
-            this.subMenuEmprestimo.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.subMenuEmprestimo.Margin = new System.Windows.Forms.Padding(2);
             this.subMenuEmprestimo.Name = "subMenuEmprestimo";
             this.subMenuEmprestimo.Size = new System.Drawing.Size(146, 88);
             this.subMenuEmprestimo.TabIndex = 8;
@@ -671,7 +672,7 @@
             // 
             this.panel32.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(194)))), ((int)(((byte)(0)))));
             this.panel32.Location = new System.Drawing.Point(0, 46);
-            this.panel32.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panel32.Margin = new System.Windows.Forms.Padding(2);
             this.panel32.Name = "panel32";
             this.panel32.Size = new System.Drawing.Size(8, 41);
             this.panel32.TabIndex = 4;
@@ -696,7 +697,7 @@
             // 
             this.panel33.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(194)))), ((int)(((byte)(0)))));
             this.panel33.Location = new System.Drawing.Point(0, 0);
-            this.panel33.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panel33.Margin = new System.Windows.Forms.Padding(2);
             this.panel33.Name = "panel33";
             this.panel33.Size = new System.Drawing.Size(8, 41);
             this.panel33.TabIndex = 0;
@@ -741,10 +742,10 @@
             this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.pictureBox1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pictureBox1.Location = new System.Drawing.Point(164, 54);
-            this.pictureBox1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.pictureBox1.Margin = new System.Windows.Forms.Padding(2);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(695, 801);
-            this.pictureBox1.TabIndex = 15;
+            this.pictureBox1.TabIndex = 17;
             this.pictureBox1.TabStop = false;
             // 
             // Form1
@@ -760,7 +761,7 @@
             this.Controls.Add(this.panelMenu);
             this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "Form1";
             this.Text = "Form1";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
@@ -821,7 +822,7 @@
         private System.Windows.Forms.Panel panel20;
         private System.Windows.Forms.Button button10;
         private System.Windows.Forms.Button button11;
-        private System.Windows.Forms.Button button12;
+        private System.Windows.Forms.Button btnConsultaAutor;
         private System.Windows.Forms.Panel panel21;
         private System.Windows.Forms.Panel panel22;
         private System.Windows.Forms.Button button13;

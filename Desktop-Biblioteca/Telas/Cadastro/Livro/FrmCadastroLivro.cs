@@ -55,7 +55,7 @@ namespace Desktop_Biblioteca.Cadastro
             if (NomeImagem != null)
                 imageBytes = File.ReadAllBytes(NomeImagem);
             
-            Entidades.Livro.Livro livro = new Entidades.Livro.Livro(txtNome.Text, categoriaId, generoId, Convert.ToInt32(txtPaginas.Text), imageBytes);
+            Entidades.Livro.Livro livro = new Entidades.Livro.Livro(txtNome.Text, categoriaId, generoId, Convert.ToInt32(txtPaginas.Text), imageBytes, int.Parse(txtQuantidade.Text));
             try
             {
                 LivroDao dao = new LivroDao();

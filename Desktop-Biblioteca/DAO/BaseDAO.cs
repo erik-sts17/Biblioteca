@@ -1,6 +1,8 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Configuration;
 using System.Data.SqlClient;
+using System.Linq;
 
 namespace Desktop_Biblioteca.DAO
 {
@@ -39,6 +41,38 @@ namespace Desktop_Biblioteca.DAO
                     if (parameters != null)
                     {
                         sqlCommand.Parameters.AddRange(parameters);
+                    }
+                    connection.Open();
+                    return sqlCommand.ExecuteScalar();
+                }
+            }
+            catch (Exception e)
+            {
+                throw e;
+            }
+        }
+
+        public object Excluir(string nomeTabela, List<int> ids)
+        {
+            List<SqlParameter> parameters = new List<SqlParameter>();
+
+            for (int i = 0; i < ids.Count; i++)
+            {
+                string parameterName = $"@Id{i}";
+                SqlParameter parameter = new SqlParameter(parameterName, ids[i]);
+                parameters.Add(parameter);
+            }
+
+            string query = $"UPDATE {nomeTabela} SET ATIVO = 0 WHERE ID IN ({string.Join(",", parameters.Select(p => p.ParameterName))})";
+
+            try
+            {
+                using (SqlConnection connection = new SqlConnection(_connectionString))
+                {
+                    SqlCommand sqlCommand = new SqlCommand(query, connection);
+                    if (parameters != null)
+                    {
+                        sqlCommand.Parameters.AddRange(parameters.ToArray());
                     }
                     connection.Open();
                     return sqlCommand.ExecuteScalar();

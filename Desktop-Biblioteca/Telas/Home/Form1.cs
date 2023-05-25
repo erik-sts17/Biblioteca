@@ -2,6 +2,7 @@
 using Desktop_Biblioteca.Cadastro.Autor;
 using Desktop_Biblioteca.Cadastro.Cliente;
 using Desktop_Biblioteca.Cadastro.Genero;
+using Desktop_Biblioteca.Consulta;
 using Desktop_Biblioteca.Livro.Categoria;
 using System;
 using System.Drawing;
@@ -14,6 +15,7 @@ namespace Desktop_Biblioteca.Home
         public Form1()
         {
             InitializeComponent();
+            pictureBox1.BackColor = Color.FromArgb(12, Color.White);
         }
 
         private void btnFechar_Click(object sender, EventArgs e)
@@ -141,11 +143,18 @@ namespace Desktop_Biblioteca.Home
         {
 
         }
+       
 
         private void btnCadastroCategoria_Click(object sender, EventArgs e)
         {
             FrmCadastroCategoria frmCadastroCategoria = new FrmCadastroCategoria();
             frmCadastroCategoria.Show();
+        }
+
+        private void btnConsultaAutor_Click(object sender, EventArgs e)
+        {
+            FrmConsultaAutor frmConsultaAutor = new FrmConsultaAutor();
+            frmConsultaAutor.Show();
         }
     }
 }

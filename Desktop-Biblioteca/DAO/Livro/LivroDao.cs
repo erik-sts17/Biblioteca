@@ -9,8 +9,8 @@ namespace Desktop_Biblioteca.DAO.Livro
     {
         public int Insert(Entidades.Livro.Livro livro, List<int> autoresIds)
         {
-            string cmdInsert = "INSERT INTO LIVRO (TITULO, CATEGORIAID, GENEROID, PAGINAS, IMAGEM, ATIVO) " +
-                                "VALUES (@Titulo, @CategoriaId, @GeneroId, @Paginas, @Imagem, @Ativo);" +
+            string cmdInsert = "INSERT INTO LIVRO (TITULO, CATEGORIAID, GENEROID, PAGINAS, IMAGEM, QUANTIDADEESTOQUE, ATIVO) " +
+                                "VALUES (@Titulo, @CategoriaId, @GeneroId, @Paginas, @Imagem, @QuantidadeEstoque, @Ativo);" +
                                 "SELECT CAST(scope_identity() AS int)";
 
             var imagemParam = new SqlParameter("@Imagem", SqlDbType.VarBinary);
@@ -28,6 +28,7 @@ namespace Desktop_Biblioteca.DAO.Livro
                 new SqlParameter("@GeneroId", livro.GeneroId),
                 new SqlParameter("@Paginas", livro.Paginas),
                 imagemParam,
+                new SqlParameter("@QuantidadeEstoque", livro.QuantidadeEstoque),
                 new SqlParameter("@Ativo", 1)
             };
 
@@ -35,6 +36,8 @@ namespace Desktop_Biblioteca.DAO.Livro
 
             string cmdInsertAutor = "INSERT INTO AUTORESLIVROS(AUTORID, LIVROID) " +
                                     "VALUES (@AutorId, @LivroId)";
+
+           
 
             foreach (int autorId in autoresIds)
             {

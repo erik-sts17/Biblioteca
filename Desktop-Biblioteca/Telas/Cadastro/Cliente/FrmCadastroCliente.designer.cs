@@ -259,7 +259,7 @@
             this.btnLimpar.BackColor = System.Drawing.Color.Red;
             this.btnLimpar.Font = new System.Drawing.Font("Segoe UI", 15F, System.Drawing.FontStyle.Bold);
             this.btnLimpar.ForeColor = System.Drawing.Color.White;
-            this.btnLimpar.Location = new System.Drawing.Point(304, 444);
+            this.btnLimpar.Location = new System.Drawing.Point(399, 451);
             this.btnLimpar.Margin = new System.Windows.Forms.Padding(2);
             this.btnLimpar.Name = "btnLimpar";
             this.btnLimpar.Size = new System.Drawing.Size(92, 48);
@@ -273,7 +273,7 @@
             this.btnSalvar.BackColor = System.Drawing.Color.Lime;
             this.btnSalvar.Font = new System.Drawing.Font("Segoe UI", 15F, System.Drawing.FontStyle.Bold);
             this.btnSalvar.ForeColor = System.Drawing.Color.White;
-            this.btnSalvar.Location = new System.Drawing.Point(202, 444);
+            this.btnSalvar.Location = new System.Drawing.Point(292, 451);
             this.btnSalvar.Margin = new System.Windows.Forms.Padding(2);
             this.btnSalvar.Name = "btnSalvar";
             this.btnSalvar.Size = new System.Drawing.Size(84, 48);
@@ -479,7 +479,7 @@
             this.lblSucesso.AutoSize = true;
             this.lblSucesso.Font = new System.Drawing.Font("Segoe UI", 13F);
             this.lblSucesso.ForeColor = System.Drawing.Color.Lime;
-            this.lblSucesso.Location = new System.Drawing.Point(400, 457);
+            this.lblSucesso.Location = new System.Drawing.Point(269, 417);
             this.lblSucesso.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblSucesso.Name = "lblSucesso";
             this.lblSucesso.Size = new System.Drawing.Size(255, 25);
@@ -514,7 +514,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(46)))), ((int)(((byte)(59)))));
-            this.ClientSize = new System.Drawing.Size(767, 506);
+            this.ClientSize = new System.Drawing.Size(767, 510);
             this.Controls.Add(this.txtRg);
             this.Controls.Add(this.lblRg);
             this.Controls.Add(this.lblSucesso);

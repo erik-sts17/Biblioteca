@@ -185,6 +185,7 @@
     <Compile Include="Client\Models\ResponseModel.cs" />
     <Compile Include="DAO\BaseDAO.cs" />
     <Compile Include="DAO\Cliente\ClienteDao.cs" />
+    <Compile Include="Entidades\Base.cs" />
     <Compile Include="Entidades\Cliente.cs" />
     <Compile Include="Entidades\Endereco.cs" />
     <Compile Include="Client\BaseClient.cs" />
@@ -226,6 +227,12 @@
     <Compile Include="Entidades\Livro\Autor.cs" />
     <Compile Include="Entidades\Livro\Categoria.cs" />
     <Compile Include="Entidades\Livro\Genero.cs" />
+    <Compile Include="Telas\Consultas\FrmConsultaAutor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Telas\Consultas\FrmConsultaAutor.designer.cs">
+      <DependentUpon>FrmConsultaAutor.cs</DependentUpon>
+    </Compile>
     <Compile Include="Telas\Home\Form1.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -254,6 +261,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Telas\Cadastro\Livro\Genero\FrnCadastroGenero.resx">
       <DependentUpon>FrnCadastroGenero.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Telas\Consultas\FrmConsultaAutor.resx">
+      <DependentUpon>FrmConsultaAutor.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Telas\Home\Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>

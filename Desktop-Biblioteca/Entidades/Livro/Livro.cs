@@ -8,13 +8,14 @@ namespace Desktop_Biblioteca.Entidades.Livro
         {
 
         }
-        public Livro(string titulo, int categoriaId, int generoId, int paginas, byte[] imagem)
+        public Livro(string titulo, int categoriaId, int generoId, int paginas, byte[] imagem, int quantidadeEstoque)
         {
             Titulo = titulo;
             CategoriaId = categoriaId;
             GeneroId = generoId;
             Paginas = paginas;
             Imagem = imagem;
+            QuantidadeEstoque = quantidadeEstoque;
         }
 
         public int Id { get; set;}
@@ -24,5 +25,6 @@ namespace Desktop_Biblioteca.Entidades.Livro
         public List<int> AutoresId { get; set; }
         public int Paginas { get; set; }
         public byte[] Imagem { get; set; }
+        public int QuantidadeEstoque { get; set; }
     }
 }

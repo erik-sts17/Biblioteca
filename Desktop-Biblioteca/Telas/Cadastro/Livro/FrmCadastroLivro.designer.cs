@@ -52,6 +52,8 @@
             this.lblFoto = new System.Windows.Forms.Label();
             this.lblNasc = new System.Windows.Forms.Label();
             this.txtPaginas = new System.Windows.Forms.TextBox();
+            this.txtQuantidade = new System.Windows.Forms.TextBox();
+            this.lblquantidade = new System.Windows.Forms.Label();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbxCliente)).BeginInit();
             this.SuspendLayout();
@@ -65,7 +67,7 @@
             this.panel2.Location = new System.Drawing.Point(0, 0);
             this.panel2.Margin = new System.Windows.Forms.Padding(2);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(823, 53);
+            this.panel2.Size = new System.Drawing.Size(862, 53);
             this.panel2.TabIndex = 22;
             // 
             // lblLivro
@@ -87,7 +89,7 @@
             this.btnFechar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Red;
             this.btnFechar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnFechar.Image = ((System.Drawing.Image)(resources.GetObject("btnFechar.Image")));
-            this.btnFechar.Location = new System.Drawing.Point(768, 0);
+            this.btnFechar.Location = new System.Drawing.Point(807, 0);
             this.btnFechar.Name = "btnFechar";
             this.btnFechar.Size = new System.Drawing.Size(55, 56);
             this.btnFechar.TabIndex = 1;
@@ -131,7 +133,7 @@
             this.buttonLimpa.BackColor = System.Drawing.Color.Red;
             this.buttonLimpa.Font = new System.Drawing.Font("Segoe UI", 15F, System.Drawing.FontStyle.Bold);
             this.buttonLimpa.ForeColor = System.Drawing.Color.White;
-            this.buttonLimpa.Location = new System.Drawing.Point(367, 309);
+            this.buttonLimpa.Location = new System.Drawing.Point(422, 322);
             this.buttonLimpa.Margin = new System.Windows.Forms.Padding(2);
             this.buttonLimpa.Name = "buttonLimpa";
             this.buttonLimpa.Size = new System.Drawing.Size(92, 48);
@@ -145,7 +147,7 @@
             this.btnEntrar.BackColor = System.Drawing.Color.Lime;
             this.btnEntrar.Font = new System.Drawing.Font("Segoe UI", 15F, System.Drawing.FontStyle.Bold);
             this.btnEntrar.ForeColor = System.Drawing.Color.White;
-            this.btnEntrar.Location = new System.Drawing.Point(256, 309);
+            this.btnEntrar.Location = new System.Drawing.Point(317, 322);
             this.btnEntrar.Margin = new System.Windows.Forms.Padding(2);
             this.btnEntrar.Name = "btnEntrar";
             this.btnEntrar.Size = new System.Drawing.Size(84, 48);
@@ -159,7 +161,7 @@
             this.lblSucesso.AutoSize = true;
             this.lblSucesso.Font = new System.Drawing.Font("Segoe UI", 13F);
             this.lblSucesso.ForeColor = System.Drawing.Color.Lime;
-            this.lblSucesso.Location = new System.Drawing.Point(277, 255);
+            this.lblSucesso.Location = new System.Drawing.Point(288, 288);
             this.lblSucesso.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblSucesso.Name = "lblSucesso";
             this.lblSucesso.Size = new System.Drawing.Size(255, 25);
@@ -286,7 +288,7 @@
             this.lstAutores.Location = new System.Drawing.Point(68, 237);
             this.lstAutores.Name = "lstAutores";
             this.lstAutores.SelectionMode = System.Windows.Forms.SelectionMode.MultiSimple;
-            this.lstAutores.Size = new System.Drawing.Size(174, 56);
+            this.lstAutores.Size = new System.Drawing.Size(203, 56);
             this.lstAutores.TabIndex = 72;
             // 
             // lblFoto
@@ -305,7 +307,7 @@
             this.lblNasc.AutoSize = true;
             this.lblNasc.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold);
             this.lblNasc.ForeColor = System.Drawing.Color.White;
-            this.lblNasc.Location = new System.Drawing.Point(278, 200);
+            this.lblNasc.Location = new System.Drawing.Point(371, 200);
             this.lblNasc.Name = "lblNasc";
             this.lblNasc.Size = new System.Drawing.Size(74, 21);
             this.lblNasc.TabIndex = 44;
@@ -314,19 +316,42 @@
             // txtPaginas
             // 
             this.txtPaginas.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.txtPaginas.Location = new System.Drawing.Point(358, 202);
+            this.txtPaginas.Location = new System.Drawing.Point(375, 235);
             this.txtPaginas.MaxLength = 50;
             this.txtPaginas.Name = "txtPaginas";
             this.txtPaginas.Size = new System.Drawing.Size(65, 23);
             this.txtPaginas.TabIndex = 61;
             this.txtPaginas.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtPaginas_KeyPress);
             // 
+            // txtQuantidade
+            // 
+            this.txtQuantidade.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.txtQuantidade.Location = new System.Drawing.Point(501, 235);
+            this.txtQuantidade.MaxLength = 50;
+            this.txtQuantidade.Name = "txtQuantidade";
+            this.txtQuantidade.Size = new System.Drawing.Size(65, 23);
+            this.txtQuantidade.TabIndex = 75;
+            this.txtQuantidade.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtPaginas_KeyPress);
+            // 
+            // lblquantidade
+            // 
+            this.lblquantidade.AutoSize = true;
+            this.lblquantidade.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold);
+            this.lblquantidade.ForeColor = System.Drawing.Color.White;
+            this.lblquantidade.Location = new System.Drawing.Point(497, 200);
+            this.lblquantidade.Name = "lblquantidade";
+            this.lblquantidade.Size = new System.Drawing.Size(104, 21);
+            this.lblquantidade.TabIndex = 74;
+            this.lblquantidade.Text = "Quantidade:";
+            // 
             // FrmCadastroLivro
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(46)))), ((int)(((byte)(59)))));
-            this.ClientSize = new System.Drawing.Size(823, 381);
+            this.ClientSize = new System.Drawing.Size(862, 390);
+            this.Controls.Add(this.txtQuantidade);
+            this.Controls.Add(this.lblquantidade);
             this.Controls.Add(this.lblFoto);
             this.Controls.Add(this.lstAutores);
             this.Controls.Add(this.btnCarregarImagem);
@@ -386,5 +411,7 @@
         private System.Windows.Forms.Label lblFoto;
         private System.Windows.Forms.Label lblNasc;
         private System.Windows.Forms.TextBox txtPaginas;
+        private System.Windows.Forms.TextBox txtQuantidade;
+        private System.Windows.Forms.Label lblquantidade;
     }
 }

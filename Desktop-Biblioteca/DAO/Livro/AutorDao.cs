@@ -18,6 +18,18 @@ namespace Desktop_Biblioteca.DAO.Livro
             Execute(cmdInsert, parameters);
         }
 
+        public void Atualizar(Autor autor)
+        {
+            string cmdUpdate = "UPDATE Autor SET NOME = @Nome, ATIVO = @Ativo WHERE ID = @Id";
+            SqlParameter[] parameters =
+            {
+                new SqlParameter("@Nome", autor.Nome),
+                new SqlParameter("@Ativo", 1),
+                new SqlParameter("@Id", autor.Id)
+            };
+            Execute(cmdUpdate, parameters);
+        }
+
         public List<Autor> Buscar()
         {
             string cmdInsert = "SELECT NOME, ID FROM biblioteca.dbo.Autor WHERE ATIVO = 1";
