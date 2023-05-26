@@ -1,6 +1,6 @@
 ﻿namespace Desktop_Biblioteca.Consulta
 {
-    partial class FrmConsultaAutor
+    partial class FrmConsultaGenero
     {
         /// <summary>
         /// Required designer variable.
@@ -28,17 +28,15 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmConsultaAutor));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmConsultaGenero));
             this.panel1 = new System.Windows.Forms.Panel();
             this.lblCadastroAutor = new System.Windows.Forms.Label();
             this.btnFechar = new System.Windows.Forms.Button();
             this.btnApagar = new System.Windows.Forms.Button();
-            this.btnSalvar = new System.Windows.Forms.Button();
-            this.lblSucesso = new System.Windows.Forms.Label();
-            this.dgrAutores = new System.Windows.Forms.DataGridView();
+            this.dgrGeneros = new System.Windows.Forms.DataGridView();
             this.btnAlterar = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgrAutores)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgrGeneros)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -60,9 +58,9 @@
             this.lblCadastroAutor.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
             this.lblCadastroAutor.Location = new System.Drawing.Point(10, 7);
             this.lblCadastroAutor.Name = "lblCadastroAutor";
-            this.lblCadastroAutor.Size = new System.Drawing.Size(192, 30);
+            this.lblCadastroAutor.Size = new System.Drawing.Size(206, 30);
             this.lblCadastroAutor.TabIndex = 2;
-            this.lblCadastroAutor.Text = "Cadastro de Autor";
+            this.lblCadastroAutor.Text = "Consulta de Gênero";
             // 
             // btnFechar
             // 
@@ -93,44 +91,17 @@
             this.btnApagar.UseVisualStyleBackColor = false;
             this.btnApagar.Click += new System.EventHandler(this.btnLimpar_Click);
             // 
-            // btnSalvar
+            // dgrGeneros
             // 
-            this.btnSalvar.BackColor = System.Drawing.Color.Lime;
-            this.btnSalvar.Font = new System.Drawing.Font("Segoe UI", 15F, System.Drawing.FontStyle.Bold);
-            this.btnSalvar.ForeColor = System.Drawing.Color.White;
-            this.btnSalvar.Location = new System.Drawing.Point(296, 74);
-            this.btnSalvar.Margin = new System.Windows.Forms.Padding(2);
-            this.btnSalvar.Name = "btnSalvar";
-            this.btnSalvar.Size = new System.Drawing.Size(90, 48);
-            this.btnSalvar.TabIndex = 26;
-            this.btnSalvar.Text = "Buscar";
-            this.btnSalvar.UseVisualStyleBackColor = false;
-            this.btnSalvar.Click += new System.EventHandler(this.btnSalvar_Click);
-            // 
-            // lblSucesso
-            // 
-            this.lblSucesso.AutoSize = true;
-            this.lblSucesso.Font = new System.Drawing.Font("Segoe UI", 13F);
-            this.lblSucesso.ForeColor = System.Drawing.Color.Red;
-            this.lblSucesso.Location = new System.Drawing.Point(20, 332);
-            this.lblSucesso.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.lblSucesso.Name = "lblSucesso";
-            this.lblSucesso.Size = new System.Drawing.Size(260, 25);
-            this.lblSucesso.TabIndex = 33;
-            this.lblSucesso.Text = "Dados apagados com sucesso!";
-            this.lblSucesso.Visible = false;
-            // 
-            // dgrAutores
-            // 
-            this.dgrAutores.AllowUserToAddRows = false;
-            this.dgrAutores.AllowUserToDeleteRows = false;
-            this.dgrAutores.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgrAutores.Location = new System.Drawing.Point(25, 74);
-            this.dgrAutores.Name = "dgrAutores";
-            this.dgrAutores.ReadOnly = true;
-            this.dgrAutores.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgrAutores.Size = new System.Drawing.Size(238, 246);
-            this.dgrAutores.TabIndex = 34;
+            this.dgrGeneros.AllowUserToAddRows = false;
+            this.dgrGeneros.AllowUserToDeleteRows = false;
+            this.dgrGeneros.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgrGeneros.Location = new System.Drawing.Point(25, 74);
+            this.dgrGeneros.Name = "dgrGeneros";
+            this.dgrGeneros.ReadOnly = true;
+            this.dgrGeneros.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgrGeneros.Size = new System.Drawing.Size(238, 246);
+            this.dgrGeneros.TabIndex = 34;
             // 
             // btnAlterar
             // 
@@ -146,28 +117,25 @@
             this.btnAlterar.UseVisualStyleBackColor = false;
             this.btnAlterar.Click += new System.EventHandler(this.btnAlterar_Click);
             // 
-            // FrmConsultaAutor
+            // FrmConsultaGenero
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(46)))), ((int)(((byte)(59)))));
-            this.ClientSize = new System.Drawing.Size(408, 390);
+            this.ClientSize = new System.Drawing.Size(408, 379);
             this.Controls.Add(this.btnAlterar);
-            this.Controls.Add(this.dgrAutores);
-            this.Controls.Add(this.lblSucesso);
+            this.Controls.Add(this.dgrGeneros);
             this.Controls.Add(this.btnApagar);
-            this.Controls.Add(this.btnSalvar);
             this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Margin = new System.Windows.Forms.Padding(2);
-            this.Name = "FrmConsultaAutor";
+            this.Name = "FrmConsultaGenero";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "FrmCadastroMoeda";
+            this.Text = "FrmConsultaGenero";
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgrAutores)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgrGeneros)).EndInit();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
@@ -177,9 +145,7 @@
         private System.Windows.Forms.Label lblCadastroAutor;
         private System.Windows.Forms.Button btnFechar;
         private System.Windows.Forms.Button btnApagar;
-        private System.Windows.Forms.Button btnSalvar;
-        private System.Windows.Forms.Label lblSucesso;
-        private System.Windows.Forms.DataGridView dgrAutores;
+        private System.Windows.Forms.DataGridView dgrGeneros;
         private System.Windows.Forms.Button btnAlterar;
     }
 }

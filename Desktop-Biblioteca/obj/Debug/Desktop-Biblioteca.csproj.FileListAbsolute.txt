@@ -96,3 +96,5 @@ C:\Users\Erik\Documents\WindowsForms\Biblioteca\Desktop-Biblioteca\bin\Debug\Sys
 C:\Users\Erik\Documents\WindowsForms\Biblioteca\Desktop-Biblioteca\bin\Debug\System.Text.Encodings.Web.xml
 C:\Users\Erik\Documents\WindowsForms\Biblioteca\Desktop-Biblioteca\bin\Debug\System.Threading.Tasks.Extensions.xml
 C:\Users\Erik\Documents\WindowsForms\Biblioteca\Desktop-Biblioteca\obj\Debug\Desktop_Biblioteca.Consulta.FrmConsultaAutor.resources
+C:\Users\Erik\Documents\WindowsForms\Biblioteca\Desktop-Biblioteca\obj\Debug\Desktop_Biblioteca.Consulta.FrmConsultaCategoria.resources
+C:\Users\Erik\Documents\WindowsForms\Biblioteca\Desktop-Biblioteca\obj\Debug\Desktop_Biblioteca.Consulta.FrmConsultaGenero.resources

@@ -42,7 +42,7 @@ namespace Desktop_Biblioteca.Cadastro.Autor
                 return;
 
             AutorDao dao = new AutorDao();
-            if (!String.IsNullOrEmpty(lblId.Text))
+            if (!String.IsNullOrEmpty(lblIdValue.Text))
             {
                 try
                 {

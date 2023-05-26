@@ -15,7 +15,6 @@ namespace Desktop_Biblioteca.Home
         public Form1()
         {
             InitializeComponent();
-            pictureBox1.BackColor = Color.FromArgb(12, Color.White);
         }
 
         private void btnFechar_Click(object sender, EventArgs e)
@@ -47,8 +46,7 @@ namespace Desktop_Biblioteca.Home
 
         private void btnConsultarFuncionario_Click(object sender, EventArgs e)
         {
-            /* FrmConsultaFuncionario consultaFunc = new FrmConsultaFuncionario();
-             consultaFunc.Show();*/
+  
         }
 
         private void btnCadastrarFuncionario_Click(object sender, EventArgs e)
@@ -139,12 +137,6 @@ namespace Desktop_Biblioteca.Home
                 subMenuEmprestimo.Visible = true;
         }
 
-        private void button14_Click(object sender, EventArgs e)
-        {
-
-        }
-       
-
         private void btnCadastroCategoria_Click(object sender, EventArgs e)
         {
             FrmCadastroCategoria frmCadastroCategoria = new FrmCadastroCategoria();
@@ -155,6 +147,18 @@ namespace Desktop_Biblioteca.Home
         {
             FrmConsultaAutor frmConsultaAutor = new FrmConsultaAutor();
             frmConsultaAutor.Show();
+        }
+
+        private void btnConsultaCategoria_Click_1(object sender, EventArgs e)
+        {
+            FrmConsultaCategoria frmConsultaCategoria = new FrmConsultaCategoria();
+            frmConsultaCategoria.Show();
+        }
+
+        private void btnConsultaGenero_Click(object sender, EventArgs e)
+        {
+            FrmConsultaGenero frmConsultaGenero = new FrmConsultaGenero();
+            frmConsultaGenero.Show();
         }
     }
 }

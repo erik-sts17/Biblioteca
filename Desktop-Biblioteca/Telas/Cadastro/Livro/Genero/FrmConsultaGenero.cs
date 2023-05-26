@@ -7,11 +7,12 @@ using System.Windows.Forms;
 
 namespace Desktop_Biblioteca.Consulta
 {
-    public partial class FrmConsultaAutor : Form
+    public partial class FrmConsultaGenero : Form
     {
-        public FrmConsultaAutor()
+        public FrmConsultaGenero()
         {
             InitializeComponent();
+            BuscarGeneros();
         }
 
         private void btnFechar_Click(object sender, EventArgs e)
@@ -21,24 +22,24 @@ namespace Desktop_Biblioteca.Consulta
 
         private void btnLimpar_Click(object sender, EventArgs e)
         {
-            lblSucesso.Visible = false;
-            int linhas = dgrAutores.SelectedRows.Count;
+            int linhas = dgrGeneros.SelectedRows.Count;
             if (linhas < 1)
             {
                 MessageBox.Show("Selecione pelo menos um registro para apagar.");
                 return;
             }
             List<int> ids = new List<int>();
-            foreach (DataGridViewRow row in dgrAutores.SelectedRows)
+            foreach (DataGridViewRow row in dgrGeneros.SelectedRows)
             {
                 int id = Convert.ToInt32(row.Cells[0].Value);
                 ids.Add(id);
             }
-            AutorDao dao = new AutorDao();
+            CategoriaDao dao = new CategoriaDao();
             try
             {
-                dao.Excluir("AUTOR", ids);
-                lblSucesso.Visible = true;
+                dao.Excluir("GENERO", ids);
+                MessageBox.Show("Dados apagados com sucesso.");
+                BuscarGeneros();
             }
             catch (Exception)
             {
@@ -49,22 +50,12 @@ namespace Desktop_Biblioteca.Consulta
 
         private void btnSalvar_Click(object sender, EventArgs e)
         {
-            try
-            {
-                AutorDao dao = new AutorDao();
-                var autores = dao.Buscar();
-                dgrAutores.DataSource = autores;
-                dgrAutores.Columns.Remove("Ativo");
-            }
-            catch (Exception)
-            {
-                MessageBox.Show("Erro ao executar operação, tente novamente.");
-            }
+            
         }
 
         private void btnAlterar_Click(object sender, EventArgs e)
         {
-            int linhas = dgrAutores.SelectedRows.Count;
+            int linhas = dgrGeneros.SelectedRows.Count;
             if (linhas > 1)
             {
                 MessageBox.Show("Para editar selecione um registro por vez.");
@@ -78,7 +69,7 @@ namespace Desktop_Biblioteca.Consulta
             }
 
             Autor autor = new Autor();
-            foreach (DataGridViewRow row in dgrAutores.SelectedRows)
+            foreach (DataGridViewRow row in dgrGeneros.SelectedRows)
             {
                 autor.Id = Convert.ToInt32(row.Cells[0].Value);
                 autor.Nome = Convert.ToString(row.Cells[1].Value);
@@ -86,6 +77,21 @@ namespace Desktop_Biblioteca.Consulta
             this.Close();
             FrmCadastroAutor frmAutor = new FrmCadastroAutor(autor);
             frmAutor.Show();
+        }
+
+        private void BuscarGeneros() 
+        {
+            try
+            {
+                GeneroDao dao = new GeneroDao();
+                var generos = dao.Buscar();
+                dgrGeneros.DataSource = generos;
+                dgrGeneros.Columns["Ativo"].Visible = false;
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("Erro ao executar operação, tente novamente.");
+            }
         }
     }
 }

@@ -66,8 +66,8 @@
             this.panel17 = new System.Windows.Forms.Panel();
             this.panel19 = new System.Windows.Forms.Panel();
             this.panel20 = new System.Windows.Forms.Panel();
-            this.button10 = new System.Windows.Forms.Button();
-            this.button11 = new System.Windows.Forms.Button();
+            this.btnConsultaCategoria = new System.Windows.Forms.Button();
+            this.btnConsultaGenero = new System.Windows.Forms.Button();
             this.btnConsultaAutor = new System.Windows.Forms.Button();
             this.panel21 = new System.Windows.Forms.Panel();
             this.panel22 = new System.Windows.Forms.Panel();
@@ -495,8 +495,8 @@
             this.subMenuLivroConsulta.Controls.Add(this.panel23);
             this.subMenuLivroConsulta.Controls.Add(this.panel17);
             this.subMenuLivroConsulta.Controls.Add(this.panel20);
-            this.subMenuLivroConsulta.Controls.Add(this.button10);
-            this.subMenuLivroConsulta.Controls.Add(this.button11);
+            this.subMenuLivroConsulta.Controls.Add(this.btnConsultaCategoria);
+            this.subMenuLivroConsulta.Controls.Add(this.btnConsultaGenero);
             this.subMenuLivroConsulta.Controls.Add(this.btnConsultaAutor);
             this.subMenuLivroConsulta.Controls.Add(this.panel21);
             this.subMenuLivroConsulta.Controls.Add(this.button13);
@@ -554,37 +554,39 @@
             this.panel20.Size = new System.Drawing.Size(8, 41);
             this.panel20.TabIndex = 8;
             // 
-            // button10
+            // btnConsultaCategoria
             // 
-            this.button10.FlatAppearance.BorderSize = 0;
-            this.button10.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Goldenrod;
-            this.button10.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button10.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button10.ForeColor = System.Drawing.Color.White;
-            this.button10.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button10.Location = new System.Drawing.Point(7, 135);
-            this.button10.Name = "button10";
-            this.button10.Size = new System.Drawing.Size(143, 41);
-            this.button10.TabIndex = 7;
-            this.button10.Text = "Categoria";
-            this.button10.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button10.UseVisualStyleBackColor = true;
+            this.btnConsultaCategoria.FlatAppearance.BorderSize = 0;
+            this.btnConsultaCategoria.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Goldenrod;
+            this.btnConsultaCategoria.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnConsultaCategoria.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnConsultaCategoria.ForeColor = System.Drawing.Color.White;
+            this.btnConsultaCategoria.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnConsultaCategoria.Location = new System.Drawing.Point(7, 135);
+            this.btnConsultaCategoria.Name = "btnConsultaCategoria";
+            this.btnConsultaCategoria.Size = new System.Drawing.Size(143, 41);
+            this.btnConsultaCategoria.TabIndex = 7;
+            this.btnConsultaCategoria.Text = "Categoria";
+            this.btnConsultaCategoria.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnConsultaCategoria.UseVisualStyleBackColor = true;
+            this.btnConsultaCategoria.Click += new System.EventHandler(this.btnConsultaCategoria_Click_1);
             // 
-            // button11
+            // btnConsultaGenero
             // 
-            this.button11.FlatAppearance.BorderSize = 0;
-            this.button11.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Goldenrod;
-            this.button11.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button11.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button11.ForeColor = System.Drawing.Color.White;
-            this.button11.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button11.Location = new System.Drawing.Point(7, 89);
-            this.button11.Name = "button11";
-            this.button11.Size = new System.Drawing.Size(143, 41);
-            this.button11.TabIndex = 6;
-            this.button11.Text = "Gênero";
-            this.button11.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button11.UseVisualStyleBackColor = true;
+            this.btnConsultaGenero.FlatAppearance.BorderSize = 0;
+            this.btnConsultaGenero.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Goldenrod;
+            this.btnConsultaGenero.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnConsultaGenero.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnConsultaGenero.ForeColor = System.Drawing.Color.White;
+            this.btnConsultaGenero.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnConsultaGenero.Location = new System.Drawing.Point(7, 89);
+            this.btnConsultaGenero.Name = "btnConsultaGenero";
+            this.btnConsultaGenero.Size = new System.Drawing.Size(143, 41);
+            this.btnConsultaGenero.TabIndex = 6;
+            this.btnConsultaGenero.Text = "Gênero";
+            this.btnConsultaGenero.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnConsultaGenero.UseVisualStyleBackColor = true;
+            this.btnConsultaGenero.Click += new System.EventHandler(this.btnConsultaGenero_Click);
             // 
             // btnConsultaAutor
             // 
@@ -717,7 +719,6 @@
             this.button14.Text = " Cadastro";
             this.button14.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.button14.UseVisualStyleBackColor = true;
-            this.button14.Click += new System.EventHandler(this.button14_Click);
             // 
             // btnEmprestimo
             // 
@@ -745,7 +746,7 @@
             this.pictureBox1.Margin = new System.Windows.Forms.Padding(2);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(695, 801);
-            this.pictureBox1.TabIndex = 17;
+            this.pictureBox1.TabIndex = 22;
             this.pictureBox1.TabStop = false;
             // 
             // Form1
@@ -820,8 +821,8 @@
         private System.Windows.Forms.Panel panel17;
         private System.Windows.Forms.Panel panel19;
         private System.Windows.Forms.Panel panel20;
-        private System.Windows.Forms.Button button10;
-        private System.Windows.Forms.Button button11;
+        private System.Windows.Forms.Button btnConsultaCategoria;
+        private System.Windows.Forms.Button btnConsultaGenero;
         private System.Windows.Forms.Button btnConsultaAutor;
         private System.Windows.Forms.Panel panel21;
         private System.Windows.Forms.Panel panel22;

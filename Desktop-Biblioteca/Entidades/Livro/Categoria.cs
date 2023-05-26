@@ -11,6 +11,13 @@
             Descricao = descricao;
         }
 
+        public Categoria(string descricao, int id)
+        {
+            Descricao = descricao;
+            Id = id;
+        }
+
+
         public int Id { get; set; }
         public string Descricao { get; set; }
         public bool Ativo { get; set; }

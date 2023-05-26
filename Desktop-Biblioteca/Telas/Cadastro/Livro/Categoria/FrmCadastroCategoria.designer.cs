@@ -37,6 +37,8 @@
             this.txtCategoria = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.lblSucesso = new System.Windows.Forms.Label();
+            this.lblId = new System.Windows.Forms.Label();
+            this.lblIdValue = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -47,7 +49,7 @@
             this.panel1.Controls.Add(this.btnFechar);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(0, 0);
-            this.panel1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panel1.Margin = new System.Windows.Forms.Padding(2);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(323, 50);
             this.panel1.TabIndex = 3;
@@ -84,7 +86,7 @@
             this.btnLimpar.Font = new System.Drawing.Font("Segoe UI", 15F, System.Drawing.FontStyle.Bold);
             this.btnLimpar.ForeColor = System.Drawing.Color.White;
             this.btnLimpar.Location = new System.Drawing.Point(158, 195);
-            this.btnLimpar.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnLimpar.Margin = new System.Windows.Forms.Padding(2);
             this.btnLimpar.Name = "btnLimpar";
             this.btnLimpar.Size = new System.Drawing.Size(85, 48);
             this.btnLimpar.TabIndex = 27;
@@ -98,7 +100,7 @@
             this.btnSalvar.Font = new System.Drawing.Font("Segoe UI", 15F, System.Drawing.FontStyle.Bold);
             this.btnSalvar.ForeColor = System.Drawing.Color.White;
             this.btnSalvar.Location = new System.Drawing.Point(58, 195);
-            this.btnSalvar.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnSalvar.Margin = new System.Windows.Forms.Padding(2);
             this.btnSalvar.Name = "btnSalvar";
             this.btnSalvar.Size = new System.Drawing.Size(84, 48);
             this.btnSalvar.TabIndex = 26;
@@ -140,12 +142,37 @@
             this.lblSucesso.Visible = false;
             this.lblSucesso.Click += new System.EventHandler(this.lblConfirma_Click);
             // 
+            // lblId
+            // 
+            this.lblId.AutoSize = true;
+            this.lblId.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold);
+            this.lblId.ForeColor = System.Drawing.Color.White;
+            this.lblId.Location = new System.Drawing.Point(56, 62);
+            this.lblId.Name = "lblId";
+            this.lblId.Size = new System.Drawing.Size(29, 21);
+            this.lblId.TabIndex = 34;
+            this.lblId.Text = "Id:";
+            this.lblId.Visible = false;
+            // 
+            // lblIdValue
+            // 
+            this.lblIdValue.AutoSize = true;
+            this.lblIdValue.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold);
+            this.lblIdValue.ForeColor = System.Drawing.Color.White;
+            this.lblIdValue.Location = new System.Drawing.Point(82, 62);
+            this.lblIdValue.Name = "lblIdValue";
+            this.lblIdValue.Size = new System.Drawing.Size(0, 21);
+            this.lblIdValue.TabIndex = 35;
+            this.lblIdValue.Visible = false;
+            // 
             // FrmCadastroCategoria
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(46)))), ((int)(((byte)(59)))));
             this.ClientSize = new System.Drawing.Size(323, 284);
+            this.Controls.Add(this.lblIdValue);
+            this.Controls.Add(this.lblId);
             this.Controls.Add(this.lblSucesso);
             this.Controls.Add(this.txtCategoria);
             this.Controls.Add(this.label1);
@@ -153,10 +180,10 @@
             this.Controls.Add(this.btnSalvar);
             this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "FrmCadastroCategoria";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "FrmCadastroMoeda";
+            this.Text = "FrmCadastroCategoria";
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.ResumeLayout(false);
@@ -174,5 +201,7 @@
         private System.Windows.Forms.TextBox txtCategoria;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label lblSucesso;
+        private System.Windows.Forms.Label lblId;
+        private System.Windows.Forms.Label lblIdValue;
     }
 }

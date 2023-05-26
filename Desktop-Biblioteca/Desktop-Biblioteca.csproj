@@ -207,11 +207,23 @@
     <Compile Include="Telas\Cadastro\Livro\Categoria\FrmCadastroCategoria.designer.cs">
       <DependentUpon>FrmCadastroCategoria.cs</DependentUpon>
     </Compile>
+    <Compile Include="Telas\Cadastro\Livro\Categoria\FrmConsultaCategoria.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Telas\Cadastro\Livro\Categoria\FrmConsultaCategoria.designer.cs">
+      <DependentUpon>FrmConsultaCategoria.cs</DependentUpon>
+    </Compile>
     <Compile Include="Telas\Cadastro\Livro\FrmCadastroLivro.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Telas\Cadastro\Livro\FrmCadastroLivro.designer.cs">
       <DependentUpon>FrmCadastroLivro.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Telas\Cadastro\Livro\Genero\FrmConsultaGenero.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Telas\Cadastro\Livro\Genero\FrmConsultaGenero.designer.cs">
+      <DependentUpon>FrmConsultaGenero.cs</DependentUpon>
     </Compile>
     <Compile Include="Telas\Cadastro\Livro\Genero\FrnCadastroGenero.cs">
       <SubType>Form</SubType>
@@ -227,10 +239,10 @@
     <Compile Include="Entidades\Livro\Autor.cs" />
     <Compile Include="Entidades\Livro\Categoria.cs" />
     <Compile Include="Entidades\Livro\Genero.cs" />
-    <Compile Include="Telas\Consultas\FrmConsultaAutor.cs">
+    <Compile Include="Telas\Cadastro\Livro\Autor\FrmConsultaAutor.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Telas\Consultas\FrmConsultaAutor.designer.cs">
+    <Compile Include="Telas\Cadastro\Livro\Autor\FrmConsultaAutor.designer.cs">
       <DependentUpon>FrmConsultaAutor.cs</DependentUpon>
     </Compile>
     <Compile Include="Telas\Home\Form1.cs">
@@ -256,13 +268,19 @@
     <EmbeddedResource Include="Telas\Cadastro\Livro\Categoria\FrmCadastroCategoria.resx">
       <DependentUpon>FrmCadastroCategoria.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Telas\Cadastro\Livro\Categoria\FrmConsultaCategoria.resx">
+      <DependentUpon>FrmConsultaCategoria.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Telas\Cadastro\Livro\FrmCadastroLivro.resx">
       <DependentUpon>FrmCadastroLivro.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Telas\Cadastro\Livro\Genero\FrmConsultaGenero.resx">
+      <DependentUpon>FrmConsultaGenero.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Telas\Cadastro\Livro\Genero\FrnCadastroGenero.resx">
       <DependentUpon>FrnCadastroGenero.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Telas\Consultas\FrmConsultaAutor.resx">
+    <EmbeddedResource Include="Telas\Cadastro\Livro\Autor\FrmConsultaAutor.resx">
       <DependentUpon>FrmConsultaAutor.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Telas\Home\Form1.resx">
