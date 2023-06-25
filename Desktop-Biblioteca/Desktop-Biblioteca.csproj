@@ -185,15 +185,30 @@
     <Compile Include="Client\Models\ResponseModel.cs" />
     <Compile Include="DAO\BaseDAO.cs" />
     <Compile Include="DAO\Cliente\ClienteDao.cs" />
+    <Compile Include="DAO\Funcionario\FuncionarioDAO.cs" />
+    <Compile Include="DAO\Funcionario\LoginDAO.cs" />
     <Compile Include="Entidades\Base.cs" />
     <Compile Include="Entidades\Cliente.cs" />
     <Compile Include="Entidades\Endereco.cs" />
     <Compile Include="Client\BaseClient.cs" />
+    <Compile Include="Entidades\Funcionario.cs" />
+    <Compile Include="Entidades\Login.cs" />
+    <Compile Include="Properties\Resources1.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
     <Compile Include="Telas\Cadastro\Cliente\FrmCadastroCliente.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Telas\Cadastro\Cliente\FrmCadastroCliente.designer.cs">
       <DependentUpon>FrmCadastroCliente.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Telas\Cadastro\Funcionario\FrmCadastroFuncionario.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Telas\Cadastro\Funcionario\FrmCadastroFuncionario.designer.cs">
+      <DependentUpon>FrmCadastroFuncionario.cs</DependentUpon>
     </Compile>
     <Compile Include="Telas\Cadastro\Livro\Autor\FrmCadastroAutor.cs">
       <SubType>Form</SubType>
@@ -262,6 +277,9 @@
     <EmbeddedResource Include="Telas\Cadastro\Cliente\FrmCadastroCliente.resx">
       <DependentUpon>FrmCadastroCliente.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Telas\Cadastro\Funcionario\FrmCadastroFuncionario.resx">
+      <DependentUpon>FrmCadastroFuncionario.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Telas\Cadastro\Livro\Autor\FrmCadastroAutor.resx">
       <DependentUpon>FrmCadastroAutor.cs</DependentUpon>
     </EmbeddedResource>
@@ -291,6 +309,7 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
+      <SubType>Designer</SubType>
       <LastGenOutput>Resources1.Designer.cs</LastGenOutput>
     </EmbeddedResource>
     <None Include="app.config" />
@@ -301,11 +320,6 @@
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
     </None>
     <Compile Include="Properties\Resources.Designer.cs" />
-    <Compile Include="Properties\Resources1.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Resources.resx</DependentUpon>
-    </Compile>
     <Compile Include="Properties\Settings.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Settings.settings</DependentUpon>
@@ -318,6 +332,7 @@
     <None Include="Resources\livros.png" />
     <Content Include="Resources\Login2.png" />
     <None Include="Resources\logoLivro.png" />
+    <None Include="Resources\logoFuncionarioNovo.png" />
     <Content Include="Resources\LogoSair.png" />
     <Content Include="Resources\LogoSair1.png" />
     <Content Include="Resources\logoCliente.png" />

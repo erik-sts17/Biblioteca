@@ -1,6 +1,6 @@
 ﻿using Desktop_Biblioteca.Client;
 using Desktop_Biblioteca.Client.Models;
-using Desktop_Biblioteca.DAO.Cliente;
+using Desktop_Biblioteca.DAO.Funcionario;
 using Desktop_Biblioteca.Entidades;
 using System;
 using System.Collections.Generic;
@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace Desktop_Biblioteca.Cadastro.Cliente
 {
-    public partial class FrmCadastroCliente : Form
+    public partial class FrmCadastroFuncionario : Form
     {
-        public FrmCadastroCliente()
+        public FrmCadastroFuncionario()
         {
             InitializeComponent();
         }
@@ -20,6 +20,7 @@ namespace Desktop_Biblioteca.Cadastro.Cliente
         private void btnLimpar_Click(object sender, EventArgs e)
         {
             txtNome.Clear();
+            TxtCpf.Clear();
             txtEmail.Clear();
             txtTelefone.Clear();
             txtEndereco.Clear();
@@ -44,16 +45,21 @@ namespace Desktop_Biblioteca.Cadastro.Cliente
             try
             {
                 var endereco = new Endereco(cbUf.SelectedItem.ToString(), txtCidade.Text, txtBairro.Text, txtEndereco.Text, txtNumero.Text, txtComplemento.Text);
-                var cliente = new Entidades.Cliente(txtNome.Text, dtDataNascimento.Value, txtRg.Text, txtEmail.Text, txtTelefone.Text, endereco);
+                var login = new Entidades.Login(txtEmail.Text, txtSenhaUser.Text);
+                var funcionario = new Entidades.Funcionario(txtNome.Text, dtDataNascimento.Value, txtRg.Text,TxtCpf.Text, txtEmail.Text, txtTelefone.Text, endereco, login);
 
-                var clienteDao = new ClienteDao();
-                clienteDao.Insert(cliente);
+                var funcionarioDAO = new FuncionarioDAO();
+                funcionarioDAO.Insert(funcionario);
+
+                var loginDao = new LoginDAO();
+                loginDao.Insert(login);
 
                 lblSucesso.Visible = true;
                 btnLimpar_Click(sender, e);
             }
-            catch (Exception)
+            catch (Exception ex)
             {
+                Console.WriteLine(ex);
                 MessageBox.Show("Erro ao executar operação, tente novamente.");
             }
         }
@@ -62,7 +68,7 @@ namespace Desktop_Biblioteca.Cadastro.Cliente
         {
             string mensagem = "";
             List<string> erros = new List<string>();
-            string[] textForms = new string[] { txtNome.Text, txtEmail.Text, txtRg.Text, txtTelefone.Text, txtCep.Text, txtCidade.Text, txtBairro.Text, txtEndereco.Text, txtNumero.Text };
+            string[] textForms = new string[] { txtNome.Text, txtEmail.Text, txtRg.Text, txtTelefone.Text, txtCep.Text, txtCidade.Text, txtBairro.Text, txtEndereco.Text, txtNumero.Text, txtSenhaUser.Text };
 
             if (textForms.Any(x => String.IsNullOrEmpty(x)))
                 erros.Add("Campos com '*' são obrigatórios!");
@@ -71,8 +77,12 @@ namespace Desktop_Biblioteca.Cadastro.Cliente
                 erros.Add("Email inválido!");
 
             var idade = DateTime.Now.Year - dtDataNascimento.Value.Year;
-            if (idade < 14)
-                erros.Add("Cadastro permitido apenas para maiores de 14 anos!");
+            if (idade < 18)
+                erros.Add("Cadastro permitido apenas para maiores de 18 anos!");
+
+            if (txtSenhaUser.Text.Length < 8)
+                erros.Add("Senha precisa ter no mínimo 8 caracteres!");
+            
 
             if (erros.Count > 0)
             {
@@ -83,6 +93,7 @@ namespace Desktop_Biblioteca.Cadastro.Cliente
                 MessageBox.Show(mensagem);
                 return true;
             }
+
             return false;
         }
 
@@ -121,5 +132,6 @@ namespace Desktop_Biblioteca.Cadastro.Cliente
             txtBairro.Text = endereco.Entity.Bairro;
             cbUf.Text = endereco.Entity.UF;
         }
+
     }
 }

@@ -160,5 +160,19 @@ namespace Desktop_Biblioteca.Home
             FrmConsultaGenero frmConsultaGenero = new FrmConsultaGenero();
             frmConsultaGenero.Show();
         }
+
+        private void btnCadstroFuncionario_Click(object sender, EventArgs e)
+        {
+            FrmCadastroFuncionario frmCadastroFuncionario = new FrmCadastroFuncionario();
+            frmCadastroFuncionario.Show();
+        }
+
+        private void btnFuncionario_Click(object sender, EventArgs e)
+        {
+            if (subMenuFuncionario.Visible)
+                subMenuFuncionario.Visible = false;
+            else
+                subMenuFuncionario.Visible = true;
+        }
     }
 }

@@ -19,10 +19,10 @@ namespace Desktop_Biblioteca.DAO.Livro
 
         public void Atualizar(Categoria categoria)
         {
-            string cmdUpdate = "UPDATE Autor SET NOME = @Nome, ATIVO = @Ativo WHERE ID = @Id";
+            string cmdUpdate = "UPDATE Categoria SET Descricao = @Descricao, ATIVO = @Ativo WHERE ID = @Id";
             SqlParameter[] parameters =
             {
-                new SqlParameter("@Nome", categoria.Descricao),
+                new SqlParameter("@Descricao", categoria.Descricao),
                 new SqlParameter("@Ativo", 1),
                 new SqlParameter("@Id", categoria.Id)
             };

@@ -20,14 +20,13 @@ namespace Desktop_Biblioteca.DAO.Cliente
                 new SqlParameter("@Rg", cliente.Rg),
                 new SqlParameter("@Email", cliente.Email),
                 new SqlParameter("@Telefone", cliente.Telefone),
-                new SqlParameter("@AtivoEnd", 1),
             };
 
-            string query = "INSERT INTO Endereco (UF, CIDADE, BAIRRO, LOGRADOURO, NUMERO, COMPLEMENTO, ATIVO) " +
-                           "VALUES (@Uf, @Cidade, @Bairro, @Logradouro, @Numero, @Complemento, @AtivoCli);" +
+            string query = "INSERT INTO Endereco (UF, CIDADE, BAIRRO, LOGRADOURO, NUMERO, COMPLEMENTO) " +
+                           "VALUES (@Uf, @Cidade, @Bairro, @Logradouro, @Numero, @Complemento);" +
                            "DECLARE @EnderecoId INT = CAST(scope_identity() AS int);" +
                            "INSERT INTO Cliente (NOME, DATANASCIMENTO, RG, EMAIL, TELEFONE, ENDERECOID, ATIVO) " +
-                           "VALUES (@Nome, @DataNascimento, @Rg, @Email, @Telefone, @EnderecoId, @AtivoEnd)";
+                           "VALUES (@Nome, @DataNascimento, @Rg, @Email, @Telefone, @EnderecoId, @AtivoCli)";
 
             Execute(query, parameters);
         }

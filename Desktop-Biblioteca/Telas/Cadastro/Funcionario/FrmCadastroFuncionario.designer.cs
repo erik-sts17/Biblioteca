@@ -1,6 +1,6 @@
 ﻿namespace Desktop_Biblioteca.Cadastro.Cliente
 {
-    partial class FrmCadastroCliente
+    partial class FrmCadastroFuncionario
     {
         /// <summary>
         /// Required designer variable.
@@ -28,16 +28,16 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmCadastroCliente));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmCadastroFuncionario));
             this.panel2 = new System.Windows.Forms.Panel();
-            this.lblLogin = new System.Windows.Forms.Label();
+            this.lblCadastroFuncionario = new System.Windows.Forms.Label();
             this.btnFechar = new System.Windows.Forms.Button();
+            this.TxtCpf = new System.Windows.Forms.MaskedTextBox();
+            this.lblCpf = new System.Windows.Forms.Label();
             this.lblGenero = new System.Windows.Forms.Label();
             this.cboGenero = new System.Windows.Forms.ComboBox();
-            this.txtEmail = new System.Windows.Forms.TextBox();
             this.txtBairro = new System.Windows.Forms.TextBox();
             this.txtNome = new System.Windows.Forms.TextBox();
-            this.lblEmail = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.lblNome = new System.Windows.Forms.Label();
             this.lblNasc = new System.Windows.Forms.Label();
@@ -63,32 +63,40 @@
             this.lblSucesso = new System.Windows.Forms.Label();
             this.txtRg = new System.Windows.Forms.MaskedTextBox();
             this.lblRg = new System.Windows.Forms.Label();
+            this.groupLogin = new System.Windows.Forms.GroupBox();
+            this.txtSenhaUser = new System.Windows.Forms.TextBox();
+            this.lblSenha = new System.Windows.Forms.Label();
+            this.maskedTextBox1 = new System.Windows.Forms.MaskedTextBox();
+            this.lblSalario = new System.Windows.Forms.Label();
+            this.lblEmail = new System.Windows.Forms.Label();
+            this.txtEmail = new System.Windows.Forms.TextBox();
             this.panel2.SuspendLayout();
             this.gbEndereco.SuspendLayout();
+            this.groupLogin.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(194)))), ((int)(((byte)(0)))));
-            this.panel2.Controls.Add(this.lblLogin);
+            this.panel2.Controls.Add(this.lblCadastroFuncionario);
             this.panel2.Controls.Add(this.btnFechar);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel2.Location = new System.Drawing.Point(0, 0);
             this.panel2.Margin = new System.Windows.Forms.Padding(2);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(767, 53);
+            this.panel2.Size = new System.Drawing.Size(769, 53);
             this.panel2.TabIndex = 22;
             // 
-            // lblLogin
+            // lblCadastroFuncionario
             // 
-            this.lblLogin.AutoSize = true;
-            this.lblLogin.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblLogin.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
-            this.lblLogin.Location = new System.Drawing.Point(9, 9);
-            this.lblLogin.Name = "lblLogin";
-            this.lblLogin.Size = new System.Drawing.Size(203, 30);
-            this.lblLogin.TabIndex = 4;
-            this.lblLogin.Text = "Cadastro de Cliente";
+            this.lblCadastroFuncionario.AutoSize = true;
+            this.lblCadastroFuncionario.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblCadastroFuncionario.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
+            this.lblCadastroFuncionario.Location = new System.Drawing.Point(9, 9);
+            this.lblCadastroFuncionario.Name = "lblCadastroFuncionario";
+            this.lblCadastroFuncionario.Size = new System.Drawing.Size(252, 30);
+            this.lblCadastroFuncionario.TabIndex = 4;
+            this.lblCadastroFuncionario.Text = "Cadastro de Funcionario";
             // 
             // btnFechar
             // 
@@ -98,19 +106,40 @@
             this.btnFechar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Red;
             this.btnFechar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnFechar.Image = ((System.Drawing.Image)(resources.GetObject("btnFechar.Image")));
-            this.btnFechar.Location = new System.Drawing.Point(712, 0);
+            this.btnFechar.Location = new System.Drawing.Point(714, 0);
             this.btnFechar.Name = "btnFechar";
             this.btnFechar.Size = new System.Drawing.Size(55, 56);
             this.btnFechar.TabIndex = 1;
             this.btnFechar.UseVisualStyleBackColor = true;
             this.btnFechar.Click += new System.EventHandler(this.btnFechar_Click);
             // 
+            // TxtCpf
+            // 
+            this.TxtCpf.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.TxtCpf.Location = new System.Drawing.Point(69, 218);
+            this.TxtCpf.Margin = new System.Windows.Forms.Padding(2);
+            this.TxtCpf.Mask = "000.000.000-00";
+            this.TxtCpf.Name = "TxtCpf";
+            this.TxtCpf.Size = new System.Drawing.Size(146, 23);
+            this.TxtCpf.TabIndex = 40;
+            // 
+            // lblCpf
+            // 
+            this.lblCpf.AutoSize = true;
+            this.lblCpf.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold);
+            this.lblCpf.ForeColor = System.Drawing.Color.White;
+            this.lblCpf.Location = new System.Drawing.Point(66, 192);
+            this.lblCpf.Name = "lblCpf";
+            this.lblCpf.Size = new System.Drawing.Size(52, 21);
+            this.lblCpf.TabIndex = 35;
+            this.lblCpf.Text = "Cpf: *";
+            // 
             // lblGenero
             // 
             this.lblGenero.AutoSize = true;
             this.lblGenero.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold);
             this.lblGenero.ForeColor = System.Drawing.Color.White;
-            this.lblGenero.Location = new System.Drawing.Point(67, 192);
+            this.lblGenero.Location = new System.Drawing.Point(238, 192);
             this.lblGenero.Name = "lblGenero";
             this.lblGenero.Size = new System.Drawing.Size(69, 21);
             this.lblGenero.TabIndex = 34;
@@ -125,19 +154,10 @@
             "MASCULINO",
             "FEMININO",
             "OUTROS"});
-            this.cboGenero.Location = new System.Drawing.Point(68, 219);
+            this.cboGenero.Location = new System.Drawing.Point(242, 218);
             this.cboGenero.Name = "cboGenero";
             this.cboGenero.Size = new System.Drawing.Size(112, 23);
             this.cboGenero.TabIndex = 33;
-            // 
-            // txtEmail
-            // 
-            this.txtEmail.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.txtEmail.Location = new System.Drawing.Point(69, 152);
-            this.txtEmail.MaxLength = 100;
-            this.txtEmail.Name = "txtEmail";
-            this.txtEmail.Size = new System.Drawing.Size(435, 23);
-            this.txtEmail.TabIndex = 32;
             // 
             // txtBairro
             // 
@@ -156,17 +176,6 @@
             this.txtNome.Name = "txtNome";
             this.txtNome.Size = new System.Drawing.Size(435, 23);
             this.txtNome.TabIndex = 27;
-            // 
-            // lblEmail
-            // 
-            this.lblEmail.AutoSize = true;
-            this.lblEmail.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold);
-            this.lblEmail.ForeColor = System.Drawing.Color.White;
-            this.lblEmail.Location = new System.Drawing.Point(65, 126);
-            this.lblEmail.Name = "lblEmail";
-            this.lblEmail.Size = new System.Drawing.Size(68, 21);
-            this.lblEmail.TabIndex = 31;
-            this.lblEmail.Text = "Email: *";
             // 
             // label2
             // 
@@ -213,10 +222,10 @@
             // txtTelefone
             // 
             this.txtTelefone.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.txtTelefone.Location = new System.Drawing.Point(211, 219);
+            this.txtTelefone.Location = new System.Drawing.Point(377, 218);
             this.txtTelefone.Mask = "(99) 00000-0000";
             this.txtTelefone.Name = "txtTelefone";
-            this.txtTelefone.Size = new System.Drawing.Size(147, 23);
+            this.txtTelefone.Size = new System.Drawing.Size(127, 23);
             this.txtTelefone.TabIndex = 43;
             this.txtTelefone.TextMaskFormat = System.Windows.Forms.MaskFormat.ExcludePromptAndLiterals;
             // 
@@ -225,7 +234,7 @@
             this.lblTelefone.AutoSize = true;
             this.lblTelefone.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold);
             this.lblTelefone.ForeColor = System.Drawing.Color.White;
-            this.lblTelefone.Location = new System.Drawing.Point(207, 192);
+            this.lblTelefone.Location = new System.Drawing.Point(373, 192);
             this.lblTelefone.Name = "lblTelefone";
             this.lblTelefone.Size = new System.Drawing.Size(91, 21);
             this.lblTelefone.TabIndex = 42;
@@ -236,7 +245,7 @@
             this.btnLimpar.BackColor = System.Drawing.Color.Red;
             this.btnLimpar.Font = new System.Drawing.Font("Segoe UI", 15F, System.Drawing.FontStyle.Bold);
             this.btnLimpar.ForeColor = System.Drawing.Color.White;
-            this.btnLimpar.Location = new System.Drawing.Point(399, 451);
+            this.btnLimpar.Location = new System.Drawing.Point(402, 452);
             this.btnLimpar.Margin = new System.Windows.Forms.Padding(2);
             this.btnLimpar.Name = "btnLimpar";
             this.btnLimpar.Size = new System.Drawing.Size(92, 48);
@@ -250,7 +259,7 @@
             this.btnSalvar.BackColor = System.Drawing.Color.Lime;
             this.btnSalvar.Font = new System.Drawing.Font("Segoe UI", 15F, System.Drawing.FontStyle.Bold);
             this.btnSalvar.ForeColor = System.Drawing.Color.White;
-            this.btnSalvar.Location = new System.Drawing.Point(292, 451);
+            this.btnSalvar.Location = new System.Drawing.Point(304, 452);
             this.btnSalvar.Margin = new System.Windows.Forms.Padding(2);
             this.btnSalvar.Name = "btnSalvar";
             this.btnSalvar.Size = new System.Drawing.Size(84, 48);
@@ -359,7 +368,7 @@
             this.gbEndereco.Controls.Add(this.txtCidade);
             this.gbEndereco.Controls.Add(this.label12);
             this.gbEndereco.ForeColor = System.Drawing.Color.White;
-            this.gbEndereco.Location = new System.Drawing.Point(70, 273);
+            this.gbEndereco.Location = new System.Drawing.Point(68, 263);
             this.gbEndereco.Margin = new System.Windows.Forms.Padding(2);
             this.gbEndereco.Name = "gbEndereco";
             this.gbEndereco.Padding = new System.Windows.Forms.Padding(2);
@@ -456,7 +465,7 @@
             this.lblSucesso.AutoSize = true;
             this.lblSucesso.Font = new System.Drawing.Font("Segoe UI", 13F);
             this.lblSucesso.ForeColor = System.Drawing.Color.Lime;
-            this.lblSucesso.Location = new System.Drawing.Point(269, 417);
+            this.lblSucesso.Location = new System.Drawing.Point(281, 417);
             this.lblSucesso.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblSucesso.Name = "lblSucesso";
             this.lblSucesso.Size = new System.Drawing.Size(255, 25);
@@ -486,12 +495,91 @@
             this.lblRg.TabIndex = 61;
             this.lblRg.Text = "RG: *";
             // 
-            // FrmCadastroCliente
+            // groupLogin
+            // 
+            this.groupLogin.Controls.Add(this.txtSenhaUser);
+            this.groupLogin.Controls.Add(this.lblSenha);
+            this.groupLogin.ForeColor = System.Drawing.Color.White;
+            this.groupLogin.Location = new System.Drawing.Point(69, 417);
+            this.groupLogin.Margin = new System.Windows.Forms.Padding(2);
+            this.groupLogin.Name = "groupLogin";
+            this.groupLogin.Padding = new System.Windows.Forms.Padding(2);
+            this.groupLogin.Size = new System.Drawing.Size(160, 83);
+            this.groupLogin.TabIndex = 63;
+            this.groupLogin.TabStop = false;
+            this.groupLogin.Text = "Login";
+            // 
+            // txtSenhaUser
+            // 
+            this.txtSenhaUser.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.txtSenhaUser.Location = new System.Drawing.Point(11, 39);
+            this.txtSenhaUser.MaxLength = 10;
+            this.txtSenhaUser.Name = "txtSenhaUser";
+            this.txtSenhaUser.Size = new System.Drawing.Size(135, 23);
+            this.txtSenhaUser.TabIndex = 65;
+            this.txtSenhaUser.UseSystemPasswordChar = true;
+            // 
+            // lblSenha
+            // 
+            this.lblSenha.AutoSize = true;
+            this.lblSenha.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold);
+            this.lblSenha.ForeColor = System.Drawing.Color.White;
+            this.lblSenha.Location = new System.Drawing.Point(6, 15);
+            this.lblSenha.Name = "lblSenha";
+            this.lblSenha.Size = new System.Drawing.Size(57, 21);
+            this.lblSenha.TabIndex = 64;
+            this.lblSenha.Text = "Senha";
+            // 
+            // maskedTextBox1
+            // 
+            this.maskedTextBox1.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.maskedTextBox1.Location = new System.Drawing.Point(540, 218);
+            this.maskedTextBox1.Margin = new System.Windows.Forms.Padding(2);
+            this.maskedTextBox1.Mask = "000.000.000-00";
+            this.maskedTextBox1.Name = "maskedTextBox1";
+            this.maskedTextBox1.Size = new System.Drawing.Size(146, 23);
+            this.maskedTextBox1.TabIndex = 64;
+            // 
+            // lblSalario
+            // 
+            this.lblSalario.AutoSize = true;
+            this.lblSalario.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold);
+            this.lblSalario.ForeColor = System.Drawing.Color.White;
+            this.lblSalario.Location = new System.Drawing.Point(536, 192);
+            this.lblSalario.Name = "lblSalario";
+            this.lblSalario.Size = new System.Drawing.Size(67, 21);
+            this.lblSalario.TabIndex = 65;
+            this.lblSalario.Text = "Salário:";
+            // 
+            // lblEmail
+            // 
+            this.lblEmail.AutoSize = true;
+            this.lblEmail.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold);
+            this.lblEmail.ForeColor = System.Drawing.Color.White;
+            this.lblEmail.Location = new System.Drawing.Point(65, 126);
+            this.lblEmail.Name = "lblEmail";
+            this.lblEmail.Size = new System.Drawing.Size(68, 21);
+            this.lblEmail.TabIndex = 31;
+            this.lblEmail.Text = "Email: *";
+            // 
+            // txtEmail
+            // 
+            this.txtEmail.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.txtEmail.Location = new System.Drawing.Point(69, 152);
+            this.txtEmail.MaxLength = 100;
+            this.txtEmail.Name = "txtEmail";
+            this.txtEmail.Size = new System.Drawing.Size(435, 23);
+            this.txtEmail.TabIndex = 32;
+            // 
+            // FrmCadastroFuncionario
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(46)))), ((int)(((byte)(59)))));
-            this.ClientSize = new System.Drawing.Size(767, 510);
+            this.ClientSize = new System.Drawing.Size(769, 542);
+            this.Controls.Add(this.lblSalario);
+            this.Controls.Add(this.maskedTextBox1);
+            this.Controls.Add(this.groupLogin);
             this.Controls.Add(this.txtRg);
             this.Controls.Add(this.lblRg);
             this.Controls.Add(this.lblSucesso);
@@ -502,6 +590,8 @@
             this.Controls.Add(this.dtDataNascimento);
             this.Controls.Add(this.txtTelefone);
             this.Controls.Add(this.lblTelefone);
+            this.Controls.Add(this.TxtCpf);
+            this.Controls.Add(this.lblCpf);
             this.Controls.Add(this.lblGenero);
             this.Controls.Add(this.cboGenero);
             this.Controls.Add(this.txtEmail);
@@ -511,7 +601,7 @@
             this.Controls.Add(this.panel2);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Margin = new System.Windows.Forms.Padding(2);
-            this.Name = "FrmCadastroCliente";
+            this.Name = "FrmCadastroFuncionario";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FrmCadastroFuncionario";
             this.Load += new System.EventHandler(this.FrmCadastroFuncionario_Load);
@@ -519,6 +609,8 @@
             this.panel2.PerformLayout();
             this.gbEndereco.ResumeLayout(false);
             this.gbEndereco.PerformLayout();
+            this.groupLogin.ResumeLayout(false);
+            this.groupLogin.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -527,14 +619,14 @@
         #endregion
 
         private System.Windows.Forms.Panel panel2;
-        private System.Windows.Forms.Label lblLogin;
+        private System.Windows.Forms.Label lblCadastroFuncionario;
         private System.Windows.Forms.Button btnFechar;
+        private System.Windows.Forms.MaskedTextBox TxtCpf;
+        private System.Windows.Forms.Label lblCpf;
         private System.Windows.Forms.Label lblGenero;
         private System.Windows.Forms.ComboBox cboGenero;
-        private System.Windows.Forms.TextBox txtEmail;
         private System.Windows.Forms.TextBox txtBairro;
         private System.Windows.Forms.TextBox txtNome;
-        private System.Windows.Forms.Label lblEmail;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label lblNome;
         private System.Windows.Forms.Label lblNasc;
@@ -560,5 +652,12 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox txtComplemento;
         private System.Windows.Forms.Button btnBuscaCep;
+        private System.Windows.Forms.GroupBox groupLogin;
+        private System.Windows.Forms.Label lblSenha;
+        private System.Windows.Forms.MaskedTextBox maskedTextBox1;
+        private System.Windows.Forms.Label lblSalario;
+        private System.Windows.Forms.Label lblEmail;
+        private System.Windows.Forms.TextBox txtEmail;
+        private System.Windows.Forms.TextBox txtSenhaUser;
     }
 }

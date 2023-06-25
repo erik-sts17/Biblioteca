@@ -1,6 +1,6 @@
 ﻿namespace Desktop_Biblioteca.Entidades.Livro
 {
-    public class Categoria
+    public class Categoria : Base
     {
         public Categoria()
         {
@@ -20,6 +20,5 @@
 
         public int Id { get; set; }
         public string Descricao { get; set; }
-        public bool Ativo { get; set; }
     }
 }

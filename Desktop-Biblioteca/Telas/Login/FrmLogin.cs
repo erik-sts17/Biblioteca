@@ -1,5 +1,8 @@
-﻿using Desktop_Biblioteca.Home;
+﻿using Desktop_Biblioteca.DAO.Funcionario;
+using Desktop_Biblioteca.Home;
 using System;
+using System.Collections.Generic;
+using System.Linq;
 using System.Windows.Forms;
 
 namespace Desktop_Biblioteca.Login
@@ -13,9 +16,19 @@ namespace Desktop_Biblioteca.Login
 
         private void btnEntrar_Click(object sender, EventArgs e)
         {
-            Form1 frmHome = new Form1();
-            frmHome.Show();
-            this.Hide();
+            ValidaDados();
+            var loginDAO = new LoginDAO();
+            var login = new Entidades.Login(txtEmailUser.Text, txtSenhaUser.Text);
+            if (loginDAO.ValidaLogin(login))
+            {
+                Form1 frmHome = new Form1();
+                frmHome.Show();
+                this.Hide();
+            }
+            else
+            {
+                lblErro.Visible = true;
+            }
         }
 
         private void btnLimparUsuario_Click(object sender, EventArgs e)
@@ -35,6 +48,14 @@ namespace Desktop_Biblioteca.Login
                 txtSenhaUser.UseSystemPasswordChar = false;
             else
                 txtSenhaUser.UseSystemPasswordChar = true;
+        }
+
+        private void ValidaDados() 
+        {
+            if (string.IsNullOrEmpty(txtEmailUser.Text) || string.IsNullOrEmpty(txtSenhaUser.Text))
+            {
+                MessageBox.Show("Campos email e senha obrigatórios!");
+            }
         }
     }
 }

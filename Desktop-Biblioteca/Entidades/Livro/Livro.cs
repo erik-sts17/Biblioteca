@@ -2,7 +2,7 @@
 
 namespace Desktop_Biblioteca.Entidades.Livro
 {
-    public class Livro
+    public class Livro : Base
     {
         public Livro()
         {

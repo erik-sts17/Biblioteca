@@ -1,6 +1,7 @@
 ﻿using Desktop_Biblioteca.Cadastro.Autor;
 using Desktop_Biblioteca.DAO.Livro;
 using Desktop_Biblioteca.Entidades.Livro;
+using Desktop_Biblioteca.Livro.Categoria;
 using System;
 using System.Collections.Generic;
 using System.Windows.Forms;
@@ -68,15 +69,15 @@ namespace Desktop_Biblioteca.Consulta
                 return;
             }
 
-            Autor autor = new Autor();
+            Categoria categoria = new Categoria();
             foreach (DataGridViewRow row in dgrCategorias.SelectedRows)
             {
-                autor.Id = Convert.ToInt32(row.Cells[0].Value);
-                autor.Nome = Convert.ToString(row.Cells[1].Value);
+                categoria.Id = Convert.ToInt32(row.Cells[0].Value);
+                categoria.Descricao = Convert.ToString(row.Cells[1].Value);
             }
             this.Close();
-            FrmCadastroAutor frmAutor = new FrmCadastroAutor(autor);
-            frmAutor.Show();
+            FrmCadastroCategoria frmCategoria = new FrmCadastroCategoria(categoria);
+            frmCategoria.Show();
         }
 
         private void BuscarCategorias() 

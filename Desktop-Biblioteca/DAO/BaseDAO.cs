@@ -8,7 +8,7 @@ namespace Desktop_Biblioteca.DAO
 {
     public class BaseDAO
     {
-        private string _connectionString = ConfigurationManager.AppSettings["ConnectionString"];
+        protected string _connectionString = ConfigurationManager.AppSettings["ConnectionString"];
         public void Execute(string sqlQuery, SqlParameter[] parameters = null)
         {
             try
