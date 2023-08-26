@@ -33,8 +33,7 @@ namespace Desktop_Biblioteca.DAO.Livro
         public List<Autor> Buscar()
         {
             string cmdInsert = "SELECT NOME, ID FROM biblioteca.dbo.Autor WHERE ATIVO = 1";
-            string strConexao = "data source=DESKTOP-IBAL138;initial catalog=biblioteca;trusted_connection=true";
-            SqlConnection con = new SqlConnection(strConexao);
+            SqlConnection con = new SqlConnection(_connectionString);
             SqlCommand sqlCommand = new SqlCommand(cmdInsert, con);
             con.Open();
             var reader = sqlCommand.ExecuteReader();

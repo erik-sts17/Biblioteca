@@ -17,8 +17,6 @@ namespace Desktop_Biblioteca.Entidades.Livro
             Imagem = imagem;
             QuantidadeEstoque = quantidadeEstoque;
         }
-
-        public int Id { get; set;}
         public string Titulo { get; set; }
         public int CategoriaId { get; set; }
         public int GeneroId { get; set; }
@@ -26,5 +24,10 @@ namespace Desktop_Biblioteca.Entidades.Livro
         public int Paginas { get; set; }
         public byte[] Imagem { get; set; }
         public int QuantidadeEstoque { get; set; }
+
+        public override string ToString()
+        {
+            return Titulo;
+        }
     }
 }

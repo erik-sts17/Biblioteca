@@ -4,6 +4,10 @@ namespace Desktop_Biblioteca.Entidades
 {
     public class Cliente : Base
     {
+        public Cliente()
+        {
+            
+        }
         public Cliente(string nome, DateTime dataNascimento, string rg, string email, string telefone, Endereco endereco)
         {
             Nome = nome;

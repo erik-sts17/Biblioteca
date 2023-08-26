@@ -1,6 +1,7 @@
 ﻿using Desktop_Biblioteca.Cadastro;
 using Desktop_Biblioteca.Cadastro.Autor;
 using Desktop_Biblioteca.Cadastro.Cliente;
+using Desktop_Biblioteca.Cadastro.Emprestimo;
 using Desktop_Biblioteca.Cadastro.Genero;
 using Desktop_Biblioteca.Consulta;
 using Desktop_Biblioteca.Livro.Categoria;
@@ -173,6 +174,12 @@ namespace Desktop_Biblioteca.Home
                 subMenuFuncionario.Visible = false;
             else
                 subMenuFuncionario.Visible = true;
+        }
+
+        private void btnNovoEmprestimo_Click(object sender, EventArgs e)
+        {
+            FrmNovoEmprestimo frmNovoEmprestimo = new FrmNovoEmprestimo();
+            frmNovoEmprestimo.Show();
         }
     }
 }

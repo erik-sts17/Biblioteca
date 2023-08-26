@@ -1,14 +1,29 @@
 ﻿using Desktop_Biblioteca.DAO.Livro;
 using System;
+using System.Drawing;
 using System.Windows.Forms;
 
 namespace Desktop_Biblioteca.Cadastro.Genero
 {
     public partial class FrmCadastroGenero : Form
     {
-        public FrmCadastroGenero()
+        public FrmCadastroGenero(Entidades.Livro.Genero genero = null)
         {
             InitializeComponent();
+            if (genero != null)
+            {
+                lblGenero.Text = "Edição de Gênero";
+                lblIdValue.Text = genero.Id.ToString();
+                txtGenero.Text = genero.Descricao.ToString();
+                lblId.Visible = true;
+                lblIdValue.Visible = true;
+                lblIdValue.ForeColor = Color.White;
+                btnSalvar.Text = "Editar";
+                btnSalvar.BackColor = Color.Yellow;
+                btnSalvar.ForeColor = Color.Black;
+                lblSucesso.ForeColor = Color.Yellow;
+                lblSucesso.Text = "Dados alterados com sucesso!";
+            }
         }
 
         private void btnFechar_Click(object sender, EventArgs e)
@@ -31,17 +46,35 @@ namespace Desktop_Biblioteca.Cadastro.Genero
             if (ValidaForm())
                 return;
 
-            try
+            Entidades.Livro.Genero genero = new Entidades.Livro.Genero(txtGenero.Text);
+            if (string.IsNullOrEmpty(lblIdValue.Text))
             {
-                Entidades.Livro.Genero genero = new Entidades.Livro.Genero(txtGenero.Text);
-                GeneroDao dao = new GeneroDao();
-                dao.Insert(genero);
-                lblSucesso.Visible = true;
-                btnLimpar_Click(sender, e);
+                try
+                {
+                    GeneroDao dao = new GeneroDao();
+                    dao.Insert(genero);
+                    lblSucesso.Visible = true;
+                    btnLimpar_Click(sender, e);
+                }
+                catch (Exception)
+                {
+                    MessageBox.Show("Erro ao executar operação, tente novamente.");
+                }
             }
-            catch (Exception)
+            else 
             {
-                MessageBox.Show("Erro ao executar operação, tente novamente.");
+                try
+                {
+                    genero.Id = int.Parse(lblIdValue.Text);
+                    GeneroDao dao = new GeneroDao();
+                    dao.Atualizar(genero);
+                    lblSucesso.Visible = true;
+                    btnLimpar_Click(sender, e);
+                }
+                catch (Exception)
+                {
+                    MessageBox.Show("Erro ao executar operação, tente novamente.");
+                }
             }
         }
 

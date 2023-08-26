@@ -48,12 +48,12 @@
             this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
             this.pbxCliente = new System.Windows.Forms.PictureBox();
             this.btnCarregarImagem = new System.Windows.Forms.Button();
-            this.lstAutores = new System.Windows.Forms.ListBox();
             this.lblFoto = new System.Windows.Forms.Label();
             this.lblNasc = new System.Windows.Forms.Label();
             this.txtPaginas = new System.Windows.Forms.TextBox();
             this.txtQuantidade = new System.Windows.Forms.TextBox();
             this.lblquantidade = new System.Windows.Forms.Label();
+            this.checkedAutores = new System.Windows.Forms.CheckedListBox();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbxCliente)).BeginInit();
             this.SuspendLayout();
@@ -282,15 +282,6 @@
             this.btnCarregarImagem.UseVisualStyleBackColor = false;
             this.btnCarregarImagem.Click += new System.EventHandler(this.btnCarregarImagem_Click);
             // 
-            // lstAutores
-            // 
-            this.lstAutores.FormattingEnabled = true;
-            this.lstAutores.Location = new System.Drawing.Point(68, 237);
-            this.lstAutores.Name = "lstAutores";
-            this.lstAutores.SelectionMode = System.Windows.Forms.SelectionMode.MultiSimple;
-            this.lstAutores.Size = new System.Drawing.Size(203, 56);
-            this.lstAutores.TabIndex = 72;
-            // 
             // lblFoto
             // 
             this.lblFoto.AutoSize = true;
@@ -344,16 +335,24 @@
             this.lblquantidade.TabIndex = 74;
             this.lblquantidade.Text = "Quantidade:";
             // 
+            // checkedAutores
+            // 
+            this.checkedAutores.FormattingEnabled = true;
+            this.checkedAutores.Location = new System.Drawing.Point(69, 242);
+            this.checkedAutores.Name = "checkedAutores";
+            this.checkedAutores.Size = new System.Drawing.Size(214, 79);
+            this.checkedAutores.TabIndex = 76;
+            // 
             // FrmCadastroLivro
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(46)))), ((int)(((byte)(59)))));
             this.ClientSize = new System.Drawing.Size(862, 390);
+            this.Controls.Add(this.checkedAutores);
             this.Controls.Add(this.txtQuantidade);
             this.Controls.Add(this.lblquantidade);
             this.Controls.Add(this.lblFoto);
-            this.Controls.Add(this.lstAutores);
             this.Controls.Add(this.btnCarregarImagem);
             this.Controls.Add(this.pbxCliente);
             this.Controls.Add(this.btnAdicionaAutor);
@@ -407,11 +406,11 @@
         private System.Windows.Forms.OpenFileDialog openFileDialog1;
         private System.Windows.Forms.PictureBox pbxCliente;
         private System.Windows.Forms.Button btnCarregarImagem;
-        private System.Windows.Forms.ListBox lstAutores;
         private System.Windows.Forms.Label lblFoto;
         private System.Windows.Forms.Label lblNasc;
         private System.Windows.Forms.TextBox txtPaginas;
         private System.Windows.Forms.TextBox txtQuantidade;
         private System.Windows.Forms.Label lblquantidade;
+        private System.Windows.Forms.CheckedListBox checkedAutores;
     }
 }

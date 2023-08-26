@@ -1,4 +1,7 @@
-﻿using System.Data.SqlClient;
+﻿using Desktop_Biblioteca.Entidades.Livro;
+using System;
+using System.Collections.Generic;
+using System.Data.SqlClient;
 
 namespace Desktop_Biblioteca.DAO.Cliente
 {
@@ -29,6 +32,31 @@ namespace Desktop_Biblioteca.DAO.Cliente
                            "VALUES (@Nome, @DataNascimento, @Rg, @Email, @Telefone, @EnderecoId, @AtivoCli)";
 
             Execute(query, parameters);
+        }
+
+        public Entidades.Cliente BuscarPorEmail(string email) 
+        {
+            string query = "SELECT * FROM Cliente WHERE Email = @Email AND ATIVO = 1";
+            SqlConnection con = new SqlConnection(_connectionString);
+            SqlCommand sqlCommand = new SqlCommand(query, con);
+            sqlCommand.Parameters.AddWithValue("@Email", email);
+            con.Open();
+            var reader = sqlCommand.ExecuteReader();
+            Entidades.Cliente cliente = null;
+            while (reader.Read())
+            {
+                cliente = new Entidades.Cliente() 
+                {
+                    Id = (int)reader["Id"],
+                    Nome = (string)reader["Nome"],
+                    DataNascimento = (DateTime)reader["DataNascimento"],
+                    Rg = (string)reader["Rg"],
+                    Email = (string)reader["Email"],
+                    Telefone = (string)reader["Telefone"],
+                };
+            }
+            con.Close();
+            return cliente;
         }
     }
 }

@@ -1,6 +1,4 @@
-﻿using Desktop_Biblioteca.Entidades;
-using System.Data.SqlClient;
-using static System.Windows.Forms.VisualStyles.VisualStyleElement.ListView;
+﻿using System.Data.SqlClient;
 
 namespace Desktop_Biblioteca.DAO.Funcionario
 {

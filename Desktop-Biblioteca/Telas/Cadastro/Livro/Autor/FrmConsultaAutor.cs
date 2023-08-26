@@ -31,7 +31,7 @@ namespace Desktop_Biblioteca.Consulta
             List<int> ids = new List<int>();
             foreach (DataGridViewRow row in dgrAutores.SelectedRows)
             {
-                int id = Convert.ToInt32(row.Cells[0].Value);
+                int id = Convert.ToInt32(row.Cells[1].Value);
                 ids.Add(id);
             }
             AutorDao dao = new AutorDao();
@@ -71,8 +71,8 @@ namespace Desktop_Biblioteca.Consulta
             Autor autor = new Autor();
             foreach (DataGridViewRow row in dgrAutores.SelectedRows)
             {
-                autor.Id = Convert.ToInt32(row.Cells[0].Value);
-                autor.Nome = Convert.ToString(row.Cells[1].Value);
+                autor.Id = Convert.ToInt32(row.Cells[1].Value);
+                autor.Nome = Convert.ToString(row.Cells[0].Value);
             }
             this.Close();
             FrmCadastroAutor frmAutor = new FrmCadastroAutor(autor);

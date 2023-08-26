@@ -1,8 +1,6 @@
 ﻿using Desktop_Biblioteca.DAO.Funcionario;
 using Desktop_Biblioteca.Home;
 using System;
-using System.Collections.Generic;
-using System.Linq;
 using System.Windows.Forms;
 
 namespace Desktop_Biblioteca.Login
@@ -50,7 +48,7 @@ namespace Desktop_Biblioteca.Login
                 txtSenhaUser.UseSystemPasswordChar = true;
         }
 
-        private void ValidaDados() 
+        private void ValidaDados()
         {
             if (string.IsNullOrEmpty(txtEmailUser.Text) || string.IsNullOrEmpty(txtSenhaUser.Text))
             {

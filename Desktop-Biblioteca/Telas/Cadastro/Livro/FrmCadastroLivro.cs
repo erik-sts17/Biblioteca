@@ -1,7 +1,6 @@
 ﻿using System;
 using System.Windows.Forms;
 using Desktop_Biblioteca.DAO.Livro;
-using System.Linq;
 using System.Collections.Generic;
 using Desktop_Biblioteca.Livro.Categoria;
 using Desktop_Biblioteca.Cadastro.Genero;
@@ -27,9 +26,12 @@ namespace Desktop_Biblioteca.Cadastro
         {
             txtNome.Clear();
             txtPaginas.Clear();
-            lstAutores.ClearSelected();
             cbxCategoria.SelectedIndex = -1;
             cbxGenero.SelectedIndex = -1;
+            for (int i = 0; i < checkedAutores.Items.Count; i++)
+            {
+                checkedAutores.SetItemChecked(i, false);
+            }
         }
 
         private void btnFechar_Click(object sender, EventArgs e)
@@ -39,23 +41,24 @@ namespace Desktop_Biblioteca.Cadastro
 
         private void btnEntrar_Click(object sender, EventArgs e)
         {
-            if (!ValidaForm())
+            if (ValidaForm())
                 return;
 
-            var categoriaId = Categorias.Where(y => y.Descricao == cbxCategoria.SelectedItem.ToString()).Select(y => y.Id).FirstOrDefault();
-            var generoId = Generos.Where(y => y.Descricao == cbxGenero.SelectedItem.ToString()).Select(y => y.Id).FirstOrDefault();
+            var categoria = (Entidades.Livro.Categoria)cbxCategoria.SelectedItem;
+            var genero = (Entidades.Livro.Genero)cbxGenero.SelectedItem;
 
-            List<string> nomesSelecionados = lstAutores.SelectedItems.Cast<string>().ToList();
-            List<int> autoresSelecionados = Autores
-                .Where(a => nomesSelecionados.Contains(a.Nome))
-                .Select(a => a.Id)
-                .ToList();
+            List<int> autoresSelecionados = new List<int>();
+
+            foreach (Entidades.Livro.Autor autorSelecionado in checkedAutores.CheckedItems)
+            {
+                autoresSelecionados.Add(autorSelecionado.Id);
+            }
 
             byte[] imageBytes = null;
             if (NomeImagem != null)
                 imageBytes = File.ReadAllBytes(NomeImagem);
-            
-            Entidades.Livro.Livro livro = new Entidades.Livro.Livro(txtNome.Text, categoriaId, generoId, Convert.ToInt32(txtPaginas.Text), imageBytes, int.Parse(txtQuantidade.Text));
+
+            Entidades.Livro.Livro livro = new Entidades.Livro.Livro(txtNome.Text, categoria.Id, genero.Id, Convert.ToInt32(txtPaginas.Text), imageBytes, int.Parse(txtQuantidade.Text));
             try
             {
                 LivroDao dao = new LivroDao();
@@ -77,24 +80,24 @@ namespace Desktop_Biblioteca.Cadastro
             var autores = autorDao.Buscar();
             var generos = generoDao.Buscar();
             var categorias = categoriaDao.Buscar();
-            this.Autores = autores;
-            this.Generos = generos;
-            this.Categorias = categorias;
-            foreach (var autor in autores.Select(x => x.Nome).ToList())
+            Autores = autores;
+            Generos = generos;
+            Categorias = categorias;
+            foreach (var autor in autores)
             {
-                lstAutores.Items.Add(autor);
+                checkedAutores.Items.Add(autor, false);
             }
-            foreach (var genero in generos.Select(x => x.Descricao).ToList())
+            foreach (var genero in generos)
             {
                 cbxGenero.Items.Add(genero);
             }
-            foreach (var categoria in categorias.Select(x => x.Descricao).ToList())
+            foreach (var categoria in categorias)
             {
                 cbxCategoria.Items.Add(categoria);
             }
-            if (this.Autores == null || this.Autores.Count == 0)
+            if (Autores == null || this.Autores.Count == 0)
             {
-                lstAutores.Visible = false;
+                checkedAutores.Visible = false;
                 btnAdicionaAutor.Visible = true;
             }
 
@@ -113,12 +116,34 @@ namespace Desktop_Biblioteca.Cadastro
 
         private bool ValidaForm()
         {
-            if (String.IsNullOrEmpty(txtNome.Text) || String.IsNullOrEmpty(txtPaginas.Text))
+            string mensagem = "";
+            List<string> erros = new List<string>();
+
+            if (string.IsNullOrEmpty(txtNome.Text) || string.IsNullOrEmpty(txtPaginas.Text))
+                erros.Add("Campos com '*' são obrigatórios!");
+             
+            if (cbxGenero.SelectedIndex == -1)
+                erros.Add("Selecione um Genero");
+
+
+            if (cbxCategoria.SelectedIndex == -1)
+                erros.Add("Selecione uma Categoria");
+
+            var autores = checkedAutores.CheckedItems;
+            if (autores.Count == 0)
+                erros.Add("Selecione um Autor");
+               
+            if (erros.Count > 0)
             {
-                MessageBox.Show("Campos obrigatórios");
-                return false;
+                foreach (var erro in erros)
+                {
+                    mensagem += "- " + erro + "\n";
+                }
+                MessageBox.Show(mensagem);
+                return true;
             }
-            return true;
+
+            return false;
         }
 
 

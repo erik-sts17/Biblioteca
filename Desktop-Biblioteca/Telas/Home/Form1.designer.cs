@@ -32,6 +32,7 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.panel1 = new System.Windows.Forms.Panel();
             this.lblLogin = new System.Windows.Forms.Label();
+            this.btnFechar = new System.Windows.Forms.Button();
             this.lblDataAtual = new System.Windows.Forms.Label();
             this.subMenuLivroCadastro = new System.Windows.Forms.Panel();
             this.panel9 = new System.Windows.Forms.Panel();
@@ -63,7 +64,8 @@
             this.panel32 = new System.Windows.Forms.Panel();
             this.button9 = new System.Windows.Forms.Button();
             this.panel33 = new System.Windows.Forms.Panel();
-            this.button14 = new System.Windows.Forms.Button();
+            this.btnNovoEmprestimo = new System.Windows.Forms.Button();
+            this.btnEmprestimo = new System.Windows.Forms.Button();
             this.submenuCliente = new System.Windows.Forms.Panel();
             this.panel4 = new System.Windows.Forms.Panel();
             this.btnConsultaCliente = new System.Windows.Forms.Button();
@@ -81,11 +83,9 @@
             this.panel8 = new System.Windows.Forms.Panel();
             this.btnCadstroFuncionario = new System.Windows.Forms.Button();
             this.panelMenu = new System.Windows.Forms.Panel();
-            this.btnEmprestimo = new System.Windows.Forms.Button();
             this.btnFuncionario = new System.Windows.Forms.Button();
             this.btnLivros = new System.Windows.Forms.Button();
             this.btnClientes = new System.Windows.Forms.Button();
-            this.btnFechar = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.subMenuLivroCadastro.SuspendLayout();
             this.panel9.SuspendLayout();
@@ -126,6 +126,21 @@
             this.lblLogin.Size = new System.Drawing.Size(151, 30);
             this.lblLogin.TabIndex = 4;
             this.lblLogin.Text = "Além do Livro";
+            // 
+            // btnFechar
+            // 
+            this.btnFechar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnFechar.FlatAppearance.BorderSize = 0;
+            this.btnFechar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.btnFechar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Red;
+            this.btnFechar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnFechar.Image = ((System.Drawing.Image)(resources.GetObject("btnFechar.Image")));
+            this.btnFechar.Location = new System.Drawing.Point(970, 0);
+            this.btnFechar.Name = "btnFechar";
+            this.btnFechar.Size = new System.Drawing.Size(55, 56);
+            this.btnFechar.TabIndex = 1;
+            this.btnFechar.UseVisualStyleBackColor = true;
+            this.btnFechar.Click += new System.EventHandler(this.btnFechar_Click);
             // 
             // lblDataAtual
             // 
@@ -464,7 +479,7 @@
             this.subMenuEmprestimo.Controls.Add(this.panel32);
             this.subMenuEmprestimo.Controls.Add(this.button9);
             this.subMenuEmprestimo.Controls.Add(this.panel33);
-            this.subMenuEmprestimo.Controls.Add(this.button14);
+            this.subMenuEmprestimo.Controls.Add(this.btnNovoEmprestimo);
             this.subMenuEmprestimo.Location = new System.Drawing.Point(16, 85);
             this.subMenuEmprestimo.Margin = new System.Windows.Forms.Padding(2);
             this.subMenuEmprestimo.Name = "subMenuEmprestimo";
@@ -491,7 +506,7 @@
             this.button9.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.button9.Location = new System.Drawing.Point(6, 46);
             this.button9.Name = "button9";
-            this.button9.Size = new System.Drawing.Size(154, 41);
+            this.button9.Size = new System.Drawing.Size(144, 41);
             this.button9.TabIndex = 5;
             this.button9.Text = "  Consulta\r\n";
             this.button9.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -506,21 +521,39 @@
             this.panel33.Size = new System.Drawing.Size(8, 41);
             this.panel33.TabIndex = 0;
             // 
-            // button14
+            // btnNovoEmprestimo
             // 
-            this.button14.FlatAppearance.BorderSize = 0;
-            this.button14.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Goldenrod;
-            this.button14.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button14.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button14.ForeColor = System.Drawing.Color.White;
-            this.button14.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button14.Location = new System.Drawing.Point(6, 0);
-            this.button14.Name = "button14";
-            this.button14.Size = new System.Drawing.Size(154, 41);
-            this.button14.TabIndex = 3;
-            this.button14.Text = " Cadastro";
-            this.button14.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button14.UseVisualStyleBackColor = true;
+            this.btnNovoEmprestimo.FlatAppearance.BorderSize = 0;
+            this.btnNovoEmprestimo.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Goldenrod;
+            this.btnNovoEmprestimo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnNovoEmprestimo.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnNovoEmprestimo.ForeColor = System.Drawing.Color.White;
+            this.btnNovoEmprestimo.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnNovoEmprestimo.Location = new System.Drawing.Point(6, 0);
+            this.btnNovoEmprestimo.Name = "btnNovoEmprestimo";
+            this.btnNovoEmprestimo.Size = new System.Drawing.Size(144, 41);
+            this.btnNovoEmprestimo.TabIndex = 3;
+            this.btnNovoEmprestimo.Text = " Cadastro";
+            this.btnNovoEmprestimo.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnNovoEmprestimo.UseVisualStyleBackColor = true;
+            this.btnNovoEmprestimo.Click += new System.EventHandler(this.btnNovoEmprestimo_Click);
+            // 
+            // btnEmprestimo
+            // 
+            this.btnEmprestimo.FlatAppearance.BorderSize = 0;
+            this.btnEmprestimo.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Goldenrod;
+            this.btnEmprestimo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnEmprestimo.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnEmprestimo.ForeColor = System.Drawing.Color.White;
+            this.btnEmprestimo.Image = ((System.Drawing.Image)(resources.GetObject("btnEmprestimo.Image")));
+            this.btnEmprestimo.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnEmprestimo.Location = new System.Drawing.Point(3, 15);
+            this.btnEmprestimo.Name = "btnEmprestimo";
+            this.btnEmprestimo.Size = new System.Drawing.Size(173, 66);
+            this.btnEmprestimo.TabIndex = 5;
+            this.btnEmprestimo.Text = "              Empréstimo";
+            this.btnEmprestimo.UseVisualStyleBackColor = true;
+            this.btnEmprestimo.Click += new System.EventHandler(this.btnEmprestimo_Click);
             // 
             // submenuCliente
             // 
@@ -742,23 +775,6 @@
             this.panelMenu.TabIndex = 4;
             this.panelMenu.Paint += new System.Windows.Forms.PaintEventHandler(this.panelMenu_Paint);
             // 
-            // btnEmprestimo
-            // 
-            this.btnEmprestimo.FlatAppearance.BorderSize = 0;
-            this.btnEmprestimo.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Goldenrod;
-            this.btnEmprestimo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnEmprestimo.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnEmprestimo.ForeColor = System.Drawing.Color.White;
-            this.btnEmprestimo.Image = ((System.Drawing.Image)(resources.GetObject("btnEmprestimo.Image")));
-            this.btnEmprestimo.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnEmprestimo.Location = new System.Drawing.Point(3, 15);
-            this.btnEmprestimo.Name = "btnEmprestimo";
-            this.btnEmprestimo.Size = new System.Drawing.Size(173, 66);
-            this.btnEmprestimo.TabIndex = 5;
-            this.btnEmprestimo.Text = "              Empréstimo";
-            this.btnEmprestimo.UseVisualStyleBackColor = true;
-            this.btnEmprestimo.Click += new System.EventHandler(this.btnEmprestimo_Click);
-            // 
             // btnFuncionario
             // 
             this.btnFuncionario.FlatAppearance.BorderSize = 0;
@@ -809,21 +825,6 @@
             this.btnClientes.Text = "             Clientes";
             this.btnClientes.UseVisualStyleBackColor = true;
             this.btnClientes.Click += new System.EventHandler(this.btnCadastroFuncionario_Click);
-            // 
-            // btnFechar
-            // 
-            this.btnFechar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnFechar.FlatAppearance.BorderSize = 0;
-            this.btnFechar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.btnFechar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Red;
-            this.btnFechar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnFechar.Image = ((System.Drawing.Image)(resources.GetObject("btnFechar.Image")));
-            this.btnFechar.Location = new System.Drawing.Point(970, 0);
-            this.btnFechar.Name = "btnFechar";
-            this.btnFechar.Size = new System.Drawing.Size(55, 56);
-            this.btnFechar.TabIndex = 1;
-            this.btnFechar.UseVisualStyleBackColor = true;
-            this.btnFechar.Click += new System.EventHandler(this.btnFechar_Click);
             // 
             // Form1
             // 
@@ -896,7 +897,7 @@
         private System.Windows.Forms.Panel panel32;
         private System.Windows.Forms.Button button9;
         private System.Windows.Forms.Panel panel33;
-        private System.Windows.Forms.Button button14;
+        private System.Windows.Forms.Button btnNovoEmprestimo;
         private System.Windows.Forms.Button btnEmprestimo;
         private System.Windows.Forms.Button btnClientes;
         private System.Windows.Forms.Button btnLivros;

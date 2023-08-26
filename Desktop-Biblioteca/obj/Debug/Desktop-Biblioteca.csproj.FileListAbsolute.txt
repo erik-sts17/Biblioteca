@@ -181,3 +181,4 @@ C:\Users\Erik\Documents\WindowsForms\novo\Biblioteca\Desktop-Biblioteca\obj\Debu
 C:\Users\Erik\Documents\WindowsForms\novo\Biblioteca\Desktop-Biblioteca\obj\Debug\Desktop-Biblioteca.exe
 C:\Users\Erik\Documents\WindowsForms\novo\Biblioteca\Desktop-Biblioteca\obj\Debug\Desktop-Biblioteca.pdb
 C:\Users\Erik\Documents\WindowsForms\novo\Biblioteca\Desktop-Biblioteca\obj\Debug\Desktop_Biblioteca.Cadastro.Cliente.FrmCadastroFuncionario.resources
+C:\Users\Erik\Documents\WindowsForms\novo\Biblioteca\Desktop-Biblioteca\obj\Debug\Desktop_Biblioteca.Cadastro.Emprestimo.FrmNovoEmprestimo.resources

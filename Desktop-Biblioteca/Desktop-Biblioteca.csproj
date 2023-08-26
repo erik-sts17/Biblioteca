@@ -185,10 +185,14 @@
     <Compile Include="Client\Models\ResponseModel.cs" />
     <Compile Include="DAO\BaseDAO.cs" />
     <Compile Include="DAO\Cliente\ClienteDao.cs" />
+    <Compile Include="DAO\Emprestimo\EmprestimoDAO.cs" />
+    <Compile Include="DAO\Emprestimo\TipoOperacao.cs" />
     <Compile Include="DAO\Funcionario\FuncionarioDAO.cs" />
     <Compile Include="DAO\Funcionario\LoginDAO.cs" />
     <Compile Include="Entidades\Base.cs" />
     <Compile Include="Entidades\Cliente.cs" />
+    <Compile Include="Entidades\Emprestimo\Emprestimo.cs" />
+    <Compile Include="Entidades\Emprestimo\EmprestimoLivro.cs" />
     <Compile Include="Entidades\Endereco.cs" />
     <Compile Include="Client\BaseClient.cs" />
     <Compile Include="Entidades\Funcionario.cs" />
@@ -260,6 +264,12 @@
     <Compile Include="Telas\Cadastro\Livro\Autor\FrmConsultaAutor.designer.cs">
       <DependentUpon>FrmConsultaAutor.cs</DependentUpon>
     </Compile>
+    <Compile Include="Telas\Emprestimo\FrmNovoEmprestimo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Telas\Emprestimo\FrmNovoEmprestimo.designer.cs">
+      <DependentUpon>FrmNovoEmprestimo.cs</DependentUpon>
+    </Compile>
     <Compile Include="Telas\Home\Form1.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -300,6 +310,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Telas\Cadastro\Livro\Autor\FrmConsultaAutor.resx">
       <DependentUpon>FrmConsultaAutor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Telas\Emprestimo\FrmNovoEmprestimo.resx">
+      <DependentUpon>FrmNovoEmprestimo.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Telas\Home\Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>

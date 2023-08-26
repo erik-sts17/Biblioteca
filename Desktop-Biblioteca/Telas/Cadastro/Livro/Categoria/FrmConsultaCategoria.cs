@@ -32,7 +32,7 @@ namespace Desktop_Biblioteca.Consulta
             List<int> ids = new List<int>();
             foreach (DataGridViewRow row in dgrCategorias.SelectedRows)
             {
-                int id = Convert.ToInt32(row.Cells[0].Value);
+                int id = Convert.ToInt32(row.Cells[1].Value);
                 ids.Add(id);
             }
             CategoriaDao dao = new CategoriaDao();
@@ -72,7 +72,7 @@ namespace Desktop_Biblioteca.Consulta
             Categoria categoria = new Categoria();
             foreach (DataGridViewRow row in dgrCategorias.SelectedRows)
             {
-                categoria.Id = Convert.ToInt32(row.Cells[0].Value);
+                categoria.Id = Convert.ToInt32(row.Cells[1].Value);
                 categoria.Descricao = Convert.ToString(row.Cells[1].Value);
             }
             this.Close();

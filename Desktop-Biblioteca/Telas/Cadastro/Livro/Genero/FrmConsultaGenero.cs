@@ -1,4 +1,5 @@
 ﻿using Desktop_Biblioteca.Cadastro.Autor;
+using Desktop_Biblioteca.Cadastro.Genero;
 using Desktop_Biblioteca.DAO.Livro;
 using Desktop_Biblioteca.Entidades.Livro;
 using System;
@@ -31,7 +32,7 @@ namespace Desktop_Biblioteca.Consulta
             List<int> ids = new List<int>();
             foreach (DataGridViewRow row in dgrGeneros.SelectedRows)
             {
-                int id = Convert.ToInt32(row.Cells[0].Value);
+                int id = Convert.ToInt32(row.Cells[1].Value);
                 ids.Add(id);
             }
             CategoriaDao dao = new CategoriaDao();
@@ -68,15 +69,15 @@ namespace Desktop_Biblioteca.Consulta
                 return;
             }
 
-            Autor autor = new Autor();
+            Genero genero = new Genero();
             foreach (DataGridViewRow row in dgrGeneros.SelectedRows)
             {
-                autor.Id = Convert.ToInt32(row.Cells[0].Value);
-                autor.Nome = Convert.ToString(row.Cells[1].Value);
+                genero.Id = Convert.ToInt32(row.Cells[1].Value);
+                genero.Descricao = Convert.ToString(row.Cells[0].Value);
             }
             this.Close();
-            FrmCadastroAutor frmAutor = new FrmCadastroAutor(autor);
-            frmAutor.Show();
+            FrmCadastroGenero frmGenero = new FrmCadastroGenero(genero);
+            frmGenero.Show();
         }
 
         private void BuscarGeneros() 
