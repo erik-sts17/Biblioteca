@@ -19,7 +19,9 @@ namespace Desktop_Biblioteca.Entidades.Livro
         }
         public string Titulo { get; set; }
         public int CategoriaId { get; set; }
+        public Categoria Categoria { get; set; }
         public int GeneroId { get; set; }
+        public Genero Genero { get; set; }
         public List<int> AutoresId { get; set; }
         public int Paginas { get; set; }
         public byte[] Imagem { get; set; }

@@ -41,12 +41,29 @@ namespace Desktop_Biblioteca.DAO.Livro
             while (reader.Read())
             {
                 Autor autor = new Autor();
-                autor.Nome = reader[0].ToString();
+                autor.Nome = reader.GetString(reader.GetOrdinal("Nome"));
                 autor.Id = reader.GetInt32(reader.GetOrdinal("ID"));
                 autores.Add(autor);
             }
             con.Close();
             return autores;
+        }
+
+        public List<int> BuscarAutoresPorLivro(int livroId)
+        {
+            string cmdInsert = "SELECT AutorId AS ID FROM AUTORESLIVROS where LivroId = @LivroId";
+            SqlConnection con = new SqlConnection(_connectionString);
+            SqlCommand sqlCommand = new SqlCommand(cmdInsert, con);
+            sqlCommand.Parameters.Add(new SqlParameter("@LivroId", livroId));
+            con.Open();
+            var reader = sqlCommand.ExecuteReader();
+            List<int> autoresIds = new List<int>();
+            while (reader.Read())
+            {
+                autoresIds.Add(reader.GetInt32(reader.GetOrdinal("ID")));
+            }
+            con.Close();
+            return autoresIds;
         }
     }
 }

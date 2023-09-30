@@ -42,7 +42,7 @@ namespace Desktop_Biblioteca.Livro.Categoria
                 return;
 
             CategoriaDao dao = new CategoriaDao();
-            if (!String.IsNullOrEmpty(lblIdValue.Text))
+            if (!string.IsNullOrEmpty(lblIdValue.Text))
             {
                 try
                 {
@@ -56,17 +56,19 @@ namespace Desktop_Biblioteca.Livro.Categoria
                     MessageBox.Show("Erro ao executar operação, tente novamente.");
                 }
             }
-
-            try
+            else
             {
-                Entidades.Livro.Categoria categoria = new Entidades.Livro.Categoria(txtCategoria.Text);
-                dao.Insert(categoria);
-                lblSucesso.Visible = true;
-                btnLimpar_Click(sender, e);
-            }
-            catch (Exception)
-            {
-                MessageBox.Show("Erro ao executar operação, tente novamente.");
+                try
+                {
+                    Entidades.Livro.Categoria categoria = new Entidades.Livro.Categoria(txtCategoria.Text);
+                    dao.Inserir(categoria);
+                    lblSucesso.Visible = true;
+                    btnLimpar_Click(sender, e);
+                }
+                catch (Exception)
+                {
+                    MessageBox.Show("Erro ao executar operação, tente novamente.");
+                }
             }
         }
 

@@ -6,7 +6,7 @@ namespace Desktop_Biblioteca.DAO.Livro
 {
     public class GeneroDao : BaseDAO
     {
-        public void Insert(Genero genero)
+        public void Inserir(Genero genero)
         {
             string cmdInsert = "INSERT INTO Genero (DESCRICAO, ATIVO) VALUES (@Descricao, @Ativo)";
             SqlParameter[] parameters =
@@ -40,7 +40,7 @@ namespace Desktop_Biblioteca.DAO.Livro
             while (reader.Read())
             {
                 Genero genero = new Genero();
-                genero.Descricao = reader[0].ToString();
+                genero.Descricao = reader.GetString(reader.GetOrdinal("Descricao"));
                 genero.Id = reader.GetInt32(reader.GetOrdinal("ID"));
                 generos.Add(genero);
             }

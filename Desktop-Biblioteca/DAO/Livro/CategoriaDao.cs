@@ -6,7 +6,7 @@ namespace Desktop_Biblioteca.DAO.Livro
 {
     public class CategoriaDao : BaseDAO
     {
-        public void Insert(Categoria categoria)
+        public void Inserir(Categoria categoria)
         {
             string cmdInsert = "INSERT INTO Categoria (DESCRICAO, ATIVO) VALUES (@Descricao, @Ativo)";
             SqlParameter[] parameters =
@@ -40,7 +40,7 @@ namespace Desktop_Biblioteca.DAO.Livro
             while (reader.Read())
             {
                 Categoria categoria = new Categoria();
-                categoria.Descricao = reader[0].ToString();
+                categoria.Descricao = reader.GetString(reader.GetOrdinal("Descricao"));
                 categoria.Id = reader.GetInt32(reader.GetOrdinal("ID"));
                 categorias.Add(categoria);
             }

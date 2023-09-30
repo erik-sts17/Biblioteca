@@ -22,30 +22,33 @@ namespace Desktop_Biblioteca.Consulta
 
         private void btnLimpar_Click(object sender, EventArgs e)
         {
-            int linhas = dgrAutores.SelectedRows.Count;
-            if (linhas < 1)
+            var resultado = MessageBox.Show("Tem certeza que deseja excluir este registro?", "Confirmação", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            if (resultado == DialogResult.Yes)
             {
-                MessageBox.Show("Selecione pelo menos um registro para apagar.");
-                return;
+                int linhas = dgrAutores.SelectedRows.Count;
+                if (linhas < 1)
+                {
+                    MessageBox.Show("Selecione pelo menos um registro para apagar.");
+                    return;
+                }
+                List<int> ids = new List<int>();
+                foreach (DataGridViewRow row in dgrAutores.SelectedRows)
+                {
+                    int id = Convert.ToInt32(row.Cells["Id"].Value);
+                    ids.Add(id);
+                }
+                AutorDao dao = new AutorDao();
+                try
+                {
+                    dao.Excluir("AUTOR", ids);
+                    MessageBox.Show("Dados apagados com sucesso.");
+                    BuscarAutores();
+                }
+                catch (Exception)
+                {
+                    MessageBox.Show("Erro ao apagar registros.");
+                }
             }
-            List<int> ids = new List<int>();
-            foreach (DataGridViewRow row in dgrAutores.SelectedRows)
-            {
-                int id = Convert.ToInt32(row.Cells[1].Value);
-                ids.Add(id);
-            }
-            AutorDao dao = new AutorDao();
-            try
-            {
-                dao.Excluir("AUTOR", ids);
-                MessageBox.Show("Dados apagados com sucesso.");
-                BuscarAutores();
-            }
-            catch (Exception)
-            {
-                MessageBox.Show("Erro ao apagar registros.");
-            }
-
         }
 
         private void btnSalvar_Click(object sender, EventArgs e)
@@ -71,8 +74,8 @@ namespace Desktop_Biblioteca.Consulta
             Autor autor = new Autor();
             foreach (DataGridViewRow row in dgrAutores.SelectedRows)
             {
-                autor.Id = Convert.ToInt32(row.Cells[1].Value);
-                autor.Nome = Convert.ToString(row.Cells[0].Value);
+                autor.Id = Convert.ToInt32(row.Cells["Id"].Value);
+                autor.Nome = Convert.ToString(row.Cells["Nome"].Value);
             }
             this.Close();
             FrmCadastroAutor frmAutor = new FrmCadastroAutor(autor);

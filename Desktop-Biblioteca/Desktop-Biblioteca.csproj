@@ -185,17 +185,24 @@
     <Compile Include="Client\Models\ResponseModel.cs" />
     <Compile Include="DAO\BaseDAO.cs" />
     <Compile Include="DAO\Cliente\ClienteDao.cs" />
+    <Compile Include="DAO\Devolucao\DevolucaoDAO.cs" />
     <Compile Include="DAO\Emprestimo\EmprestimoDAO.cs" />
     <Compile Include="DAO\Emprestimo\TipoOperacao.cs" />
+    <Compile Include="DAO\Endereco\EnderecoDao.cs" />
     <Compile Include="DAO\Funcionario\FuncionarioDAO.cs" />
     <Compile Include="DAO\Funcionario\LoginDAO.cs" />
     <Compile Include="Entidades\Base.cs" />
     <Compile Include="Entidades\Cliente.cs" />
+    <Compile Include="Entidades\Emprestimo\Devolucao.cs" />
     <Compile Include="Entidades\Emprestimo\Emprestimo.cs" />
+    <Compile Include="Entidades\Emprestimo\EmprestimoDTO.cs" />
     <Compile Include="Entidades\Emprestimo\EmprestimoLivro.cs" />
+    <Compile Include="Entidades\Emprestimo\Filtro.cs" />
+    <Compile Include="Entidades\Emprestimo\Status.cs" />
     <Compile Include="Entidades\Endereco.cs" />
     <Compile Include="Client\BaseClient.cs" />
     <Compile Include="Entidades\Funcionario.cs" />
+    <Compile Include="Entidades\Livro\Filtro.cs" />
     <Compile Include="Entidades\Login.cs" />
     <Compile Include="Properties\Resources1.Designer.cs">
       <AutoGen>True</AutoGen>
@@ -208,11 +215,23 @@
     <Compile Include="Telas\Cadastro\Cliente\FrmCadastroCliente.designer.cs">
       <DependentUpon>FrmCadastroCliente.cs</DependentUpon>
     </Compile>
+    <Compile Include="Telas\Cadastro\Cliente\FrmConsultaCliente.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Telas\Cadastro\Cliente\FrmConsultaCliente.designer.cs">
+      <DependentUpon>FrmConsultaCliente.cs</DependentUpon>
+    </Compile>
     <Compile Include="Telas\Cadastro\Funcionario\FrmCadastroFuncionario.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Telas\Cadastro\Funcionario\FrmCadastroFuncionario.designer.cs">
       <DependentUpon>FrmCadastroFuncionario.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Telas\Cadastro\Funcionario\FrmConsultaFuncionario.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Telas\Cadastro\Funcionario\FrmConsultaFuncionario.designer.cs">
+      <DependentUpon>FrmConsultaFuncionario.cs</DependentUpon>
     </Compile>
     <Compile Include="Telas\Cadastro\Livro\Autor\FrmCadastroAutor.cs">
       <SubType>Form</SubType>
@@ -237,6 +256,12 @@
     </Compile>
     <Compile Include="Telas\Cadastro\Livro\FrmCadastroLivro.designer.cs">
       <DependentUpon>FrmCadastroLivro.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Telas\Cadastro\Livro\FrmConsultaLivro.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Telas\Cadastro\Livro\FrmConsultaLivro.designer.cs">
+      <DependentUpon>FrmConsultaLivro.cs</DependentUpon>
     </Compile>
     <Compile Include="Telas\Cadastro\Livro\Genero\FrmConsultaGenero.cs">
       <SubType>Form</SubType>
@@ -264,6 +289,12 @@
     <Compile Include="Telas\Cadastro\Livro\Autor\FrmConsultaAutor.designer.cs">
       <DependentUpon>FrmConsultaAutor.cs</DependentUpon>
     </Compile>
+    <Compile Include="Telas\Emprestimo\FrmConsultaEmprestimo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Telas\Emprestimo\FrmConsultaEmprestimo.designer.cs">
+      <DependentUpon>FrmConsultaEmprestimo.cs</DependentUpon>
+    </Compile>
     <Compile Include="Telas\Emprestimo\FrmNovoEmprestimo.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -276,6 +307,12 @@
     <Compile Include="Telas\Home\Form1.designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
+    <Compile Include="Telas\Login\FrmAlterarSenha.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Telas\Login\FrmAlterarSenha.designer.cs">
+      <DependentUpon>FrmAlterarSenha.cs</DependentUpon>
+    </Compile>
     <Compile Include="Telas\Login\FrmLogin.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -287,8 +324,14 @@
     <EmbeddedResource Include="Telas\Cadastro\Cliente\FrmCadastroCliente.resx">
       <DependentUpon>FrmCadastroCliente.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Telas\Cadastro\Cliente\FrmConsultaCliente.resx">
+      <DependentUpon>FrmConsultaCliente.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Telas\Cadastro\Funcionario\FrmCadastroFuncionario.resx">
       <DependentUpon>FrmCadastroFuncionario.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Telas\Cadastro\Funcionario\FrmConsultaFuncionario.resx">
+      <DependentUpon>FrmConsultaFuncionario.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Telas\Cadastro\Livro\Autor\FrmCadastroAutor.resx">
       <DependentUpon>FrmCadastroAutor.cs</DependentUpon>
@@ -302,6 +345,9 @@
     <EmbeddedResource Include="Telas\Cadastro\Livro\FrmCadastroLivro.resx">
       <DependentUpon>FrmCadastroLivro.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Telas\Cadastro\Livro\FrmConsultaLivro.resx">
+      <DependentUpon>FrmConsultaLivro.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Telas\Cadastro\Livro\Genero\FrmConsultaGenero.resx">
       <DependentUpon>FrmConsultaGenero.cs</DependentUpon>
     </EmbeddedResource>
@@ -311,11 +357,17 @@
     <EmbeddedResource Include="Telas\Cadastro\Livro\Autor\FrmConsultaAutor.resx">
       <DependentUpon>FrmConsultaAutor.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Telas\Emprestimo\FrmConsultaEmprestimo.resx">
+      <DependentUpon>FrmConsultaEmprestimo.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Telas\Emprestimo\FrmNovoEmprestimo.resx">
       <DependentUpon>FrmNovoEmprestimo.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Telas\Home\Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Telas\Login\FrmAlterarSenha.resx">
+      <DependentUpon>FrmAlterarSenha.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Telas\Login\FrmLogin.resx">
       <DependentUpon>FrmLogin.cs</DependentUpon>

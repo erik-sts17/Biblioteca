@@ -14,10 +14,10 @@ namespace Desktop_Biblioteca.Cadastro.Autor
             {
                 lblCadastroAutor.Text = "Edição de Autor";
                 lblIdValue.Text = autor.Id.ToString();
-                txtAutor.Text = autor.Nome.ToString();   
+                txtAutor.Text = autor.Nome.ToString();
                 lblId.Visible = true;
                 lblIdValue.Visible = true;
-                lblIdValue.ForeColor = Color.White; 
+                lblIdValue.ForeColor = Color.White;
                 btnSalvar.Text = "Editar";
                 btnSalvar.BackColor = Color.Yellow;
                 btnSalvar.ForeColor = Color.Black;
@@ -42,7 +42,7 @@ namespace Desktop_Biblioteca.Cadastro.Autor
                 return;
 
             AutorDao dao = new AutorDao();
-            if (!String.IsNullOrEmpty(lblIdValue.Text))
+            if (!string.IsNullOrEmpty(lblIdValue.Text))
             {
                 try
                 {
@@ -56,23 +56,25 @@ namespace Desktop_Biblioteca.Cadastro.Autor
                     MessageBox.Show("Erro ao executar operação, tente novamente.");
                 }
             }
-
-            try
+            else
             {
-                Entidades.Livro.Autor autor = new Entidades.Livro.Autor(txtAutor.Text);
-                dao.Insert(autor);
-                lblSucesso.Visible = true;
-                btnLimpar_Click(sender, e);
-            }
-            catch (Exception)
-            {
-                MessageBox.Show("Erro ao executar operação, tente novamente.");
+                try
+                {
+                    Entidades.Livro.Autor autor = new Entidades.Livro.Autor(txtAutor.Text);
+                    dao.Insert(autor);
+                    lblSucesso.Visible = true;
+                    btnLimpar_Click(sender, e);
+                }
+                catch (Exception)
+                {
+                    MessageBox.Show("Erro ao executar operação, tente novamente.");
+                }
             }
         }
 
         private bool ValidaForm()
         {
-            if (String.IsNullOrEmpty(txtAutor.Text))
+            if (string.IsNullOrEmpty(txtAutor.Text))
             {
                 MessageBox.Show("Campo obrigatório!");
                 return false;

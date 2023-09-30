@@ -64,12 +64,13 @@
             this.txtRg = new System.Windows.Forms.MaskedTextBox();
             this.lblRg = new System.Windows.Forms.Label();
             this.groupLogin = new System.Windows.Forms.GroupBox();
+            this.chkSenha = new System.Windows.Forms.CheckBox();
             this.txtSenhaUser = new System.Windows.Forms.TextBox();
             this.lblSenha = new System.Windows.Forms.Label();
-            this.maskedTextBox1 = new System.Windows.Forms.MaskedTextBox();
-            this.lblSalario = new System.Windows.Forms.Label();
             this.lblEmail = new System.Windows.Forms.Label();
             this.txtEmail = new System.Windows.Forms.TextBox();
+            this.enderecoId = new System.Windows.Forms.Label();
+            this.clienteId = new System.Windows.Forms.Label();
             this.panel2.SuspendLayout();
             this.gbEndereco.SuspendLayout();
             this.groupLogin.SuspendLayout();
@@ -497,6 +498,7 @@
             // 
             // groupLogin
             // 
+            this.groupLogin.Controls.Add(this.chkSenha);
             this.groupLogin.Controls.Add(this.txtSenhaUser);
             this.groupLogin.Controls.Add(this.lblSenha);
             this.groupLogin.ForeColor = System.Drawing.Color.White;
@@ -504,10 +506,24 @@
             this.groupLogin.Margin = new System.Windows.Forms.Padding(2);
             this.groupLogin.Name = "groupLogin";
             this.groupLogin.Padding = new System.Windows.Forms.Padding(2);
-            this.groupLogin.Size = new System.Drawing.Size(160, 83);
+            this.groupLogin.Size = new System.Drawing.Size(160, 101);
             this.groupLogin.TabIndex = 63;
             this.groupLogin.TabStop = false;
             this.groupLogin.Text = "Login";
+            // 
+            // chkSenha
+            // 
+            this.chkSenha.AutoSize = true;
+            this.chkSenha.Font = new System.Drawing.Font("Segoe UI Semibold", 9.285714F, System.Drawing.FontStyle.Bold);
+            this.chkSenha.ForeColor = System.Drawing.Color.White;
+            this.chkSenha.Location = new System.Drawing.Point(11, 67);
+            this.chkSenha.Margin = new System.Windows.Forms.Padding(2);
+            this.chkSenha.Name = "chkSenha";
+            this.chkSenha.Size = new System.Drawing.Size(100, 21);
+            this.chkSenha.TabIndex = 67;
+            this.chkSenha.Text = "Exibir senha";
+            this.chkSenha.UseVisualStyleBackColor = true;
+            this.chkSenha.CheckedChanged += new System.EventHandler(this.chkSenha_CheckedChanged);
             // 
             // txtSenhaUser
             // 
@@ -526,30 +542,9 @@
             this.lblSenha.ForeColor = System.Drawing.Color.White;
             this.lblSenha.Location = new System.Drawing.Point(6, 15);
             this.lblSenha.Name = "lblSenha";
-            this.lblSenha.Size = new System.Drawing.Size(57, 21);
+            this.lblSenha.Size = new System.Drawing.Size(68, 21);
             this.lblSenha.TabIndex = 64;
-            this.lblSenha.Text = "Senha";
-            // 
-            // maskedTextBox1
-            // 
-            this.maskedTextBox1.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.maskedTextBox1.Location = new System.Drawing.Point(540, 218);
-            this.maskedTextBox1.Margin = new System.Windows.Forms.Padding(2);
-            this.maskedTextBox1.Mask = "000.000.000-00";
-            this.maskedTextBox1.Name = "maskedTextBox1";
-            this.maskedTextBox1.Size = new System.Drawing.Size(146, 23);
-            this.maskedTextBox1.TabIndex = 64;
-            // 
-            // lblSalario
-            // 
-            this.lblSalario.AutoSize = true;
-            this.lblSalario.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold);
-            this.lblSalario.ForeColor = System.Drawing.Color.White;
-            this.lblSalario.Location = new System.Drawing.Point(536, 192);
-            this.lblSalario.Name = "lblSalario";
-            this.lblSalario.Size = new System.Drawing.Size(67, 21);
-            this.lblSalario.TabIndex = 65;
-            this.lblSalario.Text = "Salário:";
+            this.lblSenha.Text = "Senha *";
             // 
             // lblEmail
             // 
@@ -571,14 +566,34 @@
             this.txtEmail.Size = new System.Drawing.Size(435, 23);
             this.txtEmail.TabIndex = 32;
             // 
+            // enderecoId
+            // 
+            this.enderecoId.AutoSize = true;
+            this.enderecoId.Location = new System.Drawing.Point(587, 481);
+            this.enderecoId.Name = "enderecoId";
+            this.enderecoId.Size = new System.Drawing.Size(61, 13);
+            this.enderecoId.TabIndex = 68;
+            this.enderecoId.Text = "enderecoId";
+            this.enderecoId.Visible = false;
+            // 
+            // clienteId
+            // 
+            this.clienteId.AutoSize = true;
+            this.clienteId.Location = new System.Drawing.Point(587, 452);
+            this.clienteId.Name = "clienteId";
+            this.clienteId.Size = new System.Drawing.Size(47, 13);
+            this.clienteId.TabIndex = 67;
+            this.clienteId.Text = "clienteId";
+            this.clienteId.Visible = false;
+            // 
             // FrmCadastroFuncionario
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(46)))), ((int)(((byte)(59)))));
             this.ClientSize = new System.Drawing.Size(769, 542);
-            this.Controls.Add(this.lblSalario);
-            this.Controls.Add(this.maskedTextBox1);
+            this.Controls.Add(this.enderecoId);
+            this.Controls.Add(this.clienteId);
             this.Controls.Add(this.groupLogin);
             this.Controls.Add(this.txtRg);
             this.Controls.Add(this.lblRg);
@@ -654,10 +669,11 @@
         private System.Windows.Forms.Button btnBuscaCep;
         private System.Windows.Forms.GroupBox groupLogin;
         private System.Windows.Forms.Label lblSenha;
-        private System.Windows.Forms.MaskedTextBox maskedTextBox1;
-        private System.Windows.Forms.Label lblSalario;
         private System.Windows.Forms.Label lblEmail;
         private System.Windows.Forms.TextBox txtEmail;
         private System.Windows.Forms.TextBox txtSenhaUser;
+        private System.Windows.Forms.CheckBox chkSenha;
+        private System.Windows.Forms.Label enderecoId;
+        private System.Windows.Forms.Label clienteId;
     }
 }

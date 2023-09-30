@@ -1,9 +1,12 @@
 ﻿using Desktop_Biblioteca.Client;
 using Desktop_Biblioteca.Client.Models;
+using Desktop_Biblioteca.DAO.Cliente;
 using Desktop_Biblioteca.DAO.Funcionario;
 using Desktop_Biblioteca.Entidades;
+using MySql.Data.MySqlClient.Memcached;
 using System;
 using System.Collections.Generic;
+using System.Drawing;
 using System.Linq;
 using System.Net;
 using System.Windows.Forms;
@@ -12,9 +15,36 @@ namespace Desktop_Biblioteca.Cadastro.Cliente
 {
     public partial class FrmCadastroFuncionario : Form
     {
-        public FrmCadastroFuncionario()
+        public bool Edicao { get; set; }
+        public FrmCadastroFuncionario(Entidades.Funcionario funcionario = null)
         {
             InitializeComponent();
+            if (funcionario != null)
+            {
+                lblCadastroFuncionario.Text = "Edição de Funcionário";
+                btnSalvar.Text = "Editar";
+                btnSalvar.BackColor = Color.Yellow;
+                btnSalvar.ForeColor = Color.Black;
+                lblSucesso.ForeColor = Color.Yellow;
+                lblSucesso.Text = "Dados alterados com sucesso!";
+                txtNome.Text = funcionario.Nome;
+                txtEmail.Text = funcionario.Email;
+                TxtCpf.Text = funcionario.Cpf;  
+                txtRg.Text = funcionario.Rg;
+                txtTelefone.Text = funcionario.Telefone;
+                txtEndereco.Text = funcionario.Endereco.Logradouro;
+                dtDataNascimento.Value = funcionario.DataNascimento;
+                txtBairro.Text = funcionario.Endereco.Bairro;
+                txtComplemento.Text = funcionario.Endereco.Complemento;
+                txtNumero.Text = funcionario.Endereco.Numero;
+                cbUf.Text = funcionario.Endereco.Uf;
+                txtCep.Text = funcionario.Endereco.Cep;
+                txtCidade.Text = funcionario.Endereco.Cidade;
+                Edicao = true;
+                enderecoId.Text = funcionario.Endereco.Id.ToString();
+                clienteId.Text = funcionario.Id.ToString();
+                groupLogin.Visible = false;
+            }
         }
 
         private void btnLimpar_Click(object sender, EventArgs e)
@@ -29,6 +59,8 @@ namespace Desktop_Biblioteca.Cadastro.Cliente
             txtCidade.Clear();
             txtBairro.Clear();
             txtRg.Clear();
+            txtSenhaUser.Clear();
+            txtComplemento.Clear();
             dtDataNascimento.Value = DateTime.Now;
         }
 
@@ -44,18 +76,22 @@ namespace Desktop_Biblioteca.Cadastro.Cliente
 
             try
             {
-                var endereco = new Endereco(cbUf.SelectedItem.ToString(), txtCidade.Text, txtBairro.Text, txtEndereco.Text, txtNumero.Text, txtComplemento.Text);
+                var endereco = new Endereco(txtCep.Text, cbUf.SelectedItem.ToString(), txtCidade.Text, txtBairro.Text, txtEndereco.Text, txtNumero.Text, txtComplemento.Text);
                 var login = new Entidades.Login(txtEmail.Text, txtSenhaUser.Text);
-                var funcionario = new Entidades.Funcionario(txtNome.Text, dtDataNascimento.Value, txtRg.Text,TxtCpf.Text, txtEmail.Text, txtTelefone.Text, endereco, login);
-
+                var funcionario = new Funcionario(txtNome.Text, dtDataNascimento.Value, txtRg.Text,TxtCpf.Text, txtEmail.Text, txtTelefone.Text, endereco, login);
                 var funcionarioDAO = new FuncionarioDAO();
-                funcionarioDAO.Insert(funcionario);
-
-                var loginDao = new LoginDAO();
-                loginDao.Insert(login);
-
+                if (Edicao)
+                {
+                    funcionario.Id = int.Parse(clienteId.Text);
+                    funcionario.Endereco.Id = int.Parse(enderecoId.Text);
+                    funcionarioDAO.Atualizar(funcionario);
+                }
+                else 
+                {
+                    funcionarioDAO.Insert(funcionario, login);
+                    btnLimpar_Click(sender, e);
+                }
                 lblSucesso.Visible = true;
-                btnLimpar_Click(sender, e);
             }
             catch (Exception ex)
             {
@@ -68,7 +104,7 @@ namespace Desktop_Biblioteca.Cadastro.Cliente
         {
             string mensagem = "";
             List<string> erros = new List<string>();
-            string[] textForms = new string[] { txtNome.Text, txtEmail.Text, txtRg.Text, txtTelefone.Text, txtCep.Text, txtCidade.Text, txtBairro.Text, txtEndereco.Text, txtNumero.Text, txtSenhaUser.Text };
+            string[] textForms = new string[] { txtNome.Text, txtEmail.Text, txtRg.Text, txtTelefone.Text, txtCep.Text, txtCidade.Text, txtBairro.Text, txtEndereco.Text, txtNumero.Text };
 
             if (textForms.Any(x => String.IsNullOrEmpty(x)))
                 erros.Add("Campos com '*' são obrigatórios!");
@@ -80,9 +116,21 @@ namespace Desktop_Biblioteca.Cadastro.Cliente
             if (idade < 18)
                 erros.Add("Cadastro permitido apenas para maiores de 18 anos!");
 
-            if (txtSenhaUser.Text.Length < 8)
-                erros.Add("Senha precisa ter no mínimo 8 caracteres!");
-            
+            if (!Edicao && !string.IsNullOrEmpty(txtSenhaUser.Text))
+            {
+                if (txtSenhaUser.Text.Length < 8)
+                    erros.Add("Senha precisa ter no mínimo 8 caracteres!");
+            }
+
+            if (string.IsNullOrEmpty(txtEmail.Text))
+            {
+                var clienteDao = new ClienteDao();
+                var funcionarioDao = new FuncionarioDAO();
+                if (clienteDao.ExisteCliente(txtEmail.Text) || funcionarioDao.ExisteFuncionario(txtEmail.Text))
+                {
+                    erros.Add($"Email {txtEmail.Text} já cadastrado.");
+                }
+            }
 
             if (erros.Count > 0)
             {
@@ -133,5 +181,12 @@ namespace Desktop_Biblioteca.Cadastro.Cliente
             cbUf.Text = endereco.Entity.UF;
         }
 
+        private void chkSenha_CheckedChanged(object sender, EventArgs e)
+        {
+            if (chkSenha.Checked)
+                txtSenhaUser.UseSystemPasswordChar = false;
+            else
+                txtSenhaUser.UseSystemPasswordChar = true;
+        }
     }
 }

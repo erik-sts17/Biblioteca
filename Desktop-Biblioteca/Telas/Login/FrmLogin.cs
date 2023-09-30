@@ -19,7 +19,7 @@ namespace Desktop_Biblioteca.Login
             var login = new Entidades.Login(txtEmailUser.Text, txtSenhaUser.Text);
             if (loginDAO.ValidaLogin(login))
             {
-                Form1 frmHome = new Form1();
+                Form1 frmHome = new Form1(txtEmailUser.Text);
                 frmHome.Show();
                 this.Hide();
             }

@@ -26,32 +26,31 @@ namespace Desktop_Biblioteca.Consulta
             int linhas = dgrGeneros.SelectedRows.Count;
             if (linhas < 1)
             {
-                MessageBox.Show("Selecione pelo menos um registro para apagar.");
+                MessageBox.Show("Selecione um registro para apagar.");
                 return;
             }
-            List<int> ids = new List<int>();
-            foreach (DataGridViewRow row in dgrGeneros.SelectedRows)
-            {
-                int id = Convert.ToInt32(row.Cells[1].Value);
-                ids.Add(id);
-            }
-            CategoriaDao dao = new CategoriaDao();
-            try
-            {
-                dao.Excluir("GENERO", ids);
-                MessageBox.Show("Dados apagados com sucesso.");
-                BuscarGeneros();
-            }
-            catch (Exception)
-            {
-                MessageBox.Show("Erro ao apagar registros.");
-            }
-            
-        }
 
-        private void btnSalvar_Click(object sender, EventArgs e)
-        {
-            
+            var resultado = MessageBox.Show("Tem certeza que deseja excluir este registro?", "Confirmação", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            if (resultado == DialogResult.Yes)
+            {
+                List<int> ids = new List<int>();
+                foreach (DataGridViewRow row in dgrGeneros.SelectedRows)
+                {
+                    int id = Convert.ToInt32(row.Cells["Id"].Value);
+                    ids.Add(id);
+                }
+                CategoriaDao dao = new CategoriaDao();
+                try
+                {
+                    dao.Excluir("GENERO", ids);
+                    MessageBox.Show("Dados apagados com sucesso.");
+                    BuscarGeneros();
+                }
+                catch (Exception)
+                {
+                    MessageBox.Show("Erro ao apagar registros.");
+                }
+            }
         }
 
         private void btnAlterar_Click(object sender, EventArgs e)
@@ -72,8 +71,8 @@ namespace Desktop_Biblioteca.Consulta
             Genero genero = new Genero();
             foreach (DataGridViewRow row in dgrGeneros.SelectedRows)
             {
-                genero.Id = Convert.ToInt32(row.Cells[1].Value);
-                genero.Descricao = Convert.ToString(row.Cells[0].Value);
+                genero.Id = Convert.ToInt32(row.Cells["Id"].Value);
+                genero.Descricao = Convert.ToString(row.Cells["Descricao"].Value);
             }
             this.Close();
             FrmCadastroGenero frmGenero = new FrmCadastroGenero(genero);

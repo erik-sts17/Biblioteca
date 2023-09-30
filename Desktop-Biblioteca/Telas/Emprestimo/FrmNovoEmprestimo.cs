@@ -10,12 +10,14 @@ namespace Desktop_Biblioteca.Cadastro.Emprestimo
     public partial class FrmNovoEmprestimo : Form
     {
         public int ClienteId { get; set; }
+        public int FuncionarioId { get; set; }
         public List<Entidades.Livro.Livro> LivrosDisponiveis { get; set; }
         public List<int> LivrosSelecionados { get; set; }
-        public FrmNovoEmprestimo()
+        public FrmNovoEmprestimo(int funcionarioId)
         {
             InitializeComponent();
             BuscarTodosLivros();
+            FuncionarioId = funcionarioId;
         }
 
         private void btnLimpar_Click(object sender, EventArgs e)
@@ -44,14 +46,14 @@ namespace Desktop_Biblioteca.Cadastro.Emprestimo
 
             try
             {
-                var emprestimo = new Entidades.Emprestimo(ClienteId, dtDataDevolucao.Value);
+                var emprestimo = new Entidades.Emprestimo(ClienteId, FuncionarioId, dtDataDevolucao.Value);
                 var dao = new EmprestimoDAO();
                 if (dao.VerificarEmprestimoAtivo(ClienteId))
                 {
                     MessageBox.Show("Já exite um empréstimo ativo para o cliente selecionado.");
                     return;
                 }
-                dao.Inserir(emprestimo, LivrosSelecionados, ClienteId);
+                dao.Inserir(emprestimo, LivrosSelecionados);
                 lblSucesso.Visible = true;
                 btnLimpar_Click(sender, e);
             }
@@ -93,7 +95,7 @@ namespace Desktop_Biblioteca.Cadastro.Emprestimo
         private void BuscarTodosLivros()
         {
             var dao = new LivroDao();
-            LivrosDisponiveis = dao.BuscarTodos();
+            LivrosDisponiveis = dao.BuscarTodos(true);
             foreach (var livro in LivrosDisponiveis)
             {
                 livrosDisponiveis.Items.Add(livro, false);
@@ -159,6 +161,11 @@ namespace Desktop_Biblioteca.Cadastro.Emprestimo
             txtTotalPaginas.Text = totalPaginas.ToString();
             txtTotalLivros.Text = LivrosSelecionados.Count.ToString();
             confirmacaoEmprestimo.Visible = true;
+        }
+
+        private void btnFechar_Click_1(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }

@@ -7,6 +7,7 @@ using Desktop_Biblioteca.Cadastro.Genero;
 using Desktop_Biblioteca.Cadastro.Autor;
 using System.Drawing;
 using System.IO;
+using System.Linq;
 
 namespace Desktop_Biblioteca.Cadastro
 {
@@ -16,18 +17,89 @@ namespace Desktop_Biblioteca.Cadastro
         public List<Entidades.Livro.Genero> Generos { get; set; }
         public List<Entidades.Livro.Categoria> Categorias { get; set; }
         public string NomeImagem { get; set; }
+        public bool Edicao { get; set; }
 
-        public FrmCadastroLivro()
+        public FrmCadastroLivro(Entidades.Livro.Livro livro = null)
         {
             InitializeComponent();
+            CarregarDados();
+            if (livro != null)
+            {
+                lblLivro.Text = "Edição de Livro";
+                btnEntrar.Text = "Editar";
+                btnEntrar.BackColor = Color.Yellow;
+                btnEntrar.ForeColor = Color.Black;
+                lblSucesso.ForeColor = Color.Yellow;
+                MostrarImagemNoPictureBox(livro.Imagem);
+                txtNome.Text = livro.Titulo;
+                txtPaginas.Text = livro.Paginas.ToString();
+                txtQuantidade.Text = livro.QuantidadeEstoque.ToString();
+                CarregarCheckedListBox(livro.AutoresId);
+                CarregarCategoria(livro.Categoria.Id);
+                CarregarGenero(livro.Genero.Id);
+                livroId.Text = livro.Id.ToString();
+                lblSucesso.Text = "Dados alterados com sucesso!";
+                Edicao = true;
+            }
+        }
+        private void CarregarGenero(int id) 
+        {
+            for (int i = 0; i < cbgeneros.Items.Count; i++)
+            {
+                int itemId = (int)((Entidades.Livro.Genero)cbgeneros.Items[i]).Id; 
+
+                if (itemId == id)
+                {
+                    cbgeneros.SelectedIndex = i;
+                    return;
+                }
+            }
+        }
+        private void CarregarCategoria(int id)
+        {
+            for (int i = 0; i < cbCategorias.Items.Count; i++)
+            {
+                int itemId = (int)((Entidades.Livro.Categoria)cbCategorias.Items[i]).Id;
+
+                if (itemId == id)
+                {
+                    cbCategorias.SelectedIndex = i;
+                    return;
+                }
+            }
+        }
+
+        private void CarregarCheckedListBox(List<int> ids)
+        {
+            List<Entidades.Livro.Autor> autoresSelecionados = Autores.Where(autor => ids.Contains(autor.Id)).ToList();
+
+
+            for (int i = 0; i < checkedAutores.Items.Count; i++)
+            {
+                if (autoresSelecionados.Contains(checkedAutores.Items[i]))
+                {
+                    checkedAutores.SetItemChecked(i, true);
+                }
+            }
+        }
+
+        private void MostrarImagemNoPictureBox(byte[] bytesDaImagem)
+        {
+            if (bytesDaImagem != null && bytesDaImagem.Length > 0)
+            {
+                using (MemoryStream ms = new MemoryStream(bytesDaImagem))
+                {
+                    pbxLivro.Image = Image.FromStream(ms);
+                }
+            }
         }
 
         private void buttonLimpa_Click(object sender, EventArgs e)
         {
             txtNome.Clear();
             txtPaginas.Clear();
-            cbxCategoria.SelectedIndex = -1;
-            cbxGenero.SelectedIndex = -1;
+            cbCategorias.SelectedIndex = -1;
+            cbgeneros.SelectedIndex = -1;
             for (int i = 0; i < checkedAutores.Items.Count; i++)
             {
                 checkedAutores.SetItemChecked(i, false);
@@ -44,11 +116,10 @@ namespace Desktop_Biblioteca.Cadastro
             if (ValidaForm())
                 return;
 
-            var categoria = (Entidades.Livro.Categoria)cbxCategoria.SelectedItem;
-            var genero = (Entidades.Livro.Genero)cbxGenero.SelectedItem;
+            var categoria = (Entidades.Livro.Categoria)cbCategorias.SelectedItem;
+            var genero = (Entidades.Livro.Genero)cbgeneros.SelectedItem;
 
             List<int> autoresSelecionados = new List<int>();
-
             foreach (Entidades.Livro.Autor autorSelecionado in checkedAutores.CheckedItems)
             {
                 autoresSelecionados.Add(autorSelecionado.Id);
@@ -62,8 +133,16 @@ namespace Desktop_Biblioteca.Cadastro
             try
             {
                 LivroDao dao = new LivroDao();
-                dao.Insert(livro, autoresSelecionados);
-                buttonLimpa_Click(sender, e);
+                if (Edicao)
+                {
+                    livro.Id = int.Parse(livroId.Text);
+                    dao.Atualizar(livro, autoresSelecionados);
+                }
+                else 
+                {
+                    dao.Inserir(livro, autoresSelecionados);
+                    buttonLimpa_Click(sender, e);
+                } 
                 lblSucesso.Visible = true;
             }
             catch (Exception)
@@ -72,7 +151,7 @@ namespace Desktop_Biblioteca.Cadastro
             }
         }
 
-        private void FrmCadastroFuncionario_Load(object sender, EventArgs e)
+        private void CarregarDados()
         {
             var autorDao = new AutorDao();
             var generoDao = new GeneroDao();
@@ -89,11 +168,11 @@ namespace Desktop_Biblioteca.Cadastro
             }
             foreach (var genero in generos)
             {
-                cbxGenero.Items.Add(genero);
+                cbgeneros.Items.Add(genero);
             }
             foreach (var categoria in categorias)
             {
-                cbxCategoria.Items.Add(categoria);
+                cbCategorias.Items.Add(categoria);
             }
             if (Autores == null || this.Autores.Count == 0)
             {
@@ -103,13 +182,13 @@ namespace Desktop_Biblioteca.Cadastro
 
             if (this.Categorias == null || this.Categorias.Count == 0)
             {
-                cbxCategoria.Visible = false;
+                cbCategorias.Visible = false;
                 btnAdicionaCategoria.Visible = true;
             }
 
             if (this.Generos == null || this.Generos.Count == 0)
             {
-                cbxGenero.Visible = false;
+                cbgeneros.Visible = false;
                 btnAdicionaGenero.Visible = true;
             }
         }
@@ -121,18 +200,18 @@ namespace Desktop_Biblioteca.Cadastro
 
             if (string.IsNullOrEmpty(txtNome.Text) || string.IsNullOrEmpty(txtPaginas.Text))
                 erros.Add("Campos com '*' são obrigatórios!");
-             
-            if (cbxGenero.SelectedIndex == -1)
+
+            if (cbgeneros.SelectedIndex == -1)
                 erros.Add("Selecione um Genero");
 
 
-            if (cbxCategoria.SelectedIndex == -1)
+            if (cbCategorias.SelectedIndex == -1)
                 erros.Add("Selecione uma Categoria");
 
             var autores = checkedAutores.CheckedItems;
             if (autores.Count == 0)
                 erros.Add("Selecione um Autor");
-               
+
             if (erros.Count > 0)
             {
                 foreach (var erro in erros)
@@ -183,7 +262,7 @@ namespace Desktop_Biblioteca.Cadastro
                 try
                 {
                     Image image = Image.FromFile(openFileDialog.FileName);
-                    pbxCliente.Image = image;
+                    pbxLivro.Image = image;
                     NomeImagem = openFileDialog.FileName;
                 }
                 catch (Exception ex)

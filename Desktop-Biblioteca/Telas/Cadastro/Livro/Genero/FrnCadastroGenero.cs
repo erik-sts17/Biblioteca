@@ -52,7 +52,7 @@ namespace Desktop_Biblioteca.Cadastro.Genero
                 try
                 {
                     GeneroDao dao = new GeneroDao();
-                    dao.Insert(genero);
+                    dao.Inserir(genero);
                     lblSucesso.Visible = true;
                     btnLimpar_Click(sender, e);
                 }

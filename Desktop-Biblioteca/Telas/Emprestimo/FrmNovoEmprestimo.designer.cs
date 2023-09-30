@@ -31,7 +31,6 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmNovoEmprestimo));
             this.panel2 = new System.Windows.Forms.Panel();
             this.lblNovoEmprestimo = new System.Windows.Forms.Label();
-            this.btnFechar = new System.Windows.Forms.Button();
             this.btnLimpar = new System.Windows.Forms.Button();
             this.btnSalvar = new System.Windows.Forms.Button();
             this.gbCliente = new System.Windows.Forms.GroupBox();
@@ -45,16 +44,17 @@
             this.lblCpfCliente = new System.Windows.Forms.Label();
             this.lblSucesso = new System.Windows.Forms.Label();
             this.gbLivros = new System.Windows.Forms.GroupBox();
+            this.lblSemLivros = new System.Windows.Forms.Label();
             this.btnAdicionaLivro = new System.Windows.Forms.Button();
             this.livrosDisponiveis = new System.Windows.Forms.CheckedListBox();
             this.confirmacaoEmprestimo = new System.Windows.Forms.GroupBox();
+            this.txtTotalPaginas = new System.Windows.Forms.TextBox();
+            this.lblTotalPaginas = new System.Windows.Forms.Label();
             this.txtTotalLivros = new System.Windows.Forms.TextBox();
             this.lblQuantidade = new System.Windows.Forms.Label();
             this.lblNasc = new System.Windows.Forms.Label();
             this.dtDataDevolucao = new System.Windows.Forms.DateTimePicker();
-            this.txtTotalPaginas = new System.Windows.Forms.TextBox();
-            this.lblTotalPaginas = new System.Windows.Forms.Label();
-            this.lblSemLivros = new System.Windows.Forms.Label();
+            this.btnFechar = new System.Windows.Forms.Button();
             this.panel2.SuspendLayout();
             this.gbCliente.SuspendLayout();
             this.gbLivros.SuspendLayout();
@@ -64,8 +64,8 @@
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(194)))), ((int)(((byte)(0)))));
-            this.panel2.Controls.Add(this.lblNovoEmprestimo);
             this.panel2.Controls.Add(this.btnFechar);
+            this.panel2.Controls.Add(this.lblNovoEmprestimo);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel2.Location = new System.Drawing.Point(0, 0);
             this.panel2.Margin = new System.Windows.Forms.Padding(2);
@@ -83,21 +83,6 @@
             this.lblNovoEmprestimo.Size = new System.Drawing.Size(190, 30);
             this.lblNovoEmprestimo.TabIndex = 4;
             this.lblNovoEmprestimo.Text = "Novo Empréstimo";
-            // 
-            // btnFechar
-            // 
-            this.btnFechar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnFechar.FlatAppearance.BorderSize = 0;
-            this.btnFechar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.btnFechar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Red;
-            this.btnFechar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnFechar.Image = ((System.Drawing.Image)(resources.GetObject("btnFechar.Image")));
-            this.btnFechar.Location = new System.Drawing.Point(572, 0);
-            this.btnFechar.Name = "btnFechar";
-            this.btnFechar.Size = new System.Drawing.Size(55, 56);
-            this.btnFechar.TabIndex = 1;
-            this.btnFechar.UseVisualStyleBackColor = true;
-            this.btnFechar.Click += new System.EventHandler(this.btnFechar_Click);
             // 
             // btnLimpar
             // 
@@ -264,6 +249,19 @@
             this.gbLivros.TabStop = false;
             this.gbLivros.Text = "Livros";
             // 
+            // lblSemLivros
+            // 
+            this.lblSemLivros.AutoSize = true;
+            this.lblSemLivros.Font = new System.Drawing.Font("Segoe UI", 13F);
+            this.lblSemLivros.ForeColor = System.Drawing.Color.Red;
+            this.lblSemLivros.Location = new System.Drawing.Point(57, 69);
+            this.lblSemLivros.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblSemLivros.Name = "lblSemLivros";
+            this.lblSemLivros.Size = new System.Drawing.Size(357, 25);
+            this.lblSemLivros.TabIndex = 75;
+            this.lblSemLivros.Text = "Nenhum livro disponivel, realize o cadastro!";
+            this.lblSemLivros.Visible = false;
+            // 
             // btnAdicionaLivro
             // 
             this.btnAdicionaLivro.BackColor = System.Drawing.Color.Lime;
@@ -304,6 +302,27 @@
             this.confirmacaoEmprestimo.TabStop = false;
             this.confirmacaoEmprestimo.Text = "Confirmação Empréstimo";
             this.confirmacaoEmprestimo.Visible = false;
+            // 
+            // txtTotalPaginas
+            // 
+            this.txtTotalPaginas.Enabled = false;
+            this.txtTotalPaginas.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.txtTotalPaginas.Location = new System.Drawing.Point(170, 49);
+            this.txtTotalPaginas.MaxLength = 50;
+            this.txtTotalPaginas.Name = "txtTotalPaginas";
+            this.txtTotalPaginas.Size = new System.Drawing.Size(94, 23);
+            this.txtTotalPaginas.TabIndex = 76;
+            // 
+            // lblTotalPaginas
+            // 
+            this.lblTotalPaginas.AutoSize = true;
+            this.lblTotalPaginas.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold);
+            this.lblTotalPaginas.ForeColor = System.Drawing.Color.White;
+            this.lblTotalPaginas.Location = new System.Drawing.Point(166, 25);
+            this.lblTotalPaginas.Name = "lblTotalPaginas";
+            this.lblTotalPaginas.Size = new System.Drawing.Size(116, 21);
+            this.lblTotalPaginas.TabIndex = 75;
+            this.lblTotalPaginas.Text = "Total Páginas:";
             // 
             // txtTotalLivros
             // 
@@ -347,39 +366,20 @@
             this.dtDataDevolucao.Size = new System.Drawing.Size(130, 23);
             this.dtDataDevolucao.TabIndex = 42;
             // 
-            // txtTotalPaginas
+            // btnFechar
             // 
-            this.txtTotalPaginas.Enabled = false;
-            this.txtTotalPaginas.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.txtTotalPaginas.Location = new System.Drawing.Point(170, 49);
-            this.txtTotalPaginas.MaxLength = 50;
-            this.txtTotalPaginas.Name = "txtTotalPaginas";
-            this.txtTotalPaginas.Size = new System.Drawing.Size(94, 23);
-            this.txtTotalPaginas.TabIndex = 76;
-            // 
-            // lblTotalPaginas
-            // 
-            this.lblTotalPaginas.AutoSize = true;
-            this.lblTotalPaginas.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold);
-            this.lblTotalPaginas.ForeColor = System.Drawing.Color.White;
-            this.lblTotalPaginas.Location = new System.Drawing.Point(166, 25);
-            this.lblTotalPaginas.Name = "lblTotalPaginas";
-            this.lblTotalPaginas.Size = new System.Drawing.Size(116, 21);
-            this.lblTotalPaginas.TabIndex = 75;
-            this.lblTotalPaginas.Text = "Total Páginas:";
-            // 
-            // lblSemLivros
-            // 
-            this.lblSemLivros.AutoSize = true;
-            this.lblSemLivros.Font = new System.Drawing.Font("Segoe UI", 13F);
-            this.lblSemLivros.ForeColor = System.Drawing.Color.Red;
-            this.lblSemLivros.Location = new System.Drawing.Point(57, 69);
-            this.lblSemLivros.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.lblSemLivros.Name = "lblSemLivros";
-            this.lblSemLivros.Size = new System.Drawing.Size(357, 25);
-            this.lblSemLivros.TabIndex = 75;
-            this.lblSemLivros.Text = "Nenhum livro disponivel, realize o cadastro!";
-            this.lblSemLivros.Visible = false;
+            this.btnFechar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnFechar.FlatAppearance.BorderSize = 0;
+            this.btnFechar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.btnFechar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Red;
+            this.btnFechar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnFechar.Image = ((System.Drawing.Image)(resources.GetObject("btnFechar.Image")));
+            this.btnFechar.Location = new System.Drawing.Point(572, -3);
+            this.btnFechar.Name = "btnFechar";
+            this.btnFechar.Size = new System.Drawing.Size(55, 56);
+            this.btnFechar.TabIndex = 5;
+            this.btnFechar.UseVisualStyleBackColor = true;
+            this.btnFechar.Click += new System.EventHandler(this.btnFechar_Click_1);
             // 
             // FrmNovoEmprestimo
             // 
@@ -417,7 +417,6 @@
 
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Label lblNovoEmprestimo;
-        private System.Windows.Forms.Button btnFechar;
         private System.Windows.Forms.Button btnLimpar;
         private System.Windows.Forms.Button btnSalvar;
         private System.Windows.Forms.GroupBox gbCliente;
@@ -441,5 +440,6 @@
         private System.Windows.Forms.TextBox txtTotalPaginas;
         private System.Windows.Forms.Label lblTotalPaginas;
         private System.Windows.Forms.Label lblSemLivros;
+        private System.Windows.Forms.Button btnFechar;
     }
 }

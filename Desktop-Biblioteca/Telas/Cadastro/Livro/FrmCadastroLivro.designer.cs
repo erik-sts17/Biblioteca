@@ -38,15 +38,13 @@
             this.buttonLimpa = new System.Windows.Forms.Button();
             this.btnEntrar = new System.Windows.Forms.Button();
             this.lblSucesso = new System.Windows.Forms.Label();
-            this.cbxGenero = new System.Windows.Forms.ComboBox();
-            this.cbxCategoria = new System.Windows.Forms.ComboBox();
             this.lblCategoria = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.btnAdicionaGenero = new System.Windows.Forms.Button();
             this.btnAdicionaCategoria = new System.Windows.Forms.Button();
             this.btnAdicionaAutor = new System.Windows.Forms.Button();
             this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
-            this.pbxCliente = new System.Windows.Forms.PictureBox();
+            this.pbxLivro = new System.Windows.Forms.PictureBox();
             this.btnCarregarImagem = new System.Windows.Forms.Button();
             this.lblFoto = new System.Windows.Forms.Label();
             this.lblNasc = new System.Windows.Forms.Label();
@@ -54,8 +52,11 @@
             this.txtQuantidade = new System.Windows.Forms.TextBox();
             this.lblquantidade = new System.Windows.Forms.Label();
             this.checkedAutores = new System.Windows.Forms.CheckedListBox();
+            this.cbgeneros = new System.Windows.Forms.ComboBox();
+            this.cbCategorias = new System.Windows.Forms.ComboBox();
+            this.livroId = new System.Windows.Forms.Label();
             this.panel2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pbxCliente)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbxLivro)).BeginInit();
             this.SuspendLayout();
             // 
             // panel2
@@ -169,24 +170,6 @@
             this.lblSucesso.Text = "Dados gravados com sucesso!";
             this.lblSucesso.Visible = false;
             // 
-            // cbxGenero
-            // 
-            this.cbxGenero.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.cbxGenero.FormattingEnabled = true;
-            this.cbxGenero.Location = new System.Drawing.Point(69, 162);
-            this.cbxGenero.Name = "cbxGenero";
-            this.cbxGenero.Size = new System.Drawing.Size(271, 23);
-            this.cbxGenero.TabIndex = 62;
-            // 
-            // cbxCategoria
-            // 
-            this.cbxCategoria.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.cbxCategoria.FormattingEnabled = true;
-            this.cbxCategoria.Location = new System.Drawing.Point(375, 162);
-            this.cbxCategoria.Name = "cbxCategoria";
-            this.cbxCategoria.Size = new System.Drawing.Size(242, 23);
-            this.cbxCategoria.TabIndex = 64;
-            // 
             // lblCategoria
             // 
             this.lblCategoria.AutoSize = true;
@@ -258,15 +241,15 @@
             // 
             this.openFileDialog1.FileName = "openFileDialog1";
             // 
-            // pbxCliente
+            // pbxLivro
             // 
-            this.pbxCliente.BackColor = System.Drawing.Color.White;
-            this.pbxCliente.Location = new System.Drawing.Point(650, 91);
-            this.pbxCliente.Name = "pbxCliente";
-            this.pbxCliente.Size = new System.Drawing.Size(140, 167);
-            this.pbxCliente.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pbxCliente.TabIndex = 70;
-            this.pbxCliente.TabStop = false;
+            this.pbxLivro.BackColor = System.Drawing.Color.White;
+            this.pbxLivro.Location = new System.Drawing.Point(650, 91);
+            this.pbxLivro.Name = "pbxLivro";
+            this.pbxLivro.Size = new System.Drawing.Size(140, 167);
+            this.pbxLivro.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pbxLivro.TabIndex = 70;
+            this.pbxLivro.TabStop = false;
             // 
             // btnCarregarImagem
             // 
@@ -343,25 +326,52 @@
             this.checkedAutores.Size = new System.Drawing.Size(214, 79);
             this.checkedAutores.TabIndex = 76;
             // 
+            // cbgeneros
+            // 
+            this.cbgeneros.FormattingEnabled = true;
+            this.cbgeneros.Location = new System.Drawing.Point(68, 161);
+            this.cbgeneros.Name = "cbgeneros";
+            this.cbgeneros.Size = new System.Drawing.Size(174, 21);
+            this.cbgeneros.TabIndex = 77;
+            // 
+            // cbCategorias
+            // 
+            this.cbCategorias.FormattingEnabled = true;
+            this.cbCategorias.Location = new System.Drawing.Point(375, 161);
+            this.cbCategorias.Name = "cbCategorias";
+            this.cbCategorias.Size = new System.Drawing.Size(181, 21);
+            this.cbCategorias.TabIndex = 78;
+            // 
+            // livroId
+            // 
+            this.livroId.AutoSize = true;
+            this.livroId.Location = new System.Drawing.Point(670, 344);
+            this.livroId.Name = "livroId";
+            this.livroId.Size = new System.Drawing.Size(47, 13);
+            this.livroId.TabIndex = 79;
+            this.livroId.Text = "clienteId";
+            this.livroId.Visible = false;
+            // 
             // FrmCadastroLivro
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(46)))), ((int)(((byte)(59)))));
             this.ClientSize = new System.Drawing.Size(862, 390);
+            this.Controls.Add(this.livroId);
+            this.Controls.Add(this.cbCategorias);
+            this.Controls.Add(this.cbgeneros);
             this.Controls.Add(this.checkedAutores);
             this.Controls.Add(this.txtQuantidade);
             this.Controls.Add(this.lblquantidade);
             this.Controls.Add(this.lblFoto);
             this.Controls.Add(this.btnCarregarImagem);
-            this.Controls.Add(this.pbxCliente);
+            this.Controls.Add(this.pbxLivro);
             this.Controls.Add(this.btnAdicionaAutor);
             this.Controls.Add(this.btnAdicionaCategoria);
             this.Controls.Add(this.btnAdicionaGenero);
             this.Controls.Add(this.label2);
-            this.Controls.Add(this.cbxCategoria);
             this.Controls.Add(this.lblCategoria);
-            this.Controls.Add(this.cbxGenero);
             this.Controls.Add(this.txtPaginas);
             this.Controls.Add(this.lblSucesso);
             this.Controls.Add(this.buttonLimpa);
@@ -376,10 +386,9 @@
             this.Name = "FrmCadastroLivro";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FrmCadastroLivros";
-            this.Load += new System.EventHandler(this.FrmCadastroFuncionario_Load);
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pbxCliente)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbxLivro)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -396,7 +405,6 @@
         private System.Windows.Forms.Button buttonLimpa;
         private System.Windows.Forms.Button btnEntrar;
         private System.Windows.Forms.Label lblSucesso;
-        private System.Windows.Forms.ComboBox cbxGenero;
         private System.Windows.Forms.ComboBox cbxCategoria;
         private System.Windows.Forms.Label lblCategoria;
         private System.Windows.Forms.Label label2;
@@ -404,7 +412,7 @@
         private System.Windows.Forms.Button btnAdicionaCategoria;
         private System.Windows.Forms.Button btnAdicionaAutor;
         private System.Windows.Forms.OpenFileDialog openFileDialog1;
-        private System.Windows.Forms.PictureBox pbxCliente;
+        private System.Windows.Forms.PictureBox pbxLivro;
         private System.Windows.Forms.Button btnCarregarImagem;
         private System.Windows.Forms.Label lblFoto;
         private System.Windows.Forms.Label lblNasc;
@@ -412,5 +420,8 @@
         private System.Windows.Forms.TextBox txtQuantidade;
         private System.Windows.Forms.Label lblquantidade;
         private System.Windows.Forms.CheckedListBox checkedAutores;
+        private System.Windows.Forms.ComboBox cbgeneros;
+        private System.Windows.Forms.ComboBox cbCategorias;
+        private System.Windows.Forms.Label livroId;
     }
 }

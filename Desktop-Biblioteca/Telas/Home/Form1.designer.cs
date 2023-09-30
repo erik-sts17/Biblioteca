@@ -57,12 +57,12 @@
             this.btnConsultaAutor = new System.Windows.Forms.Button();
             this.panel21 = new System.Windows.Forms.Panel();
             this.panel22 = new System.Windows.Forms.Panel();
-            this.button13 = new System.Windows.Forms.Button();
+            this.btnConsultaLivro = new System.Windows.Forms.Button();
             this.timerDataHora = new System.Windows.Forms.Timer(this.components);
             this.panel18 = new System.Windows.Forms.Panel();
             this.subMenuEmprestimo = new System.Windows.Forms.Panel();
             this.panel32 = new System.Windows.Forms.Panel();
-            this.button9 = new System.Windows.Forms.Button();
+            this.btnConsultaEmprestimo = new System.Windows.Forms.Button();
             this.panel33 = new System.Windows.Forms.Panel();
             this.btnNovoEmprestimo = new System.Windows.Forms.Button();
             this.btnEmprestimo = new System.Windows.Forms.Button();
@@ -78,6 +78,8 @@
             this.btnLivroCadastro = new System.Windows.Forms.Button();
             this.panel12 = new System.Windows.Forms.Panel();
             this.subMenuFuncionario = new System.Windows.Forms.Panel();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.btnAlterarSenha = new System.Windows.Forms.Button();
             this.panel7 = new System.Windows.Forms.Panel();
             this.btnConsultaFuncionario = new System.Windows.Forms.Button();
             this.panel8 = new System.Windows.Forms.Panel();
@@ -86,6 +88,7 @@
             this.btnFuncionario = new System.Windows.Forms.Button();
             this.btnLivros = new System.Windows.Forms.Button();
             this.btnClientes = new System.Windows.Forms.Button();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panel1.SuspendLayout();
             this.subMenuLivroCadastro.SuspendLayout();
             this.panel9.SuspendLayout();
@@ -101,6 +104,7 @@
             this.submenuLivro.SuspendLayout();
             this.subMenuFuncionario.SuspendLayout();
             this.panelMenu.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -144,9 +148,11 @@
             // 
             // lblDataAtual
             // 
+            this.lblDataAtual.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.lblDataAtual.AutoSize = true;
             this.lblDataAtual.Font = new System.Drawing.Font("Segoe UI", 10.28571F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblDataAtual.Location = new System.Drawing.Point(580, 17);
+            this.lblDataAtual.Location = new System.Drawing.Point(615, 17);
             this.lblDataAtual.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblDataAtual.Name = "lblDataAtual";
             this.lblDataAtual.Size = new System.Drawing.Size(39, 19);
@@ -316,7 +322,7 @@
             this.subMenuLivroConsulta.Controls.Add(this.btnConsultaGenero);
             this.subMenuLivroConsulta.Controls.Add(this.btnConsultaAutor);
             this.subMenuLivroConsulta.Controls.Add(this.panel21);
-            this.subMenuLivroConsulta.Controls.Add(this.button13);
+            this.subMenuLivroConsulta.Controls.Add(this.btnConsultaLivro);
             this.subMenuLivroConsulta.Location = new System.Drawing.Point(166, 362);
             this.subMenuLivroConsulta.Margin = new System.Windows.Forms.Padding(2);
             this.subMenuLivroConsulta.Name = "subMenuLivroConsulta";
@@ -441,21 +447,22 @@
             this.panel22.Size = new System.Drawing.Size(8, 41);
             this.panel22.TabIndex = 1;
             // 
-            // button13
+            // btnConsultaLivro
             // 
-            this.button13.FlatAppearance.BorderSize = 0;
-            this.button13.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Goldenrod;
-            this.button13.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button13.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button13.ForeColor = System.Drawing.Color.White;
-            this.button13.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button13.Location = new System.Drawing.Point(6, 0);
-            this.button13.Name = "button13";
-            this.button13.Size = new System.Drawing.Size(143, 41);
-            this.button13.TabIndex = 3;
-            this.button13.Text = "Livro";
-            this.button13.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button13.UseVisualStyleBackColor = true;
+            this.btnConsultaLivro.FlatAppearance.BorderSize = 0;
+            this.btnConsultaLivro.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Goldenrod;
+            this.btnConsultaLivro.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnConsultaLivro.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnConsultaLivro.ForeColor = System.Drawing.Color.White;
+            this.btnConsultaLivro.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnConsultaLivro.Location = new System.Drawing.Point(6, 0);
+            this.btnConsultaLivro.Name = "btnConsultaLivro";
+            this.btnConsultaLivro.Size = new System.Drawing.Size(143, 41);
+            this.btnConsultaLivro.TabIndex = 3;
+            this.btnConsultaLivro.Text = "Livro";
+            this.btnConsultaLivro.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnConsultaLivro.UseVisualStyleBackColor = true;
+            this.btnConsultaLivro.Click += new System.EventHandler(this.btnConsultaLivro_Click);
             // 
             // timerDataHora
             // 
@@ -477,7 +484,7 @@
             // subMenuEmprestimo
             // 
             this.subMenuEmprestimo.Controls.Add(this.panel32);
-            this.subMenuEmprestimo.Controls.Add(this.button9);
+            this.subMenuEmprestimo.Controls.Add(this.btnConsultaEmprestimo);
             this.subMenuEmprestimo.Controls.Add(this.panel33);
             this.subMenuEmprestimo.Controls.Add(this.btnNovoEmprestimo);
             this.subMenuEmprestimo.Location = new System.Drawing.Point(16, 85);
@@ -496,21 +503,22 @@
             this.panel32.Size = new System.Drawing.Size(8, 41);
             this.panel32.TabIndex = 4;
             // 
-            // button9
+            // btnConsultaEmprestimo
             // 
-            this.button9.FlatAppearance.BorderSize = 0;
-            this.button9.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Goldenrod;
-            this.button9.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button9.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button9.ForeColor = System.Drawing.Color.White;
-            this.button9.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button9.Location = new System.Drawing.Point(6, 46);
-            this.button9.Name = "button9";
-            this.button9.Size = new System.Drawing.Size(144, 41);
-            this.button9.TabIndex = 5;
-            this.button9.Text = "  Consulta\r\n";
-            this.button9.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button9.UseVisualStyleBackColor = true;
+            this.btnConsultaEmprestimo.FlatAppearance.BorderSize = 0;
+            this.btnConsultaEmprestimo.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Goldenrod;
+            this.btnConsultaEmprestimo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnConsultaEmprestimo.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnConsultaEmprestimo.ForeColor = System.Drawing.Color.White;
+            this.btnConsultaEmprestimo.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnConsultaEmprestimo.Location = new System.Drawing.Point(6, 46);
+            this.btnConsultaEmprestimo.Name = "btnConsultaEmprestimo";
+            this.btnConsultaEmprestimo.Size = new System.Drawing.Size(144, 41);
+            this.btnConsultaEmprestimo.TabIndex = 5;
+            this.btnConsultaEmprestimo.Text = "  Consulta\r\n";
+            this.btnConsultaEmprestimo.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnConsultaEmprestimo.UseVisualStyleBackColor = true;
+            this.btnConsultaEmprestimo.Click += new System.EventHandler(this.btnConsultaFunc_Click);
             // 
             // panel33
             // 
@@ -696,6 +704,8 @@
             // 
             // subMenuFuncionario
             // 
+            this.subMenuFuncionario.Controls.Add(this.panel2);
+            this.subMenuFuncionario.Controls.Add(this.btnAlterarSenha);
             this.subMenuFuncionario.Controls.Add(this.panel7);
             this.subMenuFuncionario.Controls.Add(this.btnConsultaFuncionario);
             this.subMenuFuncionario.Controls.Add(this.panel8);
@@ -703,9 +713,35 @@
             this.subMenuFuncionario.Location = new System.Drawing.Point(15, 455);
             this.subMenuFuncionario.Margin = new System.Windows.Forms.Padding(2);
             this.subMenuFuncionario.Name = "subMenuFuncionario";
-            this.subMenuFuncionario.Size = new System.Drawing.Size(146, 88);
+            this.subMenuFuncionario.Size = new System.Drawing.Size(146, 135);
             this.subMenuFuncionario.TabIndex = 8;
             this.subMenuFuncionario.Visible = false;
+            // 
+            // panel2
+            // 
+            this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(194)))), ((int)(((byte)(0)))));
+            this.panel2.Location = new System.Drawing.Point(0, 91);
+            this.panel2.Margin = new System.Windows.Forms.Padding(2);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(8, 41);
+            this.panel2.TabIndex = 5;
+            // 
+            // btnAlterarSenha
+            // 
+            this.btnAlterarSenha.FlatAppearance.BorderSize = 0;
+            this.btnAlterarSenha.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Goldenrod;
+            this.btnAlterarSenha.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnAlterarSenha.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAlterarSenha.ForeColor = System.Drawing.Color.White;
+            this.btnAlterarSenha.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnAlterarSenha.Location = new System.Drawing.Point(6, 91);
+            this.btnAlterarSenha.Name = "btnAlterarSenha";
+            this.btnAlterarSenha.Size = new System.Drawing.Size(143, 41);
+            this.btnAlterarSenha.TabIndex = 6;
+            this.btnAlterarSenha.Text = "Senha";
+            this.btnAlterarSenha.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnAlterarSenha.UseVisualStyleBackColor = true;
+            this.btnAlterarSenha.Click += new System.EventHandler(this.btnAlterarSenha_Click);
             // 
             // panel7
             // 
@@ -724,13 +760,14 @@
             this.btnConsultaFuncionario.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnConsultaFuncionario.ForeColor = System.Drawing.Color.White;
             this.btnConsultaFuncionario.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnConsultaFuncionario.Location = new System.Drawing.Point(6, 46);
+            this.btnConsultaFuncionario.Location = new System.Drawing.Point(6, 47);
             this.btnConsultaFuncionario.Name = "btnConsultaFuncionario";
             this.btnConsultaFuncionario.Size = new System.Drawing.Size(143, 41);
             this.btnConsultaFuncionario.TabIndex = 5;
             this.btnConsultaFuncionario.Text = " Consulta\r\n";
             this.btnConsultaFuncionario.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnConsultaFuncionario.UseVisualStyleBackColor = true;
+            this.btnConsultaFuncionario.Click += new System.EventHandler(this.btnConsultaFuncionario_Click);
             // 
             // panel8
             // 
@@ -826,12 +863,26 @@
             this.btnClientes.UseVisualStyleBackColor = true;
             this.btnClientes.Click += new System.EventHandler(this.btnCadastroFuncionario_Click);
             // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.pictureBox1.BackgroundImage = global::Desktop_Biblioteca.Properties.Resources.livros;
+            this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.pictureBox1.Location = new System.Drawing.Point(228, 121);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(581, 605);
+            this.pictureBox1.TabIndex = 14;
+            this.pictureBox1.TabStop = false;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(1025, 855);
+            this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.panel18);
             this.Controls.Add(this.subMenuLivroConsulta);
             this.Controls.Add(this.subMenuLivroCadastro);
@@ -858,6 +909,7 @@
             this.submenuLivro.ResumeLayout(false);
             this.subMenuFuncionario.ResumeLayout(false);
             this.panelMenu.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -887,7 +939,7 @@
         private System.Windows.Forms.Button btnConsultaAutor;
         private System.Windows.Forms.Panel panel21;
         private System.Windows.Forms.Panel panel22;
-        private System.Windows.Forms.Button button13;
+        private System.Windows.Forms.Button btnConsultaLivro;
         private System.Windows.Forms.Panel panel9;
         private System.Windows.Forms.Panel panel16;
         private System.Windows.Forms.Label lblDataAtual;
@@ -895,7 +947,7 @@
         private System.Windows.Forms.Panel panel18;
         private System.Windows.Forms.Panel subMenuEmprestimo;
         private System.Windows.Forms.Panel panel32;
-        private System.Windows.Forms.Button button9;
+        private System.Windows.Forms.Button btnConsultaEmprestimo;
         private System.Windows.Forms.Panel panel33;
         private System.Windows.Forms.Button btnNovoEmprestimo;
         private System.Windows.Forms.Button btnEmprestimo;
@@ -919,6 +971,9 @@
         private System.Windows.Forms.Panel panel8;
         private System.Windows.Forms.Button btnCadstroFuncionario;
         private System.Windows.Forms.Panel panelMenu;
+        private System.Windows.Forms.Panel panel2;
+        private System.Windows.Forms.Button btnAlterarSenha;
+        private System.Windows.Forms.PictureBox pictureBox1;
     }
 }
 

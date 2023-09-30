@@ -4,7 +4,9 @@ using Desktop_Biblioteca.Cadastro.Cliente;
 using Desktop_Biblioteca.Cadastro.Emprestimo;
 using Desktop_Biblioteca.Cadastro.Genero;
 using Desktop_Biblioteca.Consulta;
+using Desktop_Biblioteca.DAO.Funcionario;
 using Desktop_Biblioteca.Livro.Categoria;
+using Desktop_Biblioteca.Login;
 using System;
 using System.Drawing;
 using System.Windows.Forms;
@@ -13,9 +15,12 @@ namespace Desktop_Biblioteca.Home
 {
     public partial class Form1 : Form
     {
-        public Form1()
+        public int FuncionarioId { get; set; }
+        public string Email { get; set; }
+        public Form1(string email)
         {
             InitializeComponent();
+            ObterFuncionarioId(email);
         }
 
         private void btnFechar_Click(object sender, EventArgs e)
@@ -47,7 +52,8 @@ namespace Desktop_Biblioteca.Home
 
         private void btnConsultarFuncionario_Click(object sender, EventArgs e)
         {
-  
+            FrmConsultaCliente frmConsultaCliente = new FrmConsultaCliente();
+            frmConsultaCliente.Show();
         }
 
         private void btnCadastrarFuncionario_Click(object sender, EventArgs e)
@@ -178,8 +184,39 @@ namespace Desktop_Biblioteca.Home
 
         private void btnNovoEmprestimo_Click(object sender, EventArgs e)
         {
-            FrmNovoEmprestimo frmNovoEmprestimo = new FrmNovoEmprestimo();
+            FrmNovoEmprestimo frmNovoEmprestimo = new FrmNovoEmprestimo(FuncionarioId);
             frmNovoEmprestimo.Show();
+        }
+
+        private void btnConsultaFunc_Click(object sender, EventArgs e)
+        {
+            FrmConsultaEmprestimo frmConsultaEmprestimo = new FrmConsultaEmprestimo();
+            frmConsultaEmprestimo.Show();
+        }
+
+        private void btnConsultaFuncionario_Click(object sender, EventArgs e)
+        {
+            FrmConsultaFuncionario frmConsultaFuncionario = new FrmConsultaFuncionario();
+            frmConsultaFuncionario.Show();
+        }
+
+        private void btnConsultaLivro_Click(object sender, EventArgs e)
+        {
+            FrmConsultaLivro frmConsultaLivro = new FrmConsultaLivro();
+            frmConsultaLivro.Show();
+        }
+
+        private void ObterFuncionarioId(string email) 
+        {
+            var dao = new FuncionarioDAO();
+            FuncionarioId = dao.BuscarFuncionarioEmail(email);
+            Email = email;
+        }
+
+        private void btnAlterarSenha_Click(object sender, EventArgs e)
+        {
+            FrmAlterarSenha frmAlterarSenha = new FrmAlterarSenha(Email);
+            frmAlterarSenha.Show();
         }
     }
 }
