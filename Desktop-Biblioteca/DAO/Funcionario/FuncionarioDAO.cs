@@ -39,11 +39,13 @@ namespace Desktop_Biblioteca.DAO.Funcionario
                 new SqlParameter("@Email", funcionario.Email),
                 new SqlParameter("@Telefone", funcionario.Telefone),
                 new SqlParameter("@Senha", funcionario.Email),
-                new SqlParameter("@EnderecoId", enderecoId)
+                new SqlParameter("@EnderecoId", enderecoId),
+                new SqlParameter("@NivelAcesso", (int)funcionario.NivelAcesso),
+                new SqlParameter("@Genero", (int)funcionario.Genero)
             };
 
-            string queryFunc =  "INSERT INTO Funcionario (NOME, DATANASCIMENTO, RG, CPF, EMAIL, TELEFONE, ENDERECOID, ATIVO) " +
-                                "VALUES (@Nome, @DataNascimento, @Rg, @Cpf, @Email, @Telefone, @EnderecoId, @AtivoFunc)";
+            string queryFunc = "INSERT INTO Funcionario (NOME, DATANASCIMENTO, RG, CPF, EMAIL, TELEFONE, ENDERECOID, NIVELACESSO, GENERO, ATIVO) " +
+                                "VALUES (@Nome, @DataNascimento, @Rg, @Cpf, @Email, @Telefone, @EnderecoId, @NivelAcesso, @Genero, @AtivoFunc)";
 
             Execute(queryFunc, parametersFuncionario);
         }
@@ -66,7 +68,8 @@ namespace Desktop_Biblioteca.DAO.Funcionario
                                     Rg = @Rg, 
                                     Cpf = @Cpf, 
                                     Email = @Email, 
-                                    Telefone = @Telefone
+                                    Telefone = @Telefone,
+                                    Genero = @Genero
                                 WHERE Id = @Id";
 
             SqlParameter[] parameters =
@@ -86,6 +89,7 @@ namespace Desktop_Biblioteca.DAO.Funcionario
                  new SqlParameter("@Email", funcionario.Email),
                  new SqlParameter("@Telefone", funcionario.Telefone),
                  new SqlParameter("@Id", funcionario.Id),
+                 new SqlParameter("@Genero", (int)funcionario.Genero)
             };
 
             Execute(cmdUpdate, parameters);
@@ -109,6 +113,11 @@ namespace Desktop_Biblioteca.DAO.Funcionario
                 funcionario.Rg = reader.GetString(reader.GetOrdinal("Rg"));
                 funcionario.Cpf = reader.GetString(reader.GetOrdinal("Cpf"));
                 funcionario.DataNascimento = reader.GetDateTime(reader.GetOrdinal("DataNascimento"));
+                int nivelAcessoFromDB = reader.GetInt32(reader.GetOrdinal("NivelAcesso"));
+                funcionario.NivelAcesso = (NivelAcesso)nivelAcessoFromDB;
+
+                int generoDb = reader.GetInt32(reader.GetOrdinal("Genero"));
+                funcionario.Genero = (Entidades.Funcionarios.Genero)generoDb;
                 funcionarios.Add(funcionario);
             }
             return funcionarios;
@@ -133,11 +142,34 @@ namespace Desktop_Biblioteca.DAO.Funcionario
                     Telefone = reader.GetString(reader.GetOrdinal("Telefone")),
                     Rg = reader.GetString(reader.GetOrdinal("Rg")),
                     Cpf = reader.GetString(reader.GetOrdinal("Cpf")),
-                    DataNascimento = reader.GetDateTime(reader.GetOrdinal("DataNascimento"))
+                    DataNascimento = reader.GetDateTime(reader.GetOrdinal("DataNascimento")),
                 };
+                int nivelAcessoFromDB = reader.GetInt32(reader.GetOrdinal("NivelAcesso"));
+                funcionario.NivelAcesso = (NivelAcesso)nivelAcessoFromDB;
+
+                int? generoDb = reader.GetInt32(reader.GetOrdinal("Genero"));
+                funcionario.Genero = (Entidades.Funcionarios.Genero)generoDb;
+
                 funcionario.Endereco = new EnderecoDao().BuscarEnderecoPorId(funcionario.Id, true);
             }
             return funcionario;
+        }
+
+        public bool ExisteFuncionario()
+        {
+            string query = $"SELECT COUNT(*) AS TOTAL FROM Funcionario WHERE Ativo = 1 AND NivelAcesso = 2";
+            SqlConnection con = new SqlConnection(_connectionString);
+            SqlCommand sqlCommand = new SqlCommand(query, con);
+            con.Open();
+            var reader = sqlCommand.ExecuteReader();
+            var total = 0;
+            while (reader.Read())
+            {
+                total = reader.GetInt32(reader.GetOrdinal("TOTAL"));
+            }
+            if (total > 0)
+                return true;
+            return false;
         }
 
         public bool ExisteFuncionario(string email)
@@ -157,19 +189,21 @@ namespace Desktop_Biblioteca.DAO.Funcionario
             return false;
         }
 
-        public int BuscarFuncionarioEmail(string email)
+        public Entidades.Funcionarios.ConsultaFuncionario BuscarFuncionarioEmail(string email)
         {
-            string query = $"SELECT Id FROM Funcionario WHERE Email = '{email}' AND ATIVO = 1";
+            string query = $"SELECT Id, NivelAcesso FROM Funcionario WHERE Email = '{email}' AND ATIVO = 1";
             SqlConnection con = new SqlConnection(_connectionString);
             SqlCommand sqlCommand = new SqlCommand(query, con);
             con.Open();
             var reader = sqlCommand.ExecuteReader();
-            int id = 0;
+            var result = new Entidades.Funcionarios.ConsultaFuncionario();
             while (reader.Read())
             {
-                id = reader.GetInt32(reader.GetOrdinal("ID"));
+                result.Id = reader.GetInt32(reader.GetOrdinal("Id"));
+                int nivelAcessoFromDB = reader.GetInt32(reader.GetOrdinal("NivelAcesso"));
+                result.NivelAcesso = (NivelAcesso)nivelAcessoFromDB;
             }
-            return id;
+            return result;
         }
     }
 }

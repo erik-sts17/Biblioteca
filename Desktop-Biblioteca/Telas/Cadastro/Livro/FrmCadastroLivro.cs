@@ -55,6 +55,7 @@ namespace Desktop_Biblioteca.Cadastro
                 }
             }
         }
+
         private void CarregarCategoria(int id)
         {
             for (int i = 0; i < cbCategorias.Items.Count; i++)

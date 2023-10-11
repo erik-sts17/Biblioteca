@@ -35,13 +35,13 @@ namespace Desktop_Biblioteca.Consulta
             List<int> ids = new List<int>();
             foreach (DataGridViewRow row in dgrLivros.SelectedRows)
             {
-                int id = Convert.ToInt32(row.Cells[1].Value);
+                int id = Convert.ToInt32(row.Cells["Id"].Value);
                 ids.Add(id);
             }
             AutorDao dao = new AutorDao();
             try
             {
-                dao.Excluir("AUTOR", ids);
+                dao.Excluir("Livro", ids);
                 MessageBox.Show("Dados apagados com sucesso.");
                 BuscarLivros();
             }

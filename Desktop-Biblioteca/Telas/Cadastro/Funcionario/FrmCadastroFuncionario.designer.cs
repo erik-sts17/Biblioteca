@@ -64,6 +64,8 @@
             this.txtRg = new System.Windows.Forms.MaskedTextBox();
             this.lblRg = new System.Windows.Forms.Label();
             this.groupLogin = new System.Windows.Forms.GroupBox();
+            this.cbAcesso = new System.Windows.Forms.ComboBox();
+            this.lblAcesso = new System.Windows.Forms.Label();
             this.chkSenha = new System.Windows.Forms.CheckBox();
             this.txtSenhaUser = new System.Windows.Forms.TextBox();
             this.lblSenha = new System.Windows.Forms.Label();
@@ -151,10 +153,6 @@
             this.cboGenero.FlatStyle = System.Windows.Forms.FlatStyle.System;
             this.cboGenero.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.cboGenero.FormattingEnabled = true;
-            this.cboGenero.Items.AddRange(new object[] {
-            "MASCULINO",
-            "FEMININO",
-            "OUTROS"});
             this.cboGenero.Location = new System.Drawing.Point(242, 218);
             this.cboGenero.Name = "cboGenero";
             this.cboGenero.Size = new System.Drawing.Size(112, 23);
@@ -246,7 +244,7 @@
             this.btnLimpar.BackColor = System.Drawing.Color.Red;
             this.btnLimpar.Font = new System.Drawing.Font("Segoe UI", 15F, System.Drawing.FontStyle.Bold);
             this.btnLimpar.ForeColor = System.Drawing.Color.White;
-            this.btnLimpar.Location = new System.Drawing.Point(402, 452);
+            this.btnLimpar.Location = new System.Drawing.Point(490, 452);
             this.btnLimpar.Margin = new System.Windows.Forms.Padding(2);
             this.btnLimpar.Name = "btnLimpar";
             this.btnLimpar.Size = new System.Drawing.Size(92, 48);
@@ -260,7 +258,7 @@
             this.btnSalvar.BackColor = System.Drawing.Color.Lime;
             this.btnSalvar.Font = new System.Drawing.Font("Segoe UI", 15F, System.Drawing.FontStyle.Bold);
             this.btnSalvar.ForeColor = System.Drawing.Color.White;
-            this.btnSalvar.Location = new System.Drawing.Point(304, 452);
+            this.btnSalvar.Location = new System.Drawing.Point(402, 452);
             this.btnSalvar.Margin = new System.Windows.Forms.Padding(2);
             this.btnSalvar.Name = "btnSalvar";
             this.btnSalvar.Size = new System.Drawing.Size(84, 48);
@@ -466,7 +464,7 @@
             this.lblSucesso.AutoSize = true;
             this.lblSucesso.Font = new System.Drawing.Font("Segoe UI", 13F);
             this.lblSucesso.ForeColor = System.Drawing.Color.Lime;
-            this.lblSucesso.Location = new System.Drawing.Point(281, 417);
+            this.lblSucesso.Location = new System.Drawing.Point(379, 417);
             this.lblSucesso.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblSucesso.Name = "lblSucesso";
             this.lblSucesso.Size = new System.Drawing.Size(255, 25);
@@ -498,6 +496,8 @@
             // 
             // groupLogin
             // 
+            this.groupLogin.Controls.Add(this.cbAcesso);
+            this.groupLogin.Controls.Add(this.lblAcesso);
             this.groupLogin.Controls.Add(this.chkSenha);
             this.groupLogin.Controls.Add(this.txtSenhaUser);
             this.groupLogin.Controls.Add(this.lblSenha);
@@ -506,10 +506,58 @@
             this.groupLogin.Margin = new System.Windows.Forms.Padding(2);
             this.groupLogin.Name = "groupLogin";
             this.groupLogin.Padding = new System.Windows.Forms.Padding(2);
-            this.groupLogin.Size = new System.Drawing.Size(160, 101);
+            this.groupLogin.Size = new System.Drawing.Size(306, 101);
             this.groupLogin.TabIndex = 63;
             this.groupLogin.TabStop = false;
             this.groupLogin.Text = "Login";
+            // 
+            // cbAcesso
+            // 
+            this.cbAcesso.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.cbAcesso.FormattingEnabled = true;
+            this.cbAcesso.Items.AddRange(new object[] {
+            "AC",
+            "AL",
+            "AP",
+            "AM",
+            "BA",
+            "CE",
+            "DF",
+            "ES",
+            "GO",
+            "MA",
+            "MT",
+            "MS",
+            "MG",
+            "PA",
+            "PB",
+            "PR",
+            "PE",
+            "PI",
+            "RJ",
+            "RN",
+            "RS",
+            "RO",
+            "RR",
+            "SC",
+            "SP",
+            "SE",
+            "TO"});
+            this.cbAcesso.Location = new System.Drawing.Point(156, 39);
+            this.cbAcesso.Name = "cbAcesso";
+            this.cbAcesso.Size = new System.Drawing.Size(131, 23);
+            this.cbAcesso.TabIndex = 65;
+            // 
+            // lblAcesso
+            // 
+            this.lblAcesso.AutoSize = true;
+            this.lblAcesso.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold);
+            this.lblAcesso.ForeColor = System.Drawing.Color.White;
+            this.lblAcesso.Location = new System.Drawing.Point(152, 15);
+            this.lblAcesso.Name = "lblAcesso";
+            this.lblAcesso.Size = new System.Drawing.Size(77, 21);
+            this.lblAcesso.TabIndex = 68;
+            this.lblAcesso.Text = "Acesso: *";
             // 
             // chkSenha
             // 
@@ -542,9 +590,9 @@
             this.lblSenha.ForeColor = System.Drawing.Color.White;
             this.lblSenha.Location = new System.Drawing.Point(6, 15);
             this.lblSenha.Name = "lblSenha";
-            this.lblSenha.Size = new System.Drawing.Size(68, 21);
+            this.lblSenha.Size = new System.Drawing.Size(72, 21);
             this.lblSenha.TabIndex = 64;
-            this.lblSenha.Text = "Senha *";
+            this.lblSenha.Text = "Senha: *";
             // 
             // lblEmail
             // 
@@ -675,5 +723,7 @@
         private System.Windows.Forms.CheckBox chkSenha;
         private System.Windows.Forms.Label enderecoId;
         private System.Windows.Forms.Label clienteId;
+        private System.Windows.Forms.ComboBox cbAcesso;
+        private System.Windows.Forms.Label lblAcesso;
     }
 }

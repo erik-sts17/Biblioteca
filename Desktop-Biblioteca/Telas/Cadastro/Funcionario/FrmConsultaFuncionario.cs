@@ -1,5 +1,4 @@
 ﻿using Desktop_Biblioteca.Cadastro.Cliente;
-using Desktop_Biblioteca.DAO.Cliente;
 using Desktop_Biblioteca.DAO.Funcionario;
 using Desktop_Biblioteca.DAO.Livro;
 using System;

@@ -1,5 +1,4 @@
-﻿using Desktop_Biblioteca.Cadastro.Autor;
-using Desktop_Biblioteca.Cadastro.Genero;
+﻿using Desktop_Biblioteca.Cadastro.Genero;
 using Desktop_Biblioteca.DAO.Livro;
 using Desktop_Biblioteca.Entidades.Livro;
 using System;

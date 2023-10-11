@@ -15,12 +15,19 @@ namespace Desktop_Biblioteca.Home
 {
     public partial class Form1 : Form
     {
-        public int FuncionarioId { get; set; }
+        public Entidades.Funcionarios.ConsultaFuncionario ConsultaFuncionario { get; set; } = new Entidades.Funcionarios.ConsultaFuncionario();
         public string Email { get; set; }
         public Form1(string email)
         {
             InitializeComponent();
             ObterFuncionarioId(email);
+            if (ConsultaFuncionario.NivelAcesso != Entidades.NivelAcesso.Gerente)
+            {
+                btnCadstroFuncionario.Visible = false;
+                panelCadastroFunc.Visible = false;
+                panelConsultaFunc.Visible = false;
+                btnConsultaFuncionario.Visible = false;
+            }
         }
 
         private void btnFechar_Click(object sender, EventArgs e)
@@ -184,7 +191,7 @@ namespace Desktop_Biblioteca.Home
 
         private void btnNovoEmprestimo_Click(object sender, EventArgs e)
         {
-            FrmNovoEmprestimo frmNovoEmprestimo = new FrmNovoEmprestimo(FuncionarioId);
+            FrmNovoEmprestimo frmNovoEmprestimo = new FrmNovoEmprestimo(ConsultaFuncionario.Id);
             frmNovoEmprestimo.Show();
         }
 
@@ -208,12 +215,13 @@ namespace Desktop_Biblioteca.Home
 
         private void ObterFuncionarioId(string email) 
         {
-            var dao = new FuncionarioDAO();
-            FuncionarioId = dao.BuscarFuncionarioEmail(email);
+            var result = new FuncionarioDAO().BuscarFuncionarioEmail(email);
+            ConsultaFuncionario.Id = result.Id;
+            ConsultaFuncionario.NivelAcesso = result.NivelAcesso;
             Email = email;
         }
 
-        private void btnAlterarSenha_Click(object sender, EventArgs e)
+        private void btnAlterarSenha_Click_1(object sender, EventArgs e)
         {
             FrmAlterarSenha frmAlterarSenha = new FrmAlterarSenha(Email);
             frmAlterarSenha.Show();

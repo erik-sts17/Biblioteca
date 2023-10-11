@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Desktop_Biblioteca.Entidades.Funcionarios;
+using System;
 
 namespace Desktop_Biblioteca.Entidades
 {
@@ -8,7 +9,7 @@ namespace Desktop_Biblioteca.Entidades
         {
             
         }
-        public Funcionario(string nome, DateTime dataNascimento, string rg, string cpf, string email, string telefone, Endereco endereco, Login login)
+        public Funcionario(string nome, DateTime dataNascimento, string rg, string cpf, string email, string telefone, Endereco endereco, Login login, NivelAcesso nivelAcesso, Genero genero)
         {
             Nome = nome;
             DataNascimento = dataNascimento;
@@ -18,6 +19,8 @@ namespace Desktop_Biblioteca.Entidades
             Telefone = telefone;
             Endereco = endereco;
             Login = login;
+            NivelAcesso = nivelAcesso;
+            Genero = genero;
         }
 
         public string Nome { get; set; }
@@ -28,5 +31,7 @@ namespace Desktop_Biblioteca.Entidades
         public string Cpf { get; set; }
         public Endereco Endereco { get; set; }
         public Login Login { get; set; }
+        public NivelAcesso NivelAcesso { get; set; }
+        public Genero Genero { get; set; }
     }
 }

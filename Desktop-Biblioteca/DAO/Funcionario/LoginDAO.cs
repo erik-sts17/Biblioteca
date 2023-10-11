@@ -1,7 +1,4 @@
-﻿using Desktop_Biblioteca.Entidades;
-using MySql.Data.MySqlClient;
-using System.Data.SqlClient;
-using System.Drawing;
+﻿using System.Data.SqlClient;
 
 namespace Desktop_Biblioteca.DAO.Funcionario
 {
@@ -45,7 +42,7 @@ namespace Desktop_Biblioteca.DAO.Funcionario
                     new SqlParameter("@Email", login.Email),
                     new SqlParameter("@Senha", login.Senha),
                 };
-            string query = "SELECT COUNT(*) FROM Login L INNER JOIN Funcionario F ON L.Email = F.Email WHERE L.Email = @Email AND L.Senha = @Senha";
+            string query = "SELECT COUNT(*) FROM Login L INNER JOIN Funcionario F ON L.Email = F.Email WHERE L.Email = @Email AND L.Senha = @Senha AND F.Ativo = 1";
             var result = (int)ExecuteScalar(query, parameters);
             return result > 0;
         }

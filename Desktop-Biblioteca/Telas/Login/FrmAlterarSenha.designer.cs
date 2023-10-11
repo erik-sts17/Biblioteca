@@ -50,7 +50,7 @@
             this.lblsenha.AutoSize = true;
             this.lblsenha.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold);
             this.lblsenha.ForeColor = System.Drawing.Color.White;
-            this.lblsenha.Location = new System.Drawing.Point(12, 136);
+            this.lblsenha.Location = new System.Drawing.Point(12, 152);
             this.lblsenha.Name = "lblsenha";
             this.lblsenha.Size = new System.Drawing.Size(92, 21);
             this.lblsenha.TabIndex = 40;
@@ -59,7 +59,7 @@
             // txtSenhaUser
             // 
             this.txtSenhaUser.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.txtSenhaUser.Location = new System.Drawing.Point(122, 134);
+            this.txtSenhaUser.Location = new System.Drawing.Point(122, 150);
             this.txtSenhaUser.MaxLength = 10;
             this.txtSenhaUser.Name = "txtSenhaUser";
             this.txtSenhaUser.Size = new System.Drawing.Size(185, 23);
@@ -71,7 +71,7 @@
             this.lblNovaSenha.AutoSize = true;
             this.lblNovaSenha.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold);
             this.lblNovaSenha.ForeColor = System.Drawing.Color.White;
-            this.lblNovaSenha.Location = new System.Drawing.Point(11, 97);
+            this.lblNovaSenha.Location = new System.Drawing.Point(11, 113);
             this.lblNovaSenha.Name = "lblNovaSenha";
             this.lblNovaSenha.Size = new System.Drawing.Size(106, 21);
             this.lblNovaSenha.TabIndex = 38;
@@ -82,7 +82,7 @@
             this.btnLimparUsuario.BackColor = System.Drawing.Color.Red;
             this.btnLimparUsuario.Font = new System.Drawing.Font("Segoe UI", 15F, System.Drawing.FontStyle.Bold);
             this.btnLimparUsuario.ForeColor = System.Drawing.Color.White;
-            this.btnLimparUsuario.Location = new System.Drawing.Point(186, 230);
+            this.btnLimparUsuario.Location = new System.Drawing.Point(186, 240);
             this.btnLimparUsuario.Margin = new System.Windows.Forms.Padding(2);
             this.btnLimparUsuario.Name = "btnLimparUsuario";
             this.btnLimparUsuario.Size = new System.Drawing.Size(89, 48);
@@ -96,7 +96,7 @@
             this.btnAlterar.BackColor = System.Drawing.Color.Yellow;
             this.btnAlterar.Font = new System.Drawing.Font("Segoe UI", 15F, System.Drawing.FontStyle.Bold);
             this.btnAlterar.ForeColor = System.Drawing.Color.Black;
-            this.btnAlterar.Location = new System.Drawing.Point(84, 230);
+            this.btnAlterar.Location = new System.Drawing.Point(83, 240);
             this.btnAlterar.Margin = new System.Windows.Forms.Padding(2);
             this.btnAlterar.Name = "btnAlterar";
             this.btnAlterar.Size = new System.Drawing.Size(88, 48);
@@ -148,7 +148,7 @@
             this.chkSenha.AutoSize = true;
             this.chkSenha.Font = new System.Drawing.Font("Segoe UI Semibold", 9.285714F, System.Drawing.FontStyle.Bold);
             this.chkSenha.ForeColor = System.Drawing.Color.White;
-            this.chkSenha.Location = new System.Drawing.Point(122, 163);
+            this.chkSenha.Location = new System.Drawing.Point(122, 179);
             this.chkSenha.Margin = new System.Windows.Forms.Padding(2);
             this.chkSenha.Name = "chkSenha";
             this.chkSenha.Size = new System.Drawing.Size(100, 21);
@@ -160,7 +160,7 @@
             // txtSenha1
             // 
             this.txtSenha1.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.txtSenha1.Location = new System.Drawing.Point(123, 99);
+            this.txtSenha1.Location = new System.Drawing.Point(123, 115);
             this.txtSenha1.MaxLength = 10;
             this.txtSenha1.Name = "txtSenha1";
             this.txtSenha1.Size = new System.Drawing.Size(185, 23);
@@ -172,7 +172,7 @@
             this.lblSucesso.AutoSize = true;
             this.lblSucesso.Font = new System.Drawing.Font("Segoe UI", 13F);
             this.lblSucesso.ForeColor = System.Drawing.Color.Lime;
-            this.lblSucesso.Location = new System.Drawing.Point(53, 186);
+            this.lblSucesso.Location = new System.Drawing.Point(54, 203);
             this.lblSucesso.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblSucesso.Name = "lblSucesso";
             this.lblSucesso.Size = new System.Drawing.Size(254, 25);

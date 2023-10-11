@@ -3,7 +3,6 @@ using Desktop_Biblioteca.Client.Models;
 using Desktop_Biblioteca.DAO.Cliente;
 using Desktop_Biblioteca.DAO.Funcionario;
 using Desktop_Biblioteca.Entidades;
-using MySql.Data.MySqlClient.Memcached;
 using System;
 using System.Collections.Generic;
 using System.Drawing;
@@ -16,9 +15,11 @@ namespace Desktop_Biblioteca.Cadastro.Cliente
     public partial class FrmCadastroFuncionario : Form
     {
         public bool Edicao { get; set; }
-        public FrmCadastroFuncionario(Entidades.Funcionario funcionario = null)
+        public bool PrimeiroAcesso { get; set; }
+        public FrmCadastroFuncionario(Entidades.Funcionario funcionario = null, bool primeiroAcesso = false)
         {
             InitializeComponent();
+            cboGenero.DataSource = Enum.GetValues(typeof(Entidades.Funcionarios.Genero));
             if (funcionario != null)
             {
                 lblCadastroFuncionario.Text = "Edição de Funcionário";
@@ -29,7 +30,7 @@ namespace Desktop_Biblioteca.Cadastro.Cliente
                 lblSucesso.Text = "Dados alterados com sucesso!";
                 txtNome.Text = funcionario.Nome;
                 txtEmail.Text = funcionario.Email;
-                TxtCpf.Text = funcionario.Cpf;  
+                TxtCpf.Text = funcionario.Cpf;
                 txtRg.Text = funcionario.Rg;
                 txtTelefone.Text = funcionario.Telefone;
                 txtEndereco.Text = funcionario.Endereco.Logradouro;
@@ -44,6 +45,20 @@ namespace Desktop_Biblioteca.Cadastro.Cliente
                 enderecoId.Text = funcionario.Endereco.Id.ToString();
                 clienteId.Text = funcionario.Id.ToString();
                 groupLogin.Visible = false;
+                CarregarGenero(funcionario.Genero);
+            }
+            PrimeiroAcesso = primeiroAcesso;
+        }
+
+        private void CarregarGenero(Entidades.Funcionarios.Genero generoDb)
+        {
+            foreach (var item in cboGenero.Items)
+            {
+                if (item is Entidades.Funcionarios.Genero && (Entidades.Funcionarios.Genero)item == generoDb)
+                {
+                    cboGenero.SelectedItem = item;
+                    break; 
+                }
             }
         }
 
@@ -76,9 +91,10 @@ namespace Desktop_Biblioteca.Cadastro.Cliente
 
             try
             {
+                var acesso = (NivelAcesso)cbAcesso.SelectedItem;
                 var endereco = new Endereco(txtCep.Text, cbUf.SelectedItem.ToString(), txtCidade.Text, txtBairro.Text, txtEndereco.Text, txtNumero.Text, txtComplemento.Text);
                 var login = new Entidades.Login(txtEmail.Text, txtSenhaUser.Text);
-                var funcionario = new Funcionario(txtNome.Text, dtDataNascimento.Value, txtRg.Text,TxtCpf.Text, txtEmail.Text, txtTelefone.Text, endereco, login);
+                var funcionario = new Funcionario(txtNome.Text, dtDataNascimento.Value, txtRg.Text, TxtCpf.Text, txtEmail.Text, txtTelefone.Text, endereco, login, acesso, (Entidades.Funcionarios.Genero)cboGenero.SelectedItem);
                 var funcionarioDAO = new FuncionarioDAO();
                 if (Edicao)
                 {
@@ -86,7 +102,7 @@ namespace Desktop_Biblioteca.Cadastro.Cliente
                     funcionario.Endereco.Id = int.Parse(enderecoId.Text);
                     funcionarioDAO.Atualizar(funcionario);
                 }
-                else 
+                else
                 {
                     funcionarioDAO.Insert(funcionario, login);
                     btnLimpar_Click(sender, e);
@@ -122,6 +138,12 @@ namespace Desktop_Biblioteca.Cadastro.Cliente
                     erros.Add("Senha precisa ter no mínimo 8 caracteres!");
             }
 
+            if (cbAcesso.SelectedItem == null)
+                erros.Add("Escolha um nível de acesso!");
+
+            if (cboGenero.SelectedItem == null)
+                erros.Add("Escolha um genêro.");
+
             if (string.IsNullOrEmpty(txtEmail.Text))
             {
                 var clienteDao = new ClienteDao();
@@ -147,7 +169,10 @@ namespace Desktop_Biblioteca.Cadastro.Cliente
 
         private void FrmCadastroFuncionario_Load(object sender, EventArgs e)
         {
-
+            if (PrimeiroAcesso)
+                cbAcesso.DataSource = new NivelAcesso[] { NivelAcesso.Gerente };
+            else
+                cbAcesso.DataSource = Enum.GetValues(typeof(NivelAcesso));
         }
 
         private void cbUf_SelectedIndexChanged(object sender, EventArgs e)

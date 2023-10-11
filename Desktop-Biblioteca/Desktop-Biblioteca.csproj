@@ -201,9 +201,12 @@
     <Compile Include="Entidades\Emprestimo\Status.cs" />
     <Compile Include="Entidades\Endereco.cs" />
     <Compile Include="Client\BaseClient.cs" />
-    <Compile Include="Entidades\Funcionario.cs" />
+    <Compile Include="Entidades\Funcionarios\ConsultaFuncionario.cs" />
+    <Compile Include="Entidades\Funcionarios\Funcionario.cs" />
+    <Compile Include="Entidades\Funcionarios\Genero.cs" />
     <Compile Include="Entidades\Livro\Filtro.cs" />
     <Compile Include="Entidades\Login.cs" />
+    <Compile Include="Entidades\Funcionarios\NivelAcesso.cs" />
     <Compile Include="Properties\Resources1.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>

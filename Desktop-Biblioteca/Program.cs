@@ -1,8 +1,7 @@
-﻿using Desktop_Biblioteca.Home;
+﻿using Desktop_Biblioteca.Cadastro.Cliente;
+using Desktop_Biblioteca.DAO.Funcionario;
 using Desktop_Biblioteca.Login;
 using System;
-using System.Collections.Generic;
-using System.Linq;
 using System.Windows.Forms;
 
 namespace Desktop_Biblioteca
@@ -17,7 +16,12 @@ namespace Desktop_Biblioteca
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new FrmLogin());
+            var funcionarioDao = new FuncionarioDAO();
+            if (!funcionarioDao.ExisteFuncionario())
+                Application.Run(new FrmCadastroFuncionario(primeiroAcesso: true));
+            
+            else
+                Application.Run(new FrmLogin());
         }
     }
 }
