@@ -1,4 +1,4 @@
-# BibliotecaApp
+# DesktopBiblioteca
 
 Sistema de biblioteca desenvolvido em C# .NET 3.1 com Windows Forms.
 
